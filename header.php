@@ -11,10 +11,12 @@
 </head>
 <body>
   <header>
-    <ul id="nav">
-      <li><a href="#section1">Accueil</a></li>
-      <li><a href="contact/contact.php">Contact</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="#section1">Accueil</a></li>
+        <li><a href="#section2">Contact</a></li>
+      </ul>
+    </nav>
     
     <?php require "bdd/bdd_connexion.php"; ?>
   </header>
