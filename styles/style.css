@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
 :root {
-  --background: #425C6A;
-  --panel: #133751;
-  --green: #8FA096;
-  --second-panel: #D3D3D3;
-  --text-color: #D9D9D9;
+  --background: #5C6672;
+  --panel: #313E50;
+  --second-panel: #6C6F7F;
+  --text-color: #E4E4E4;
 }
 
 * {
@@ -16,10 +15,6 @@ html {
   background-color: var(--background);
 }
 
-body {
-  overflow: hidden;
-}
-
 header {
   height: 7.5em;
 
@@ -29,36 +24,39 @@ header {
 }
 
 nav {
+  width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 2em 0;
 }
 
-ul {
-  width: 26%;
+.logo img { }
 
+.links {
+  width: 38%;
+}
+
+.links ul {
   display: flex;
   justify-content: space-around;
 }
 
-li {
+.links li {
   list-style-type: none;
 }
 
-li a {
+.links a {
   text-decoration: none;
 
-  font-size: 42px;
+  font-size: 34px;
   font-family: "Roboto", sans-serif;
 
   color: var(--text-color);
   cursor: pointer;
 
   padding-bottom: 0% 0.1em;
-  background-image: linear-gradient(var(--green), var(--green));
+  background-image: linear-gradient(var(--second-panel), var(--second-panel));
   background-size: 0% 0.1em;
   background-position-y: 110%;
   background-position-x: 50%;
@@ -66,21 +64,20 @@ li a {
   transition: background-size 0.5s;
 }
 
-li a:hover {
-  background-size: 100% 0.2em;
+.links a:hover {
+  background-size: 100% 0.22em;
 }
 
 footer {
   height: 4.688em;
-  margin-top: 35.6%;
 
   background-color: var(--panel);
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.4);
 }
 
 footer p {
-  padding-top: 0.5em;
-  font-size: 28px;
+  padding-top: 1.4%;
+  font-size: 24px;
   font-family: "Roboto", sans-serif;
   text-align: center;
 
