@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
+:root {
+  --background: #5C6672;
+  --panel: #313E50;
+  --second-panel: #6C6F7F;
+  --text-color: #E4E4E4;
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 3.75em 0;
+    white-space: nowrap;
+    position: relative;
+
+    outline: dotted orange 10px;
+  }
+  
+  .logos:after {
+    position: absolute;
+    top: 0;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 20s slide infinite linear;
+
+    outline: dotted orange 10px;
+  }
+  
+  .logos-slide img {
+    width: 11em;
+    height: 15em;
+    margin: 0 2.5em;
+  }
