@@ -1,10 +1,24 @@
+//zzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
 let list = document.querySelectorAll(".navigation li");
 
-function activelink(){
-    list.forEach(item=>{
-        item.classListe.remove("hovered");
+function activeLink(){
+    list.forEach(item=> {
+        item.classList.remove("hovered");
     });
-    this.classListe.add("hovered");
+    this.classList.add("hovered");
 }
 
-list.forEach(item => item.addEventListener("mouseover", ))
+list.forEach((item) => item.addEventListener("mouseover", activeLink ));
+
+
+// Nav dépliante
+
+let toggle = document.querySelector(".toggle");
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+
+toggle.onclick = function(){
+    navigation.classList.toggle("active");
+    main.classList.toggle("active");
+}
