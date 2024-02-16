@@ -310,7 +310,6 @@ width: 80px;
   border-radius: 6px;
 }
 
-
 .details table {
   width: 100%;
   border-collapse: collapse;
@@ -344,15 +343,6 @@ width: 80px;
   text-align: center;
 }
 
-/* .status.delivered {
-  padding: 2px 4px;
-  background: #8de02c;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-} */
-
 .recentCustomers {
   position: relative;
   display: grid;
@@ -379,11 +369,6 @@ width: 80px;
   object-fit: cover;
 }
 
-.recentCustomers table tr:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-
 .recentCustomers table tr td {
   padding: 12px 10px;
 }
@@ -397,4 +382,77 @@ width: 80px;
 .recentCustomers table tr td h4 span {
   font-size: 14px;
   color: var(--black2);
+}
+
+.recentCustomers table tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.recentCustomers table tr:hover td h4 span {  
+  color: var(--white);
+}
+
+/* =============== Le responsif ============== */
+
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
 }
