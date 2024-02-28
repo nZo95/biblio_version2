@@ -4,7 +4,7 @@
   <?php require('header.php'); ?>
   <body>
         <nav>
-            <ul class="nav_space"> 
+            <ul> 
                 <li>WISHLIST</li>
                 <li>RESERVATION</li>
                 <li>PARAMETRE</li>
