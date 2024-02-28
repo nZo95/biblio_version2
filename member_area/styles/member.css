@@ -42,10 +42,6 @@ body {
 width: 80px;
 }
 
-.navigation.active {
-  width: 80px;
-}
-
 .navigation ul {
   position: absolute;
   top: 0;
