@@ -370,7 +370,7 @@ width: 80px;
 }
 
 .recentCustomers table tr h4 {
-  font-size: 16px;
+  font-size: 16px;  
   font-weight: 500;
   line-height: 1.2rem;
 }
@@ -417,6 +417,7 @@ width: 80px;
   }
   .recentOrders {
     overflow-x: auto;
+    border-color: #222;
   }
   .status.inProgress {
     white-space: nowrap;

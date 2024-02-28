@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require('header.php'); ?>
+<?php require('../header.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Membre ASF</title>
-    <link rel="stylesheet" href="member_area/styles/member.css">
+    <link rel="stylesheet" href="styles/member.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
   
@@ -31,7 +32,7 @@
 
 
                 <li>
-                    <a href="member.php">
+                    <a href="../member.php">
 
                         <span class="icon">
 
@@ -44,7 +45,7 @@
                 </li>
 
                 <li>
-                    <a href="member_area/wish.php">
+                    <a href="wish.php">
 
                         <span class="icon">
 
@@ -52,13 +53,13 @@
 
                         </span>
 
-                        <span class="title">Favoris </span>
+                        <span class="title">Favoris</span>
 
                     </a>
                 </li>
 
                 <li>
-                    <a href="member_area/reservation.php">
+                    <a href="reservation.php">
 
                         <span class="icon">
 
@@ -67,12 +68,11 @@
                         </span>
 
                         <span class="title">Réservation</span>
-
                     </a>
                 </li>
 
                 <li>
-                    <a href="member_area/setting.php">
+                    <a href="setting.php">
 
                         <span class="icon">
 
@@ -81,7 +81,6 @@
                         </span>
                         
                         <span class="title">Paramètre</span>
-
                     </a>
                 </li>
             </ul>
@@ -104,14 +103,10 @@
             <!-- ============ Résa en cours ============ -->
 
             <div class="details">
-
                 <div class="recentOrders">
-
                     <div class="cardHeader">
 
-
                         <div>
-
                           <h1>Bienvenue dans l'espace Membre !</h1>
 
                           <p>ffdfdffddffd</p>
