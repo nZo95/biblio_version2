@@ -58,20 +58,6 @@
                 </li>
 
                 <li>
-                    <a href="member_area/reservation.php">
-
-                        <span class="icon">
-
-                          <ion-icon name="bookmark-outline"></ion-icon>
-
-                        </span>
-
-                        <span class="title">Réservation</span>
-
-                    </a>
-                </li>
-
-                <li>
                     <a href="member_area/setting.php">
 
                         <span class="icon">
@@ -109,6 +95,39 @@
 
                     <div class="cardHeader">
                     <h1 class="mod">Bienvenue</h1>
+                    </div>
+
+                    <div>
+
+                        <p>dsgfsfs</p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="details">
+
+                <div class="recentOrders">
+
+                    <div class="cardHeader">
+
+                    <h1 class="mod">Favoris</h1>
+                    </div>
+
+                    <div>
+
+                        <p>dsgfsfs</p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="details">
+
+                <div class="recentOrders">
+
+                    <div class="cardHeader">
+                    <h1 class="mod">Paramètre</h1>
                     </div>
 
                     <div>
