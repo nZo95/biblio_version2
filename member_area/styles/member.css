@@ -6,6 +6,7 @@ h1{
   text-align: center;
   font-size: 30px;
   padding-bottom: 20px;
+  padding-top: 40px;
 }
 .space{
 text-align: center;
@@ -17,6 +18,12 @@ text-align: center;
   margin-left: auto;
   margin-right: auto;
 
+}
+
+hr{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table{
@@ -52,13 +59,13 @@ body{
 
 
 .slider-wrapper .image-list .image-item{
-  width: 325px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
 .container{
-  max-width: 1000px;
+  max-width: 600px;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
@@ -66,6 +73,7 @@ body{
 
 .slider-wrapper .slide-button{
   position: absolute;
+  top: 50%;
   height: 50px;
   width: 50px;
   color: #fff;
@@ -75,7 +83,7 @@ body{
   font-size: 2.2rem; 
   cursor: pointer;
   border-radius: 50%;
-  transform: translate Y(-50%);
+  transform: translateY(300%);
 }
 
 .slider-wrapper .slide-button:hover{
@@ -84,11 +92,12 @@ body{
 
 
 .slider-wrapper .slide-button#prev-slide{
-  left: 30px;
+  left: 20%;
+  display: none;
 }
 
 .slider-wrapper .slide-button#next-slide{
-  right: 30px;
+  right: 20%;
 }
 
 
@@ -97,5 +106,21 @@ body{
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+@media (max-witdh: 1023px){
+  .slider-wrapper .slide-button {
+    display: none!important;
+  }
+  .slider-wrapper .image-list{
+    gap: 10px;
+    margin-bottom: 15px;
+
+  }
+  
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
 }
 
