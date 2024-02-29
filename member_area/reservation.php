@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require('../header.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Membre ASF</title>
     <link rel="stylesheet" href="styles/member.css">
-    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
   
@@ -93,21 +91,14 @@
                 <div class="recentOrders">
                     <div class="cardHeader">
 
-                        <div>
-                            <h1>Réservation</h1>
-                            <div> <!-- div image -->
-
-                                <picture>
-
-                                    <img src="reservation.png" alt="">
-
-                                </picture>
-
-                            </div>
-
-                        </div>
+                        <img class="imgResa" src="img/reservation.png" alt="">
 
                     </div>
+                    <div> 
+
+                        <p>Vous n'avez aucune réservation pour l'instant.</p> 
+                        
+                    <div>
                 </div>
 
             </div>
@@ -118,7 +109,7 @@
 
      <!-- ============ Script ============ -->
 
-     <script src="admin_interface_BBV2/assets/js/main.js"></script>
+     <script src="../admin_interface_BBV2/assets/js/main.js"></script>
 
 
      <!-- ============ Pour les îcones ============ -->

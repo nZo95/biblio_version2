@@ -453,3 +453,20 @@ width: 80px;
     left: initial;
   }
 }
+
+.imgResa{
+  margin: 50px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+}
+.text {
+  margin: 300px;
+}
+
+.mod{
+  margin-left: auto;
+  margin-right: auto;
+}

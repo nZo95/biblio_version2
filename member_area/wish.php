@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require('../header.php'); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,7 +110,7 @@
 
      <!-- ============ Script ============ -->
 
-     <script src="admin_interface_BBV2/assets/js/main.js"></script>
+     <script src="../admin_interface_BBV2/assets/js/main.js"></script>
 
 
      <!-- ============ Pour les îcones ============ -->

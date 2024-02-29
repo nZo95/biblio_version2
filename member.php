@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require('header.php'); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,15 +108,12 @@
                 <div class="recentOrders">
 
                     <div class="cardHeader">
+                    <h1 class="mod">Bienvenue</h1>
+                    </div>
 
+                    <div>
 
-                        <div>
-
-                          <h1>Bienvenue dans l'espace Membre !</h1>
-
-                          <p>ffdfdffddffd</p>
-
-                        </div>
+                        <p>dsgfsfs</p>
 
                     </div>
                 </div>
