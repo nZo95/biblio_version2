@@ -9,7 +9,6 @@
     <main>
       <div class="logos">
         <div class="logos-slide">
-          <div class="logo-box"></div>
           <img src="images/9780090898305.jpg"/>
           <img src="images/9780090898305.jpg"/>
           <img src="images/9780090898305.jpg"/>

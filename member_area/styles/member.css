@@ -1,0 +1,101 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+h1{
+  color: aliceblue;
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+.space{
+text-align: center;
+}
+
+.sizeimg{
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+table{
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+}
+td, th{
+  overflow: auto;
+  max-width: 150px;
+  min-width: 150px;
+  color: aliceblue;
+}
+
+body{
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.slider-wrapper .image-list{
+  display: grid;
+  gap: 18px;
+  font-size: 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+  display: none;
+}
+
+
+.slider-wrapper .image-list .image-item{
+  width: 325px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container{
+  max-width: 1000px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider-wrapper .slide-button{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #000;
+  font-size: 2.2rem; 
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translate Y(-50%);
+}
+
+.slider-wrapper .slide-button:hover{
+  background: #444;
+}
+
+
+.slider-wrapper .slide-button#prev-slide{
+  left: 30px;
+}
+
+.slider-wrapper .slide-button#next-slide{
+  right: 30px;
+}
+
+
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+

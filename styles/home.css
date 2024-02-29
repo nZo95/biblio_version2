@@ -61,6 +61,7 @@
 #textMember {
   width: 40%;
   font-size: 20px;
+  font-family: "Roboto", sans-serif;
 
   color: var(--subtext-color);
 }
@@ -73,7 +74,8 @@
 
 h2 {
   font-size: 32px;
-  margin-top: 0.5em;
+  font-family: "Roboto", sans-serif;
+  margin-top: 1em;
   margin-bottom: 1em;
 
   color: var(--text-color);
@@ -99,6 +101,7 @@ h2 {
 
 label{
   font-size: 28px;
+  font-family: "Roboto", sans-serif;
 
   color: var(--subtext-color);
 }
@@ -106,6 +109,7 @@ label{
 #id {
   height: 1.25em;
   font-size: 24px;
+  font-family: "Roboto", sans-serif;
   border: solid 2px;
   outline: none;
   border-color: var(--text-color);
@@ -120,6 +124,7 @@ label{
 #btnFind {
   margin-top: 0.5em;
   font-size: 16px;
+  font-family: "Roboto", sans-serif;
   background: none;
   border: none;
   outline: none;
@@ -141,6 +146,7 @@ label{
 
 #btnSubmit {
   font-size: 22px;
+  font-family: "Roboto", sans-serif;
   border: solid 3px;
   outline: none;
   border-color: var(--text-color);
@@ -160,5 +166,10 @@ label{
 }
 
 #findDiv { 
-  /*display: none;*/
+  display: none;
+  margin-top: 0.5em;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+
+  color: var(--text-color);
 }
