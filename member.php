@@ -7,17 +7,16 @@
     <title>Espace Membre - ASF</title>
     <link rel="stylesheet" href="member_area/styles/member.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    
+    <script src="member_area/js/script.js" defer></script>
 </head>
 <body>
     <section>
-
         <div class="space">
             <h1>Bienvenue sur votre espace membre</h1>
             <img class="sizeimg" src="member_area/img/compte.png" alt="">
             
         </div>
-
+        <hr />
         <div class="space">
             <h1>Favoris</h1>
             <div class="container">
@@ -39,7 +38,7 @@
                 </div>
             </div>
         </div>
-
+        <hr />
         <div class="space">
             <h1>Paramètre</h1>
         </div>
