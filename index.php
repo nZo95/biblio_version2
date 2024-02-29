@@ -16,6 +16,7 @@
         </div>
       </div>
       <script src="scripts/home.js"></script>
+      <hr>
       <section id="signIn">
           <div id="textMember">
               <h2>Pourquoi devenir <em>Membre</em> ?</h2>

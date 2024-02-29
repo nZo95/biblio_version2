@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 :root {
   --background: #5C6672;
+  --second-background: #8FA096;
   --panel: #313E50;
   --second-panel: #6C6F7F;
   --text-color: #E4E4E4;
-  --subtext-color: #d0d0d0;
+  --subtext-color: #e3e3e3;
 }
 
 @keyframes slide {
@@ -47,7 +48,6 @@
   border: solid 4px;
   border-color: var(--text-color);
   border-radius: 10px;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.4);
 }
 
 #signIn{
@@ -61,7 +61,7 @@
 #textMember {
   width: 40%;
   font-size: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu";
 
   color: var(--subtext-color);
 }
@@ -74,9 +74,9 @@
 
 h2 {
   font-size: 32px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu";
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 
   color: var(--text-color);
 }
@@ -85,46 +85,46 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: solid 4px;
   border-color: var(--text-color);
-  border-radius: 10px;
-  background-color: var(--panel);
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-  width: 49%;
+  border-radius: 7px;
+  background-color: var(--second-background);
+  width: 39%;
   text-align: center;
-}
-
-#id{
-  border-radius: 10px;
-  padding: 0.313em;
 }
 
 label{
   font-size: 28px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu";
 
   color: var(--subtext-color);
 }
 
 #id {
+  margin-top: 0.4em;
+  padding: 0.313em;
   height: 1.25em;
   font-size: 24px;
-  font-family: "Roboto", sans-serif;
-  border: solid 2px;
+  font-family: "Ubuntu";
+  background: none;
+  border: none;
   outline: none;
-  border-color: var(--text-color);
-  border-radius: 10px;
-  background-color: var(--second-panel);
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+  border-color: var(--panel);
+  border-radius: 7px;
+  background-color: var(--panel);
   box-sizing: border-box;
 
-  color: var(--text-color)
+  color: var(--text-color);
+  transition: background-color 0.4s;
+}
+
+#id:hover {
+  background-color: var(--second-panel);
 }
 
 #btnFind {
   margin-top: 0.5em;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-family: "Ubuntu";
   background: none;
   border: none;
   outline: none;
@@ -145,14 +145,13 @@ label{
 }
 
 #btnSubmit {
+  width: 20%;
   font-size: 22px;
-  font-family: "Roboto", sans-serif;
-  border: solid 3px;
+  font-family: "Ubuntu";
   outline: none;
   border-color: var(--text-color);
-  border-radius: 10px;
+  border-radius: 7px;
   background-color: var(--panel);
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
   padding: 0.313em;
   margin: 1.25em;
   color: var(--text-color);
@@ -169,7 +168,7 @@ label{
   display: none;
   margin-top: 0.5em;
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu";
 
   color: var(--text-color);
 }
