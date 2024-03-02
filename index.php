@@ -45,17 +45,26 @@
                  rendre à votre bibliothèque</p>
             </div>
 
+            <div id="passwordFields" style="display: none;">
 
-            <div id="singIn">
-              <p>Vous avez déjà un compte ?</p>
-              <button type="button" id="btnSignIn">Se connecter</button>
+              <label for="password">Mot de passe :</label><br>
+              <input type="password" id="password" name="password" required><br>
+
+            </div>
+
+
+            <div id="createPasswordFields" style="display: none;">
+
+              <label for="newPassword">Créer votre mot de passe :</label><br>
+              <input type="password" id="newPassword" name="newPassword" required><br>
+              <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br>
+              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
+
             </div>
 
             <button id="btnSubmit" type="submit">Suivant</button>
           </form>
-          <form action="">
-              
-          </form>
+         <p>Si vous avez déjà un compte, alors rentrez votre numéro d'identification.</p>
         </div>
       </section>
     </main>
