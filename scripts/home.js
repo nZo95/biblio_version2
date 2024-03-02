@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 let btnFind = document.getElementById('btnFind');
 let divFind = document.getElementById('findDiv');
 
-btnFind.onclick = find;
+btnFind.addEventListener("click", find())
 
 function find() {
     if (divFind.style.display === "block") {
@@ -15,3 +15,4 @@ function find() {
         divFind.style.display = "block";
     }
 }
+
