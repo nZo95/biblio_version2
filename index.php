@@ -4,6 +4,7 @@
   <?php require('header.php'); ?>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/home.css">
+    
   </head>
   <body>
     <main>
@@ -39,15 +40,30 @@
             <label for="id">Numéro d'identification : </label> <br>
             <input type="text" name="id" id="id" required> <br>
             <button type="button" id="btnFind">Comment le trouver ?</button> <br>
+
+            /* Le client ne sait pas où trouver le numéro d'identification*/
+
             <div id="findDiv">
               <p>Pour le trouver veuillez vous 
                  rendre à votre bibliothèque</p>
             </div>
+
+            /* Le client à déjà un compte et souhaite se connecter*/
+            
+            <div id="singIn">
+              <p>Vous avez déjà un compte ?</p>
+              <button type="button" id="btnSignIn">Se connecter</button>
+            </div>
+
             <button id="btnSubmit" type="submit">Suivant</button>
+          </form>
+          <form action="">
+
           </form>
         </div>
       </section>
     </main>
+    <script src="home.js"></script>
   </body>
   <?php require('footer.php'); ?>
 </html>
