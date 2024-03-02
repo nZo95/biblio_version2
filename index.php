@@ -4,7 +4,6 @@
   <?php require('header.php'); ?>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/home.css">
-    <script src="home.js"></script>
   </head>
   <body>
     <main>
@@ -16,7 +15,6 @@
           <img src="images/9780090898305.jpg"/>
         </div>
       </div>
-      <script src="scripts/home.js"></script>
       <hr>
       <section id="signIn">
           <div id="textMember">
@@ -61,6 +59,7 @@
         </div>
       </section>
     </main>
+    <script src="scripts/home.js"></script>
   </body>
   <?php require('footer.php'); ?>
 </html>

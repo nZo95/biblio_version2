@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
 let btnFind = document.getElementById('btnFind');
 let divFind = document.getElementById('findDiv');
 
-btnFind.addEventListener("click", find())
+btnFind.onclick = find;
 
 function find() {
-    if (divFind.style.display === "block") {
-        divFind.style.display = "none";
-    } else {
+    if (divFind.style.display === "none") {
         divFind.style.display = "block";
+    } else {
+        divFind.style.display = "none";
     }
 }
 
