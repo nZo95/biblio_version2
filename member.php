@@ -12,9 +12,54 @@
 <body>
     <section>
         <div class="space">
-            <h1>Bienvenue sur votre espace membre</h1>
-            <img class="sizeimg" src="member_area/img/compte.png" alt="">
-            
+            <div class="content">
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="fullName">Nom Complet</label>
+                            <input type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Enter Full Name"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="fullName">Username</label>
+                            <input type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Enter Username"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="mail">Email</label>
+                            <input type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter email"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="phone">Phone Number</label>
+                            <input type="text"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Enter Phone Number"/>
+                        </div>
+                    </div>
+                    <div class="gender-details-box">
+                        <span class="gender-title">Genre</span>
+                        <div class="gender-category">
+                            <input type="radio" name="gender" id="male">
+                            <label for ="male">Homme</label>
+                            <input type="radio" name="gender" id="female">
+                            <label for ="female">Femme</label>
+                            <input type="radio" name="gender" id="other">
+                            <label for ="other">Autre</label>
+                        </div>
+                    </div>
+                    <div class="form-submit-btn">
+                        <input type="submit" value="Enregistrer">
+                    </div>
+                </form>
+            </div>
         </div>
         <hr />
         <div class="space">
