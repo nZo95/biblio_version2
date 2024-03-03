@@ -15,7 +15,6 @@
           <img src="images/9780090898305.jpg"/>
         </div>
       </div>
-      <script src="scripts/home.js"></script>
       <hr>
       <section id="signIn">
           <div id="textMember">
@@ -38,16 +37,38 @@
           <form action="">
             <label for="id">Numéro d'identification : </label> <br>
             <input type="text" name="id" id="id" required> <br>
-            <button type="button" id="btnFind">Comment le trouver ?</button> <br>
+            <button type="button" id="btnFind">Où le trouver ?</button> <br>
+
+
             <div id="findDiv">
               <p>Pour le trouver veuillez vous 
-                 rendre à votre bibliothèque</p>
+                 rendre à votre bibliothèque.</p>
             </div>
+
+            <div id="passwordFields" style="display: none;">
+
+              <label for="password">Mot de passe :</label><br>
+              <input type="password" id="password" name="password" required><br>
+
+            </div>
+
+
+            <div id="createPasswordFields" style="display: none;">
+
+              <label for="newPassword">Créer votre mot de passe :</label><br>
+              <input type="password" id="newPassword" name="newPassword" required><br>
+              <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br>
+              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
+
+            </div>
+
             <button id="btnSubmit" type="submit">Suivant</button>
           </form>
+         <p>Si vous avez déjà un compte, alors rentrez votre numéro d'identification.</p>
         </div>
       </section>
     </main>
+    <script src="scripts/home.js"></script>
   </body>
   <?php require('footer.php'); ?>
 </html>
