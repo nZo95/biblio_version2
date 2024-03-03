@@ -37,12 +37,12 @@
           <form action="">
             <label for="id">Numéro d'identification : </label> <br>
             <input type="text" name="id" id="id" required> <br>
-            <button type="button" id="btnFind">Comment le trouver ?</button> <br>
+            <button type="button" id="btnFind">Où le trouver ?</button> <br>
 
 
             <div id="findDiv">
               <p>Pour le trouver veuillez vous 
-                 rendre à votre bibliothèque</p>
+                 rendre à votre bibliothèque.</p>
             </div>
 
             <div id="passwordFields" style="display: none;">
