@@ -10,6 +10,7 @@ h1{
 }
 .space{
 text-align: center;
+padding-bottom: 40px;
 }
 
 .sizeimg{
@@ -83,7 +84,7 @@ body{
   font-size: 2.2rem; 
   cursor: pointer;
   border-radius: 50%;
-  transform: translateY(500%);
+  transform: translateY(1250%);
 }
 
 .slider-wrapper .slide-button:hover{
@@ -125,13 +126,14 @@ body{
 }
 .content{
   background: rgba;
-  width: 50%;
+  width: 55%;
   height: 120%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  background: #444;
+  background: #313E50;
   border-radius: 10px;
+  padding: 28px;
 }
 .main-user-info{
   display: flex;
@@ -149,11 +151,12 @@ body{
   flex-wrap: wrap;
   width: 40%;
   padding-bottom: 15px;
+  color: aliceblue;
 }
 
 .user-input-box label{
   width: 95%;
-  color: aliceblue;
+  color: fff;
   font-size: 20px;
   font-weight: 400;
   margin: 5px 0;
@@ -161,4 +164,42 @@ body{
 .user-input-box input{
   height: 40px;
   width: 95%;
+  border-radius: 7px;
+  outline: none;
+  padding: 0 10px;
 }
+.gender-title{
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.gender-category{
+  margin: 15px 0;
+  color: aliceblue;
+}
+
+.gender-category label{
+  padding: 0 10px 5px;
+}
+
+.gender-category label,
+.gender-category input,
+.form-submit-btn input{
+  cursor: pointer;
+}
+.form-submit-btn{
+  margin-top: 40px;
+}
+
+.form-submit-btn input{
+  width: 200px;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  color: aliceblue;
+  background: #5C6672;
+}
+

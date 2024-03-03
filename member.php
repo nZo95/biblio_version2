@@ -10,6 +10,10 @@
     <script src="member_area/js/script.js" defer></script>
 </head>
 <body>
+    <div class ="space">
+        <h1>Bienvenue sur votre espace membre !</h1>
+        <img class="sizeimg" src="member_area/img/compte.png" alt="">
+    </div>
     <section>
         <div class="space">
             <div class="content">
@@ -20,28 +24,28 @@
                             <input type="text"
                                     id="fullName"
                                     name="fullName"
-                                    placeholder="Enter Full Name"/>
+                                    placeholder="Nom et Prénom"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="fullName">Username</label>
+                            <label for="fullName">Pseudo</label>
                             <input type="text"
                                     id="username"
                                     name="username"
-                                    placeholder="Enter Username"/>
+                                    placeholder="Pseudo"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="mail">Email</label>
+                            <label for="mail">Adresse Mail</label>
                             <input type="text"
                                     id="email"
                                     name="email"
-                                    placeholder="Enter email"/>
+                                    placeholder="Email"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone">Téléphone</label>
                             <input type="text"
                                     id="phoneNumber"
                                     name="phoneNumber"
-                                    placeholder="Enter Phone Number"/>
+                                    placeholder="Téléphone"/>
                         </div>
                     </div>
                     <div class="gender-details-box">
@@ -61,7 +65,9 @@
                 </form>
             </div>
         </div>
-        <hr />
+    </section>
+    <hr>
+    <section>
         <div class="space">
             <h1>Favoris</h1>
             <div class="container">
