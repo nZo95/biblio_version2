@@ -93,7 +93,58 @@
         <div class="space">
             <h1>Paramètre</h1>
         </div>
-
+        <section>
+        <div class="space">
+            <div class="content">
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="fullName">Nom Complet</label>
+                            <input type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    placeholder="Nom et Prénom"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="fullName">Pseudo</label>
+                            <input type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Pseudo"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="mail">Adresse Mail</label>
+                            <input type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="phone">Téléphone</label>
+                            <input type="text"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Téléphone"/>
+                        </div>
+                    </div>
+                    <div class="gender-details-box">
+                        <span class="gender-title">Genre</span>
+                        <div class="gender-category">
+                            <input type="radio" name="gender" id="male">
+                            <label for ="male">Homme</label>
+                            <input type="radio" name="gender" id="female">
+                            <label for ="female">Femme</label>
+                            <input type="radio" name="gender" id="other">
+                            <label for ="other">Autre</label>
+                        </div>
+                    </div>
+                    <div class="form-submit-btn">
+                        <input type="submit" value="Enregistrer">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </section>
     </section>
 </body>
 <?php require 'footer.php'?>

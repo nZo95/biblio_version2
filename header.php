@@ -16,7 +16,7 @@
       </div>
       <div class="links">
         <ul>
-          <li><a href="#">Accueil</a></li>
+          <li><a href="index.php">Accueil</a></li>
           <li><a href="#">Livres</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
