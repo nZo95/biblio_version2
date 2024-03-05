@@ -7,15 +7,30 @@
   </head>
   <body>
     <main>
-      <div class="logos">
-        <div class="logos-slide">
-          <img src="images/9780090898305.jpg"/>
-          <img src="images/9780090898305.jpg"/>
-          <img src="images/9780090898305.jpg"/>
-          <img src="images/9780090898305.jpg"/>
+      <br><br><br><br><br><br><br>
+      <div class="container">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+          <div class="image-list">
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
+          </div>
+          <button id="next-slide" class="slide-button material-symbols-rounded">></button>
         </div>
       </div>
-      <hr>
+      <div class="slider-scrollbar">
+        <div class="scrollbar-track">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+
+
+
       <section id="signIn">
           <div id="textMember">
               <h2>Pourquoi devenir <em>Membre</em> ?</h2>

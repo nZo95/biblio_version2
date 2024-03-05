@@ -2,6 +2,7 @@
 :root {
   --background: #5C6672;
   --panel: #313E50;
+  --panel-hover: #444;
   --second-panel: #6C6F7F;
   --text-color: #E4E4E4;
   --btext-color: #242424;
@@ -16,38 +17,99 @@
     transform: translateX(-100%);
   }
 }
-  
-.logos {
-  overflow: hidden;
-  padding-top: 3.4em;
-  white-space: nowrap;
-  position: relative;
-}
-  
-.logos:after {
-  position: absolute;
-  top: 0;
-  content: "";
-  z-index: 2;
-}
-  
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-  
-.logos-slide {
-  display: inline-block;
-  animation: 16s slide infinite linear;
-}
-  
-.logos-slide img {
-  width: 11em;
-  height: 15em;
-  margin: 0 2em;
 
-  border: solid 4px;
-  border-color: var(--text-color);
-  border-radius: 10px;
+.container{
+  max-width: 70%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+.slider-wrapper .image-list{
+  display: grid;
+  gap: 18px;
+  font-size: 0;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+  display: none;
+}
+
+.slider-wrapper .image-list .image-item{
+  width: 240px;
+  height: 340px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  background: var(--panel);
+  border-radius: 7px;
+}
+
+.slider-wrapper .image-list .image-item img{  
+  width: 200px;
+  height: 300px;
+  margin: auto;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slider-wrapper .image-list .image-item img:hover{  
+  width: 215px;
+  height: 315px;
+}
+
+.slider-wrapper .slide-button{
+  position: absolute;
+  top: 30%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: var(--panel);
+  font-size: 2.2rem; 
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.6s;
+}
+
+.slider-wrapper .slide-button:hover{
+  background: var(--panel-hover);
+}
+
+.slider-wrapper .slide-button#prev-slide{
+  left: 10%;
+  display: none;
+}
+
+.slider-wrapper .slide-button#next-slide{
+  right: 10%;
+}
+
+.container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-witdh: 1023px) {
+  .slider-wrapper .slide-button {
+    display: none!important;
+  }
+  .slider-wrapper .image-list{
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
 }
 
 #signIn{
