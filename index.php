@@ -4,13 +4,14 @@
   <?php require('header.php'); ?>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
   </head>
   <body>
     <main>
-      <br><br><br><br><br><br><br>
-      <div class="container">
+      <div class="space"></div>
+      <div class="container-slider-wrapper">
         <div class="slider-wrapper">
-          <button id="prev-slide" class="slide-button material-symbols-rounded"><</button>
+          <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
           <div class="image-list">
             <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
             <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
@@ -20,7 +21,7 @@
             <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
             <div class="image-item"><img src="images/9782253087830.jpg" alt=""></div>
           </div>
-          <button id="next-slide" class="slide-button material-symbols-rounded">></button>
+          <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
         </div>
       </div>
       <div class="slider-scrollbar">
@@ -28,10 +29,40 @@
           <div class="scrollbar-thumb"></div>
         </div>
       </div>
+      <div class="space"><hr></div>
+      <div class="container-member">
+        <div class="member">
+          <div class="text-member">
+            <h2>Pourquoi devenir <em>Membre</em> ?</h2>
+            <p>
+                  En devenant membre de notre bibliothèque, 
+                  vous entrez dans un monde fascinant où chaque 
+                  livre est une clé vers de nouvelles aventures, 
+                  de nouveaux savoirs et de nouvelles perspectives. 
+                  Mais les avantages ne s'arrêtent pas là.
+                  En tant que membre, vous bénéficiez d'un espace 
+                  personnel exclusif, votre propre sanctuaire du savoir.
+                  Dans cet espace membre, vous pouvez explorer votre
+                  historique de lecture, retracer vos voyages à travers 
+                  les pages et redécouvrir vos moments préférés.
+            </p>
+          </div>
+          <div class="sign-member">
+            <h2>Devenir Membre !</h2>
+            <h3>Numéro d'identification : </h3>
+            <input type="text" name="id" id="id" required><br><br>
+            <a id="buttonFind">Où le trouver ?</a><br>
+            <div id="find">
+              <p>Pour le trouver veuillez vous 
+                  rendre à votre bibliothèque.</p>
+            </div>
+            <button id="buttonSubmit" type="submit">Suivant</button>
+          </div>
+        </div>
+      </div>
+      <div class="space"></div>
 
-
-
-      <section id="signIn">
+      <!-- <section id="signIn">
           <div id="textMember">
               <h2>Pourquoi devenir <em>Membre</em> ?</h2>
               <p>
@@ -55,7 +86,7 @@
             <button type="button" id="btnFind">Où le trouver ?</button> <br>
 
 
-            <div id="findDiv">
+           <div id="findDiv">
               <p>Pour le trouver veuillez vous 
                  rendre à votre bibliothèque.</p>
             </div>
@@ -81,7 +112,7 @@
           </form>
          <p>Si vous avez déjà un compte, alors rentrez votre numéro d'identification.</p>
         </div>
-      </section>
+      </section> -->
     </main>
     <script src="scripts/home.js"></script>
   </body>

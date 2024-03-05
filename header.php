@@ -12,7 +12,7 @@
   <header>
     <nav>
       <div class="logo">
-      <img src="images/logopng.png" alt="error">
+        <img src="images/logo.png" alt="error">
       </div>
       <div class="links">
         <ul>

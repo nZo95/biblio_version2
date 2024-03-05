@@ -11,8 +11,6 @@ const initSlider = () => {
         });
     });
 
-    // Pour retirer la flèche quand la carousel arrive à la fin
-
     const handleSlideButtons = () => {
         slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "block";
         slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "block";
@@ -24,8 +22,24 @@ const initSlider = () => {
 }
 window.addEventListener("load", initSlider);
 
-let btnFind = document.getElementById('btnFind');
-let divFind = document.getElementById('findDiv');
+let btnFind = document.getElementById('buttonFind');
+let divFind = document.getElementById('find');
+
+/* document.addEventListener("DOMContentLoaded", function() {
+
+    let buttonFind = document.getElementById("buttonFind");
+    let find = document.getElementById("find");
+    buttonFind.onclick = function()
+    {
+        if (find.style.display === "none") 
+        {
+            divFind.style.display = "block";
+        } else {
+            divFind.style.display = "none";
+        }
+    }
+
+}); */
 
 btnFind.onclick = find;
 

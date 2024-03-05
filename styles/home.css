@@ -9,23 +9,40 @@
   --subtext-color: #e3e3e3;
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+h2 {
+  font-size: 32px;
+  font-family: "Ubuntu";
+
+  color: var(--subtext-color);
 }
 
-.container{
+h3 {
+  font-size: 24px;
+  font-family: "Ubuntu";
+
+  color: var(--text-color);
+}
+
+.space {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.space hr {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color)
+}
+
+.container-slider-wrapper {
   max-width: 70%;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
   
-.slider-wrapper .image-list{
+.slider-wrapper .image-list {
   display: grid;
   gap: 18px;
   font-size: 0;
@@ -35,11 +52,11 @@
   grid-template-columns: repeat(10, 1fr);
 }
 
-.slider-wrapper .image-list::-webkit-scrollbar{
+.slider-wrapper .image-list::-webkit-scrollbar {
   display: none;
 }
 
-.slider-wrapper .image-list .image-item{
+.slider-wrapper .image-list .image-item {
   width: 240px;
   height: 340px;
   object-fit: cover;
@@ -49,7 +66,7 @@
   border-radius: 7px;
 }
 
-.slider-wrapper .image-list .image-item img{  
+.slider-wrapper .image-list .image-item img {  
   width: 200px;
   height: 300px;
   margin: auto;
@@ -57,14 +74,14 @@
   transition: all 0.2s;
 }
 
-.slider-wrapper .image-list .image-item img:hover{  
+.slider-wrapper .image-list .image-item img:hover {  
   width: 215px;
   height: 315px;
 }
 
-.slider-wrapper .slide-button{
+.slider-wrapper .slide-button {
   position: absolute;
-  top: 30%;
+  top: 36%;
   height: 50px;
   width: 50px;
   color: #fff;
@@ -77,16 +94,16 @@
   transition: all 0.6s;
 }
 
-.slider-wrapper .slide-button:hover{
+.slider-wrapper .slide-button:hover {
   background: var(--panel-hover);
 }
 
-.slider-wrapper .slide-button#prev-slide{
+.slider-wrapper .slide-button#prev-slide {
   left: 10%;
   display: none;
 }
 
-.slider-wrapper .slide-button#next-slide{
+.slider-wrapper .slide-button#next-slide {
   right: 10%;
 }
 
@@ -101,6 +118,7 @@
   .slider-wrapper .slide-button {
     display: none!important;
   }
+
   .slider-wrapper .image-list{
     gap: 10px;
     margin-bottom: 15px;
@@ -112,81 +130,72 @@
   }
 }
 
-#signIn{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 4.4em;
-  margin-bottom: 2em;
+.container-member {
+  max-width: 80%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#textMember {
-  width: 49%;
+.member {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+.member .text-member {
+  width: 45%;
+  text-align: left;
+}
+
+.member .text-member h2 {
+  margin-top: 1em;
+}
+
+.member .text-member p {
+  margin-top: 1em;
+  margin-bottom: 2em;
   font-size: 20px;
   font-family: "Ubuntu";
-  color: var(--subtext-color);
-}
-
-#textMember h2 {
-  margin-top: 2em;
-  margin-bottom: 0.8em;
 
   color: var(--text-color);
 }
 
-h2 {
-  font-size: 32px;
-  font-family: "Ubuntu";
-  margin-bottom: 0.6em;
-
-  color: var(--text-color);
-}
-
-#borderSignIn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border-color: var(--text-color);
+.member .sign-member {
+  width: 45%;
   border-radius: 7px;
-  padding: 70px;
-  max-width: 49%;
-  background-color: var(--panel);
   text-align: center;
+  background: var(--panel);
 }
 
-label{
-  font-size: 28px;
-  font-family: "Ubuntu";
-
-  color: var(--subtext-color);
+.member .sign-member h2 {
+  margin-top: 1em;
 }
 
-#id {
+.member .sign-member h3 {
   margin-top: 0.6em;
-  padding: 0.313em;
-  height: 1.25em;
-  font-size: 24px;
-  font-family: "Ubuntu";
-  background: none;
-  border: none;
-  outline: none;
-  border-color: var(--panel);
-  border-radius: 7px;
-  background-color: var(--text-color);
-  box-sizing: border-box;
-
-  color: var(--btext-color);
 }
 
-#btnFind {
-  margin-top: 0.5em;
-  font-size: 18px;
+.member .sign-member #id {
+  margin-top: 0.6em;
+  border-radius: 7px;
+  font-size: 26px;
   font-family: "Ubuntu";
-  background: none;
+  color: var(--btext-color);
+
   border: none;
   outline: none;
+  box-sizing: border-box;
+}
+
+.member .sign-member #buttonFind {
+  font-size: 20px;
+  font-family: "Ubuntu";
+
   color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+
   padding-bottom: 0% 0.1em;
   background-image: linear-gradient(var(--second-panel), var(--second-panel));
   background-size: 0% 0.1em;
@@ -194,41 +203,37 @@ label{
   background-position-x: 50%;
   background-repeat: no-repeat;
   transition: background-size 0.5s;
-  box-sizing: border-box;
-  cursor: pointer;
 }
 
-#btnFind:hover {
+.member .sign-member #buttonFind:hover {
   background-size: 100% 0.22em;
 }
 
-#btnSubmit {
-  width: 30%;
-  font-size: 22px;
-  font-family: "Ubuntu";
-  border: none;
-  outline: none;
-  border-color: var(--text-color);
-  border-radius: 7px;
-  background-color: var(--second-panel);
-  padding: 0.313em;
-  margin: 1.25em;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-#findDiv { 
+.member .sign-member #find {
   display: none;
-  margin-top: 0.5em;
+  margin-top: 0.6em;
   font-size: 16px;
   font-family: "Ubuntu";
 
   color: var(--text-color);
 }
 
-#borderSignIn p {
-  font-size: 14px;
+.member .sign-member #buttonSubmit {
+  width: 30%;
+  height: 32px;
+  margin: 2em;
+  font-size: 22px;
   font-family: "Ubuntu";
-
   color: var(--text-color);
+
+  background: var(--background);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.6s;
+}
+
+.member .sign-member #buttonSubmit:hover {
+  background: var(--panel-hover);
 }

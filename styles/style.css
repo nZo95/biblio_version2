@@ -66,8 +66,9 @@ nav {
   background-size: 100% 0.22em;
 }
 
-.links img {
-  height: 5.5em;
+.logo img {
+  width: 5em;
+  height: 5em;
 }
 
 footer {
