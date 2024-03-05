@@ -68,6 +68,70 @@ body {
   margin-left: auto; 
 }
 
+/* =============== Contenu de la paeg ================ */
 
+.book-card {
+  display: flex;
+  width: 70%;
+  margin: 5% auto; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.219);
+  border-radius: 25px; 
+  overflow: hidden; 
+}
 
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px; 
+}
 
+.left-panel {
+  background-color: var(--Bleu_clair); 
+  align-items: center;
+  text-align: center;
+}
+
+.right-panel {
+  background-color: var(--Beige); 
+  align-items: center;
+  text-align: center;
+}
+
+.right-panel .add-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.right-panel .add-image ion-icon {
+  font-size: 48px; 
+  color: var(--Bleu_foncé); 
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: none; /* Ca empêche de pouvoir agrandir la taille de l'input */
+}
+
+/* =============== Pr le bouton d'envoi ================ */
+
+.send-button {
+  background-color: var(--Beige);
+  border-radius: 25px;
+  height: 10%;
+  width: 20%;
+
+}
