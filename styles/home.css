@@ -237,3 +237,10 @@ h3 {
 .member .sign-member #buttonSubmit:hover {
   background: var(--panel-hover);
 }
+#section_genre h2{
+  text-align: center;
+  padding: 20px;
+}
+.genre h3{
+  text-align: center;
+}
