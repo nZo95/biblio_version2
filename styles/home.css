@@ -29,6 +29,18 @@ h3 {
   color: var(--text-color);
 }
 
+.space {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.space hr {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color)
+}
+
 .container-slider-wrapper {
   max-width: 70%;
   width: 95%;
@@ -57,7 +69,7 @@ h3 {
   display: flex;
   align-items: center;
   background: var(--panel);
-  border-radius: 13px;
+  border-radius: 7px;
 }
 
 .slider-wrapper .image-list .image-item img {  
@@ -157,7 +169,7 @@ h3 {
 
 .member .sign-member {
   width: 45%;
-  border-radius: 13px;
+  border-radius: 7px;
   text-align: center;
   background: var(--panel);
 }
@@ -172,7 +184,7 @@ h3 {
 
 .member .sign-member #id {
   margin-top: 0.6em;
-  border-radius: 13px;
+  border-radius: 7px;
   font-size: 26px;
   font-family: "Ubuntu";
   color: var(--btext-color);
@@ -224,6 +236,47 @@ h3 {
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 13px;
+  border-radius: 7px;
   transition: all 0.6s;
+}
+
+.member .sign-member #buttonSubmit:hover {
+  background: var(--panel-hover);
+}
+#section_genre h2{
+  text-align: center;
+  padding: 20px;
+}
+.genre h3{
+  text-align: center;
+}
+#div_search{
+  display: flex;
+  justify-content: center;
+}
+#search{
+  width: 250px;
+  height: 30px;
+  border-radius: 20px;
+}
+#button_search{
+  border-radius: 10px;
+}
+#SignIn{
+  margin-top: 30px;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+}
+#SignUp{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+}
+.sign-member{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
 }
