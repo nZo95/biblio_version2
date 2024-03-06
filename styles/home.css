@@ -1,18 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 :root {
-  --background: #5C6672;
-  --panel: #313E50;
-  --panel-hover: #444;
-  --second-panel: #6C6F7F;
-  --text-color: #E4E4E4;
+  --background: #5C6672;  /* Background */
+  --panel: #313E50; /* Header & Footer*/
+  --text-color: #8fa096; /* Boutons */
+  --text-hover: #8fa096; 
+  --text-color: #E4E4E4;  /* Couleurs pr le texte */
   --btext-color: #242424;
   --subtext-color: #e3e3e3;
-
-  --Bleu_foncé : #213742; /* Header / footer */
-  --Bleu_clair : #425c6a; /* Footer */
-  --Beige : #c8ceb5; /* Cartes / boutons */
-  --Gris : #d9d9d9;  /* Cartes bis / contours */
-  --Vert_pâle : #8fa096; /* Couleur supp */
 }
 
 h2 {
@@ -169,7 +163,7 @@ h3 {
 
 .member .sign-member {
   width: 45%;
-  border-radius: 7px;
+  border-radius: 13px;
   text-align: center;
   background: var(--panel);
 }
@@ -184,7 +178,7 @@ h3 {
 
 .member .sign-member #id {
   margin-top: 0.6em;
-  border-radius: 7px;
+  border-radius: 13px;
   font-size: 26px;
   font-family: "Ubuntu";
   color: var(--btext-color);
@@ -203,7 +197,7 @@ h3 {
   cursor: pointer;
 
   padding-bottom: 0% 0.1em;
-  background-image: linear-gradient(var(--second-panel), var(--second-panel));
+  background-image: linear-gradient(var(--text-hover), var(--text-hover));
   background-size: 0% 0.1em;
   background-position-y: 110%;
   background-position-x: 50%;
@@ -236,7 +230,7 @@ h3 {
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 13px;
   transition: all 0.6s;
 }
 
@@ -257,8 +251,8 @@ h3 {
 #search{
   width: 250px;
   height: 30px;
-  border-radius: 20px;
+  border-radius: 13px;
 }
 #button_search{
-  border-radius: 10px;
+  border-radius: 13px;
 }
