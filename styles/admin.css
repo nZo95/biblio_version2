@@ -44,11 +44,28 @@ body {
   gap: 15px; 
 }
 
+/* =============== Pr le coté gauche ================ */
+
 .left-panel {
   background-color: var(--panel); 
   align-items: center;
   text-align: center;
 }
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: none; /* Ca empêche de pouvoir agrandir la taille de l'input */
+}
+
+/* =============== Pr le coté droit ================ */
 
 .right-panel {
   background-color: var(--text-color); 
@@ -67,19 +84,6 @@ body {
 .right-panel .add-image ion-icon {
   font-size: 48px; 
   color: var(--Bleu_foncé); 
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-textarea {
-  resize: none; /* Ca empêche de pouvoir agrandir la taille de l'input */
 }
 
 /* =============== Pr le bouton "envoyer" ================ */
