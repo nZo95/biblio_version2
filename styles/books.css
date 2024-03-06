@@ -29,6 +29,18 @@ h3 {
   color: var(--text-color);
 }
 
+.space {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.space hr {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color)
+}
+
 .container-slider-wrapper {
   max-width: 70%;
   width: 95%;
@@ -226,4 +238,27 @@ h3 {
   cursor: pointer;
   border-radius: 7px;
   transition: all 0.6s;
+}
+
+.member .sign-member #buttonSubmit:hover {
+  background: var(--panel-hover);
+}
+#section_genre h2{
+  text-align: center;
+  padding: 20px;
+}
+.genre h3{
+  text-align: center;
+}
+#div_search{
+  display: flex;
+  justify-content: center;
+}
+#search{
+  width: 250px;
+  height: 30px;
+  border-radius: 20px;
+}
+#button_search{
+  border-radius: 10px;
 }
