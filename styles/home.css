@@ -57,7 +57,7 @@ h3 {
   display: flex;
   align-items: center;
   background: var(--panel);
-  border-radius: 7px;
+  border-radius: 13px;
 }
 
 .slider-wrapper .image-list .image-item img {  
@@ -157,7 +157,7 @@ h3 {
 
 .member .sign-member {
   width: 45%;
-  border-radius: 7px;
+  border-radius: 13px;
   text-align: center;
   background: var(--panel);
 }
@@ -172,7 +172,7 @@ h3 {
 
 .member .sign-member #id {
   margin-top: 0.6em;
-  border-radius: 7px;
+  border-radius: 13px;
   font-size: 26px;
   font-family: "Ubuntu";
   color: var(--btext-color);
@@ -224,6 +224,6 @@ h3 {
   outline: none;
   border: none;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 13px;
   transition: all 0.6s;
 }
