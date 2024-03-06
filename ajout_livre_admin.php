@@ -5,60 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface Administrateur ASF</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="styles/style_admin.css">
 </head>
 <body>
-    <!-- ============ Barre de navigation ============ -->
-    <div class="navigation">
-        <ul>
-            <li>
-                <a href="index.html">
-                    <span class="logo">
-                        <ion-icon name="library-outline"></ion-icon>
-                    </span>
-                    <span class="title">ASF</span>
-                </a>
-            </li>
 
-            <li>
-                <a href="notif.html">
-                    <span class="icon">
-                        <ion-icon name="file-tray-outline"></ion-icon>
-                    </span>
-                    <span class="title">Notifications</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="ajout_livre.html">
-                    <span class="icon">
-                        <ion-icon name="add-circle-outline"></ion-icon>
-                    </span>
-                    <span class="title">Ajouter un livre</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="JSON.html">
-                    <span class="icon">
-                        <ion-icon name="document-outline"></ion-icon>
-                    </span>
-                    <span class="title">Importer JSON</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                    </span>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
+<?php require('header.php'); ?>
     <div class="book-card">
         <div class="left-panel">
             <input type="text" placeholder="Titre du livre" />
