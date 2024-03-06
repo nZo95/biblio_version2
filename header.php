@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav>
-      <div class="logo">
+      <div class="icon">
         <img src="images/icon.png" alt="error">
       </div>
       <div class="links">
