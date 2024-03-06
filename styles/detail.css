@@ -14,14 +14,15 @@ h2 {
   font-family: "Ubuntu";
   text-align: center;
 
-  color: var(--subtext-color);
+  color: var(--text-color);
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
   font-family: "Ubuntu";
+  text-align: center;
 
-  color: var(--text-color);
+  color: var(--subtext-color);
 }
 
 .space {
@@ -76,11 +77,20 @@ h3 {
   width: 100%;
 }
 
-.book .text-item p {
-  margin-top: 1em;
-  margin-bottom: 2em;
-  font-size: 20px;
+.book .text-item .center {
+  margin-bottom: 0.6em;
+  font-size: 24px;
   font-family: "Ubuntu";
+  text-align: center;
+
+  color: var(--text-color);
+}
+
+.book .text-item .resume {
+  margin-top: 0.6em;
+  font-size: 18px;
+  font-family: "Ubuntu";
+  text-align: center;
 
   color: var(--text-color);
 }
