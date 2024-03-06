@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Membre - ASF</title>
-    <link rel="stylesheet" href="member_area/styles/member.css">
+    <link rel="stylesheet" href="styles/member.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="member_area/js/script.js" defer></script>
+    <script src="scripts/member.js" defer></script>
 </head>
 <body>
     <div class ="space">
