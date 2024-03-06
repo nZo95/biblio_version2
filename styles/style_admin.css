@@ -22,53 +22,7 @@ body {
   background-color : var(--Gris);
 }
 
-/* =============== Navigation ================ */
-
-.navigation ul {
-  list-style-type: none;
-  margin: 10px 20px;
-  padding: 0;
-  overflow: hidden;
-  background-color: var(--Bleu_clair);
-  border-radius: 25px;
-  display: flex; 
-  align-items: center; 
-}
-
-.navigation li {
-  display: inline-block; 
-}
-
-.navigation li a {
-  display: flex;
-  align-items: center;
-  color: var(--Beige);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.navigation li a .icon, .navigation li a .logo {
-  margin-right: 8px; 
-  align-self: center; 
-  margin-bottom: -2px; 
-}
-
-.navigation li a:hover {
-  background-color: var(--Bleu_foncé);
-  border-radius: 25px;
-  color: white;
-}
-
-.navigation li:first-child {
-  margin-right: auto; 
-}
-
-.navigation li:last-child {
-  margin-left: auto; 
-}
-
-/* =============== Contenu de la paeg ================ */
+/* =============== Contenu de la page ================ */
 
 .book-card {
   display: flex;

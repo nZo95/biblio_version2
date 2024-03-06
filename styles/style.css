@@ -2,9 +2,11 @@
 :root {
   --background: #5C6672;
   --panel: #313E50;
+  --panel-hover: #444;
   --second-panel: #6C6F7F;
   --text-color: #E4E4E4;
-  --subtext-color: #d0d0d0;
+  --btext-color: #242424;
+  --subtext-color: #e3e3e3;
 }
 
 * {
@@ -31,7 +33,7 @@ nav {
   align-items: center;
 }
 
-nav img {
+.icon img {
   width: 5em;
   height: 5em;
 }
