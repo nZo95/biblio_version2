@@ -7,14 +7,14 @@
 # Table: compte
 #------------------------------------------------------------
 
-CREATE TABLE `compte`(
+CREATE TABLE compte(
         id     Int NOT NULL ,
         admin  Bool NOT NULL ,
         nom    Varchar (50) NOT NULL ,
         prenom Varchar (50) NOT NULL ,
         mdp    Varchar (255) NOT NULL
 	,CONSTRAINT compte_PK PRIMARY KEY (id)
-
+        
 )ENGINE=InnoDB;
 
 
@@ -22,9 +22,9 @@ CREATE TABLE `compte`(
 # Table: editeur
 #------------------------------------------------------------
 
-CREATE TABLE `editeur`(
-        `id`      Int  Auto_increment  NOT NULL ,
-        `libelle` Varchar (255) NOT NULL
+CREATE TABLE editeur(
+        id      Int  Auto_increment  NOT NULL ,
+        libelle Varchar (255) NOT NULL
 	,CONSTRAINT editeur_PK PRIMARY KEY (id)
 
 )ENGINE=InnoDB;
@@ -46,9 +46,9 @@ INSERT INTO `Editeur` (id,libelle) VALUES
 # Table: genre
 #------------------------------------------------------------
 
-CREATE TABLE `genre`(
-        `id`      Int  Auto_increment  NOT NULL ,
-        `libelle` Varchar (255) NOT NULL
+CREATE TABLE genre(
+        id      Int  Auto_increment  NOT NULL ,
+        libelle Varchar (255) NOT NULL
 	,CONSTRAINT genre_PK PRIMARY KEY (id)
 
 )ENGINE=InnoDB;
@@ -58,11 +58,10 @@ CREATE TABLE `genre`(
 # Table: langue
 #------------------------------------------------------------
 
-CREATE TABLE `langue`(
-        `id`      Int  Auto_increment  NOT NULL ,
-        `libelle` Varchar (50) NOT NULL
+CREATE TABLE langue(
+        id      Int  Auto_increment  NOT NULL ,
+        libelle Varchar (50) NOT NULL
 	,CONSTRAINT langue_PK PRIMARY KEY (id)
-
 )ENGINE=InnoDB;
 
 INSERT INTO `Langue` (id,libelle) VALUES
@@ -76,20 +75,27 @@ INSERT INTO `Langue` (id,libelle) VALUES
 # Table: livre
 #------------------------------------------------------------
 
-CREATE TABLE `livre`(
+CREATE TABLE livre(
         isbn       Varchar (255) NOT NULL ,
         titre      Varchar (50) NOT NULL ,
+        auteur     Varchar (50) NOT NULL ,
         annee      Int ,
         genre      Int NOT NULL ,
         langue     Int NOT NULL ,
         nbpages    Int ,
         editeur    Int NOT NULL ,
         reserve    Bool NOT NULL ,
+        id         Int NOT NULL ,
+        id_genre   Int NOT NULL ,
+        id_editeur Int
 	,CONSTRAINT livre_PK PRIMARY KEY (isbn)
-        
+
+	,CONSTRAINT livre_langue_FK FOREIGN KEY (id) REFERENCES langue(id)
+	,CONSTRAINT livre_genre0_FK FOREIGN KEY (id_genre) REFERENCES genre(id)
+	,CONSTRAINT livre_editeur1_FK FOREIGN KEY (id_editeur) REFERENCES editeur(id)
 )ENGINE=InnoDB;
 
-INSERT INTO `livre` (isbn,titre,editeur,annee,genre,langue,nbpages) VALUES 
+INSERT INTO `Livre` (isbn,titre,editeur,annee,genre,langue,nbpages) VALUES 
  ('9780090898305','2001:' 'L''Odyssée De' ' L''espace',1,2001,'2'and '1',1,648),
  ('9780151001637','Des Fleurs Pour Algernon',2,1968,'1',3,80),
  ('9780307792365','La Planete Des Singes',3,1963,'1' and '2',2,208),
@@ -106,7 +112,7 @@ INSERT INTO `livre` (isbn,titre,editeur,annee,genre,langue,nbpages) VALUES
 # Table: personne
 #------------------------------------------------------------
 
-CREATE TABLE `personne`(
+CREATE TABLE personne(
         id     Int  Auto_increment  NOT NULL ,
         nom    Varchar (255) NOT NULL ,
         prenom Varchar (255) NOT NULL
@@ -137,13 +143,13 @@ INSERT INTO `Personne` (id,nom,prenom) VALUES
 # Table: role
 #------------------------------------------------------------
 
-CREATE TABLE `role`(
+CREATE TABLE role(
         `id`      Int  Auto_increment  NOT NULL ,
         `libelle` Varchar (255) NOT NULL
 	,CONSTRAINT role_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
-INSERT INTO `role` (id,libelle) VALUES (1,'Ecrivain'),
+INSERT INTO `Role` (id,libelle) VALUES (1,'Ecrivain'),
  (2,'Traducteur');
 
 #------------------------------------------------------------
@@ -152,8 +158,9 @@ INSERT INTO `role` (id,libelle) VALUES (1,'Ecrivain'),
 
 CREATE TABLE favoris(
         `isbn` Varchar (255) NOT NULL ,
-        `id`   Int NOT NULL
+        id   Int NOT NULL
 	,CONSTRAINT favoris_PK PRIMARY KEY (isbn,id)
+
 	,CONSTRAINT favoris_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
 	,CONSTRAINT favoris_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
 )ENGINE=InnoDB;
@@ -163,7 +170,7 @@ CREATE TABLE favoris(
 # Table: Auteur
 #------------------------------------------------------------
 
-CREATE TABLE `Auteur`(
+CREATE TABLE Auteur(
         id      Int NOT NULL ,
         isbn    Varchar (255) NOT NULL ,
         id_role Int NOT NULL
