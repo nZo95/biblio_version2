@@ -12,7 +12,7 @@
 <body>
     <div class ="space">
         <h1>Bienvenue sur votre espace membre !</h1>
-        <img class="sizeimg" src="member_area/img/compte.png" alt="">
+        <img class="sizeimg" src="images/user.png" alt="">
     </div>
     <section>
         <div class="space">
@@ -91,7 +91,7 @@
         </div>
         <hr />
         <div class="space">
-            <h1>Paramètre</h1>
+            <h1>Paramètres</h1>
         </div>
         <section>
         <div class="space">
