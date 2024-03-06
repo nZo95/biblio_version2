@@ -80,7 +80,7 @@ textarea {
   resize: none; /* Ca empêche de pouvoir agrandir la taille de l'input */
 }
 
-/* =============== Pr le bouton d'envoi ================ */
+/* =============== Pr le bouton "envoyer" ================ */
 
 .send-button {
   display: inline-block;
