@@ -124,7 +124,6 @@ body{
     height: 380px;
   }
 
-
 }
 .content{
   background: rgba;
@@ -163,6 +162,7 @@ body{
   font-weight: 400;
   margin: 5px 0;
 }
+
 .user-input-box input{
   height: 40px;
   width: 95%;
@@ -170,6 +170,7 @@ body{
   outline: none;
   padding: 0 10px;
 }
+
 .gender-title{
   color: aliceblue;
   font-size: 24px;
@@ -190,9 +191,11 @@ body{
 .form-submit-btn input{
   cursor: pointer;
 }
+
 .form-submit-btn{
   margin-top: 40px;
 }
+
 
 .form-submit-btn input{
   width: 200px;
