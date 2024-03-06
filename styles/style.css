@@ -38,10 +38,15 @@ header {
 }
 
 nav {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
   align-items: center;
 }
 
@@ -50,8 +55,16 @@ nav {
   height: 5em;
 }
 
+.icon p {
+  margin-left: 14%;
+  font-size: 34px;
+  font-family: "Ubuntu";
+
+  color: var(--text-color);
+}
+
 .links {
-  width: 36%;
+  width: 26%;
 }
 
 .links ul {
@@ -83,7 +96,7 @@ nav {
 }
 
 .links a:hover {
-  background-size: 100% 0.22em;
+  background-size: 100% 0.16em;
 }
 
 .links img {
