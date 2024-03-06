@@ -275,7 +275,8 @@ h3 {
   width: 200px;
   border-radius: 10px;
 }
-#first{
+.sign-member{
   display: flex;
   flex-direction: column;
+  height: 300px;
 }

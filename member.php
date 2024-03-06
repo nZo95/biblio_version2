@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Membre - ASF</title>
-    <link rel="stylesheet" href="member_area/styles/member.css">
+    <link rel="stylesheet" href="styles/member.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="member_area/js/script.js" defer></script>
+    <script src="scripts/member.js" defer></script>
 </head>
 <body>
     <div class ="space">
@@ -89,62 +89,6 @@
                 </div>
             </div>
         </div>
-        <hr />
-        <div class="space">
-            <h1>Paramètres</h1>
-        </div>
-        <section>
-        <div class="space">
-            <div class="content">
-                <form action="#">
-                    <div class="main-user-info">
-                        <div class="user-input-box">
-                            <label for="fullName">Nom Complet</label>
-                            <input type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    placeholder="Nom et Prénom"/>
-                        </div>
-                        <div class="user-input-box">
-                            <label for="fullName">Pseudo</label>
-                            <input type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Pseudo"/>
-                        </div>
-                        <div class="user-input-box">
-                            <label for="mail">Adresse Mail</label>
-                            <input type="text"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Email"/>
-                        </div>
-                        <div class="user-input-box">
-                            <label for="phone">Téléphone</label>
-                            <input type="text"
-                                    id="phoneNumber"
-                                    name="phoneNumber"
-                                    placeholder="Téléphone"/>
-                        </div>
-                    </div>
-                    <div class="gender-details-box">
-                        <span class="gender-title">Genre</span>
-                        <div class="gender-category">
-                            <input type="radio" name="gender" id="male">
-                            <label for ="male">Homme</label>
-                            <input type="radio" name="gender" id="female">
-                            <label for ="female">Femme</label>
-                            <input type="radio" name="gender" id="other">
-                            <label for ="other">Autre</label>
-                        </div>
-                    </div>
-                    <div class="form-submit-btn">
-                        <input type="submit" value="Enregistrer">
-                    </div>
-                </form>
-            </div>
-        </div>
-        </section>
     </section>
 </body>
 <?php require 'footer.php'?>

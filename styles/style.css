@@ -1,18 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 :root {
-  --background: #5C6672;
-  --panel: #313E50;
-  --panel-hover: #444;
-  --second-panel: #6C6F7F;
-  --text-color: #E4E4E4;
+  --background: #5C6672;  /* Background */
+  --panel: #313E50; /* Header & Footer*/
+  --text-color: #8fa096; /* Boutons */
+  --text-hover: #8fa096; 
+  --text-color: #E4E4E4;  /* Couleurs pr le texte */
   --btext-color: #242424;
   --subtext-color: #e3e3e3;
-
-  --Bleu_foncé : #213742; /* Header / footer */
-  --Bleu_clair : #425c6a; /* Footer */
-  --Beige : #c8ceb5; /* Cartes / boutons */
-  --Gris : #d9d9d9;  /* Cartes bis / contours */
-  --Vert_pâle : #8fa096; /* Couleur supp */
 }
 
 * {
@@ -31,11 +25,28 @@ header {
   background-color: var(--panel);
 }
 
-nav {
+.space {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.space hr {
   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color)
+}
+
+nav {
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
   align-items: center;
 }
 
@@ -44,8 +55,16 @@ nav {
   height: 5em;
 }
 
+.icon p {
+  margin-left: 14%;
+  font-size: 34px;
+  font-family: "Ubuntu";
+
+  color: var(--text-color);
+}
+
 .links {
-  width: 36%;
+  width: 26%;
 }
 
 .links ul {
@@ -68,7 +87,7 @@ nav {
   cursor: pointer;
 
   padding-bottom: 0% 0.1em;
-  background-image: linear-gradient(var(--second-panel), var(--second-panel));
+  background-image: linear-gradient(var(--text-hover), var(--text-hover));
   background-size: 0% 0.1em;
   background-position-y: 110%;
   background-position-x: 50%;
@@ -77,7 +96,7 @@ nav {
 }
 
 .links a:hover {
-  background-size: 100% 0.22em;
+  background-size: 100% 0.16em;
 }
 
 .links img {

@@ -9,17 +9,19 @@
 }
 
 :root {
- --Bleu_foncé : #213742; /* Header / footer */
- --Bleu_clair : #425c6a; /* Footer */
- --Beige : #c8ceb5; /* Cartes / boutons */
- --Gris : #d9d9d9;  /* Cartes bis / contours */
- --Vert_pâle : #8fa096; /* Couleur supp */
+ --background: #5C6672;  /* Background */
+ --panel: #313E50; /* Header & Footer*/
+ --text-color: #8fa096; /* Boutons */
+ --text-hover: #8fa096; 
+ --text-color: #E4E4E4;  /* Couleurs pr le texte */
+ --btext-color: #242424;
+ --subtext-color: #e3e3e3;
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color : var(--Gris);
+  background-color : var(--background);
 }
 
 /* =============== Contenu de la page ================ */
@@ -29,7 +31,7 @@ body {
   width: 70%;
   margin: 5% auto; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.219);
-  border-radius: 25px; 
+  border-radius: 13px; 
   overflow: hidden; 
 }
 
@@ -43,13 +45,13 @@ body {
 }
 
 .left-panel {
-  background-color: var(--Bleu_clair); 
+  background-color: var(--panel); 
   align-items: center;
   text-align: center;
 }
 
 .right-panel {
-  background-color: var(--Beige); 
+  background-color: var(--text-color); 
   align-items: center;
   text-align: center;
 }
@@ -86,7 +88,7 @@ textarea {
   display: inline-block;
   text-align: center; 
   vertical-align: middle;
-  background-color: var(--Beige);
+  background-color: var(--text-color);
   border-radius: 25px;
   height: 10%;
   width: 20%;
