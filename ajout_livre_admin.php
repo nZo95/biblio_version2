@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface Administrateur ASF</title>
-    <link rel="stylesheet" href="styles/style_admin.css">
+    <link rel="stylesheet" href="styles/admin.css">
 </head>
 <body>
     
@@ -16,7 +16,7 @@
             <input type="text" placeholder="ISBN" />
             <input type="date" placeholder="Date de publication" />
             <textarea placeholder="Description du livre" rows="4"></textarea>
-            <button class="send-button">Envoyer</button>
+            <a href="ajout_livre_admin.php" class="send-button">Envoyer</a>
         </div>
         <div class="right-panel">
             <input type="file" id="imageInput" style="display: none;" accept="image/*" /> <!-- ============ Pour ouvrir les fichiers pour choisir l'image du livre ============ -->
