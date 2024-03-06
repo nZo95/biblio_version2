@@ -32,7 +32,10 @@
       <section id="section_genre">
         <section id="searchBar">
             <h2>Entrez dans le monde merveilleux de la lecture, une aventure rempli de mystère...</h2>
-            <input type="text">
+            <div id="div_search">
+            <input type="text" id="search">
+            <button type="submit" id="button_search">Rechercher</button>
+            </div>
         </section>
         <H2>Découvrir par <em>Genre</em></H2>
         <div id="fantastique" class="genre">

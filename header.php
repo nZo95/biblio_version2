@@ -17,7 +17,7 @@
       <div class="links">
         <ul>
           <li><a href="index.php">Accueil</a></li>
-          <li><a href="#">Livres</a></li>
+          <li><a href="page_Livre.php">Livres</a></li>
           <li><img src="images/user.png" alt="error"></li>
         </ul>
       </div>

@@ -250,3 +250,15 @@ h3 {
 .genre h3{
   text-align: center;
 }
+#div_search{
+  display: flex;
+  justify-content: center;
+}
+#search{
+  width: 250px;
+  height: 30px;
+  border-radius: 20px;
+}
+#button_search{
+  border-radius: 10px;
+}
