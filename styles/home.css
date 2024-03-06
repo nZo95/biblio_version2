@@ -7,6 +7,12 @@
   --text-color: #E4E4E4;
   --btext-color: #242424;
   --subtext-color: #e3e3e3;
+
+  --Bleu_foncé : #213742; /* Header / footer */
+  --Bleu_clair : #425c6a; /* Footer */
+  --Beige : #c8ceb5; /* Cartes / boutons */
+  --Gris : #d9d9d9;  /* Cartes bis / contours */
+  --Vert_pâle : #8fa096; /* Couleur supp */
 }
 
 h2 {
