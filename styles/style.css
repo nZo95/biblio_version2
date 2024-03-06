@@ -31,12 +31,18 @@ nav {
   align-items: center;
 }
 
+nav img {
+  width: 5em;
+  height: 5em;
+}
+
 .links {
-  width: 38%;
+  width: 36%;
 }
 
 .links ul {
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -59,30 +65,40 @@ nav {
   background-position-y: 110%;
   background-position-x: 50%;
   background-repeat: no-repeat;
-  transition: background-size 0.5s;
+  transition: background-size 0.4s;
 }
 
 .links a:hover {
   background-size: 100% 0.22em;
 }
 
-.logo img {
-  width: 5em;
-  height: 5em;
+.links img {
+  width: 3.2em;
+  height: 3.2em;
+
+  cursor: pointer;
+  
+  transition: all 0.4s;
+}
+
+.links img:hover {
+  width: 3.6em;
+  height: 3.6em;
 }
 
 footer {
   height: 3em;
+  display: flex;
+  align-items: center;
 
   background-color: var(--panel);
 }
 
 footer p {
-  padding-top: 0.644em;
+  margin-left: auto;
+  margin-right: auto;
 
   font-size: 20px;
   font-family: "Ubuntu";
-  text-align: center;
-
   color: var(--text-color);
 }
