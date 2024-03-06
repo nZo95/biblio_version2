@@ -48,6 +48,16 @@
             </p>
           </div>
           <div class="sign-member">
+            <div id="first">
+          <h2>Espace Membre</h2>
+          <div id="div-button">
+          <button type="button" id="SignIn">Connexion</button>
+          <button type="button" id="SignUp">Inscription</button>
+          </div>
+          </div>
+          
+           <!--
+            <div id="inscription">
             <h2>Devenir Membre !</h2>
             <h3>Numéro d'identification : </h3>
             <input type="text" name="id" id="id" required><br><br>
@@ -57,12 +67,13 @@
                   rendre à votre bibliothèque.</p>
             </div>
             <button id="buttonSubmit" type="submit">Suivant</button>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="space"></div>
 
-      <!-- <section id="signIn">
+      <!-- <section id="section_signIn">
           <div id="textMember">
               <h2>Pourquoi devenir <em>Membre</em> ?</h2>
               <p>

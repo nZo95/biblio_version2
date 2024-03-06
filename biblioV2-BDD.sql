@@ -57,12 +57,8 @@ CREATE TABLE langue(
 CREATE TABLE livre(
         isbn       Varchar (255) NOT NULL ,
         titre      Varchar (50) NOT NULL ,
-        auteur     Varchar (50) NOT NULL ,
         annee      Int ,
-        genre      Int NOT NULL ,
-        langue     Int NOT NULL ,
         nbpages    Int ,
-        editeur    Int NOT NULL ,
         reserve    Bool NOT NULL ,
         id         Int NOT NULL ,
         id_genre   Int NOT NULL ,

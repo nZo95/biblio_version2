@@ -25,22 +25,6 @@ window.addEventListener("load", initSlider);
 let btnFind = document.getElementById('buttonFind');
 let divFind = document.getElementById('find');
 
-/* document.addEventListener("DOMContentLoaded", function() {
-
-    let buttonFind = document.getElementById("buttonFind");
-    let find = document.getElementById("find");
-    buttonFind.onclick = function()
-    {
-        if (find.style.display === "none") 
-        {
-            divFind.style.display = "block";
-        } else {
-            divFind.style.display = "none";
-        }
-    }
-
-}); */
-
 btnFind.onclick = find;
 
 function find() {
@@ -51,3 +35,15 @@ function find() {
     }
 }
 
+let btnSignIn = document.getElementById('SignIn');
+let btnSignUp = document.getElementById('SignUp');
+let divSignIn = document.getElementById('inscription');
+let first = document.getElementById('first');
+
+
+btnSignIn.onclick = connexion;
+
+function connexion(){
+    first.style.display = "none";
+    divSignIn.style.display = "block";
+}
