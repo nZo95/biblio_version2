@@ -13,7 +13,11 @@
     <div class="book-card">
         <div class="left-panel">
             <input type="text" placeholder="Titre du livre" />
+            <input type="text" placeholder="Auteur" />
+            <input type="text" placeholder="Editeur" />
             <input type="text" placeholder="ISBN" />
+            <input type="text" placeholder="Genre" />
+            <input type="text" placeholder="Langue" />
             <input type="date" placeholder="Date de publication" />
             <textarea placeholder="Description du livre" rows="4"></textarea>
             <a href="ajout_livre_admin.php" class="send-button">Envoyer</a>
