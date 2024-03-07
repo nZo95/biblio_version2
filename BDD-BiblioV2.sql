@@ -233,15 +233,3 @@ CREATE TABLE Note(
 	,CONSTRAINT Note_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
 )ENGINE=InnoDB;
 
-#------------------------------------------------------------
-# Table: Résumé
-#------------------------------------------------------------
-
-CREATE TABLE Resume(
-        isbn Varchar(255) NOT NULL, 
-        "resume" Varchar(255) NOT NULL,
-
-        CONSTRAINT Resume_PK PRIMARY KEY (isbn),
-        CONSTRAINT Resume_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
-
-)ENGINE=InnoDB;
