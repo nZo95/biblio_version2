@@ -29,3 +29,6 @@ document.getElementById('removeImageButton').addEventListener('click', function(
     // C'est pr réafficher le logo du + et le texte "Ajouter une image de couverture"
     document.querySelector('.add-image').style.display = 'flex';
 });
+
+
+
