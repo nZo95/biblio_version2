@@ -124,6 +124,7 @@ body{
     height: 380px;
   }
 
+  /* Formulaire compte */
 }
 .content{
   background: rgba;
@@ -131,7 +132,6 @@ body{
   height: 120%;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
   background: #313E50;
   border-radius: 10px;
   padding: 28px;
@@ -207,4 +207,6 @@ body{
   color: aliceblue;
   background: #5C6672;
 }
+
+
 
