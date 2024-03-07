@@ -85,7 +85,7 @@ CREATE TABLE livre(
         id         Int NOT NULL ,
         id_genre   Int NOT NULL ,
         id_editeur Int,
-        `resume`   Varchar(4096) NOT NULL
+        résumé   Varchar(4096) NOT NULL
 
 	,CONSTRAINT livre_PK PRIMARY KEY (isbn)
 
