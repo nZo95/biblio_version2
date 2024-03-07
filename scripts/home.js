@@ -39,11 +39,34 @@ let btnSignIn = document.getElementById('SignIn');
 let btnSignUp = document.getElementById('SignUp');
 let divSignIn = document.getElementById('inscription');
 let first = document.getElementById('first');
+let password = document.getElementById('passwordFields');
+let createPassword = document.getElementById('createPasswordFields');
 
+btnSignIn.onclick = inscription;
 
-btnSignIn.onclick = connexion;
+function inscription(){
+    first.style.display = "none";
+    divSignIn.style.display = "block";
+    createPassword.style.display = "block";
+    password.style.display = "none";
+}
+
+btnSignUp.onclick = connexion;
 
 function connexion(){
     first.style.display = "none";
     divSignIn.style.display = "block";
+    password.style.display = "block";
+    createPassword.style.display = "none";
+}
+
+
+
+let btnBack = document.getElementById('btnBack')
+
+btnBack.onclick = back;
+
+function back(){
+    first.style.display = "block";
+    divSignIn.style.display = "none";
 }
