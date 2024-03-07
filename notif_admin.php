@@ -8,8 +8,53 @@
 </head>
 <body>
     
-<?php require('header.php'); ?>
+<?php
+require "header.php";
+?>
+    <h1>Demandes d'activation de compte</h1>
 
+    <div class="account_container">
+        <div class="request_card">
+            <h2>Nom Prénom</h2>
+            <p>Identifiant : XXXX</p>
+            <p>Date de demande : XX/XX/XXXX</p>
+            <button>Autoriser</button>
+            <button>Refuser</button>
+        </div>
+
+        <div class="request_card">
+            <h2>Nom Prénom</h2>
+            <p>Identifiant : XXXX</p>
+            <p>Date de demande : XX/XX/XXXX</p>
+            <button>Autoriser</button>
+            <button>Refuser</button>
+        </div>
+
+        <div class="request_card">
+            <h2>Nom Prénom</h2>
+            <p>Identifiant : XXXX</p>
+            <p>Date de demande : XX/XX/XXXX</p>
+            <button>Autoriser</button>
+            <button>Refuser</button>
+        </div>
+
+        <div class="request_card">
+            <h2>Nom Prénom</h2>
+            <p>Identifiant : XXXX</p>
+            <p>Date de demande : XX/XX/XXXX</p>
+            <button>Autoriser</button>
+            <button>Refuser</button>
+        </div>
+
+        <div class="request_card">
+            <h2>Nom Prénom</h2>
+            <p>Identifiant : XXXX</p>
+            <p>Date de demande : XX/XX/XXXX</p>
+            <button>Autoriser</button>
+            <button>Refuser</button>
+        </div>
+    </div>
+    
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

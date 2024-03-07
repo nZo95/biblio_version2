@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
   background-color : var(--background);
 }
-
+                /* =============== Page d'ajout de livres ================ */
 /* =============== Contenu de la page ================ */
 
 .book-card {
@@ -98,4 +98,25 @@ textarea {
   width: 20%;
   text-decoration: none; 
   color: var(--Bleu_foncé); 
+}
+
+              /* =============== Page de réini de mdp ================ */
+
+.account_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.request_card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(33.333% - 20px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.request_card h2, .request_card p {
+  margin: 10px 0;
 }
