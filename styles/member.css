@@ -128,13 +128,14 @@ body{
 }
 .content{
   background: rgba;
-  width: 55%;
+  width: 50%;
   height: 120%;
   margin-left: auto;
   margin-right: auto;
   background: #313E50;
   border-radius: 10px;
   padding: 28px;
+
 }
 .main-user-info{
   display: flex;
@@ -208,5 +209,27 @@ body{
   background: #5C6672;
 }
 
+/* Paramètres */
 
+.content-setting{
+  background: rgba;
+  width: 30%;
+  height: 120%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #313E50;
+  border-radius: 10px;
+  padding: 28px;
+}
 
+.form-logout-btn input{
+  width: 200px;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  color: aliceblue;
+  background: #5C6672;
+  margin-left: 57%;
+}

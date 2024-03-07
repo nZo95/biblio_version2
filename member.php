@@ -96,7 +96,7 @@
     </div>
     <section>
         <div class="space">
-            <div class="content">
+            <div class="content-setting">
                 <form action="#">
                     <div class="main-user-info">
                         <div class="user-input-box">
