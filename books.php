@@ -25,13 +25,32 @@
       <div class="space"><hr></div>
       <h2>Entrez dans le monde merveilleux de la lecture, une aventure rempli de mystère...</h2>
       <h2>Découvrir par <em>Genre</em></h2>
-      <h3>Fantastique</h3>
-      <div class="space"></div>
-      <div class="container-books">
-        <div class="grid">
-          <div class="image-item"><a href="detail.php"><img src="images/9782253087830.jpg" alt=""></a></div>
-        </div>
-      </div>
+      <?php
+        $query = mysqli_query($link, "SELECT * FROM genre;");
+        $countQuery = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM genre;")["count(*)"]);
+ 
+        if (!$query) { return; }
+
+        while ($row = mysqli_fetch_array($query))
+        {
+          $queryBook = mysqli_query($link, "SELECT isbn FROM livre WHERE genre = " . $row["id"] . ";");
+          echo '<h3>' . $row["libelle"] . '</h3>';
+          echo '<div class="space"></div>';
+          echo '<div class="container-books">
+                <div class="grid">';
+          while($rowBook = mysqli_fetch_array($queryBook))
+          {
+            echo '<div class="image-item"><a href="detail.php"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>'; 
+          }
+          echo '</div>
+                </div>';
+          if ($countQuery - 1 > 0)
+          {
+            echo '<div class="space"><hr></div>';
+            $countQuery--;
+          }
+        }
+      ?>
       <div class="space"></div>
       <?php require('footer.php'); ?>
 </body>
