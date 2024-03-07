@@ -18,20 +18,7 @@
       <div class="links">
         <ul>
           <li><a href="index.php">Accueil</a></li>
-          <?php
-            $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-  
-              if (str_contains($actual_link, "admin"))
-              {
-                echo '<li><a href="ajout_livre_admin.php">Ajout</a></li>';
-                echo '<li><a href="notif_admin.php">Comptes client</a></li>';
-              }
-              else
-              {
-                  echo '<li><a href="page_Livre.php">Livres</a></li>';
-              }
-            ?>
-          
+          <li><a href="books.php">Livres</a></li>
           <li><img src="images/user.png" alt="error"></li>
         </ul>
       </div>
