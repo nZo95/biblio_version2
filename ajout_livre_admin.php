@@ -20,21 +20,24 @@
             <input type="text" placeholder="Langue" class="input"/>
             <input type="date" placeholder="Date de publication" class="input"/>
             <textarea placeholder="Description du livre" rows="4" class="input"></textarea>
-            <a href="ajout_livre_admin.php" class="send-button">Envoyer</a>
+            <button class="send-button">Envoyer</button>
         </div>
         <div class="right-panel">
-            <input type="file" id="imageInput" style="display: none;" accept="image/*" /> <!-- ============ Pour ouvrir les fichiers pour choisir l'image du livre ============ -->
-            <div class="add-image" onclick="document.getElementById('imageInput').click();"> 
-                <ion-icon name="add-circle-outline"></ion-icon>
-                <p>Ajouter une image de couverture</p>
-            </div>
-            <img id="coverImage" style="max-width: 100%; display: none;"/>
-        </div>
+    <input type="file" id="imageInput" style="display: none;" accept="image/*" />
+    <div class="add-image" onclick="document.getElementById('imageInput').click();">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>Ajouter une image de couverture</p>
+    </div>
+    <button id="removeImageButton" style="display: none;">Retirer l'image</button>
+    <img id="coverImage" style="max-width: 100%; display: none;"/>
+</div>
         
     </div>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/admin.js"></script>
+
+    <?php require('footer.php'); ?>
 </body>
 </html>
