@@ -11,7 +11,7 @@
 <?php
 require "header.php";
 ?>
-    <h1>Demandes d'activations de compte</h1>
+    <h1>Demandes d'activation de compte</h1>
 
     <div class="account_container">
         <div class="request_card">
