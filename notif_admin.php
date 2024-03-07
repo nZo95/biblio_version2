@@ -8,7 +8,9 @@
 </head>
 <body>
     
-<?php require('header.php'); ?>
+<?php
+require "header.php";
+?>
 
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
