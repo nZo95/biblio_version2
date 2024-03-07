@@ -27,20 +27,22 @@
       <h2>Découvrir par <em>Genre</em></h2>
       <?php
         $query = mysqli_query($link, "SELECT * FROM genre;");
-        $countQuery = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM genre;")["count(*)"]);
- 
+      
         if (!$query) { return; }
+        
+        $countQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM genre;"));
+        $countQuery = intval($countQueryFetch["count(*)"]);
 
         while ($row = mysqli_fetch_array($query))
         {
-          $queryBook = mysqli_query($link, "SELECT isbn FROM livre WHERE genre = " . $row["id"] . ";");
+          $queryBook = mysqli_query($link, "SELECT isbn FROM livre WHERE id_genre = " . $row["id"] . ";");
           echo '<h3>' . $row["libelle"] . '</h3>';
           echo '<div class="space"></div>';
           echo '<div class="container-books">
                 <div class="grid">';
           while($rowBook = mysqli_fetch_array($queryBook))
           {
-            echo '<div class="image-item"><a href="detail.php"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>'; 
+            echo '<div class="image-item"><a href="detail.php?isbn=' . $rowBook["isbn"] . '"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>'; 
           }
           echo '</div>
                 </div>';

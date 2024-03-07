@@ -27,6 +27,12 @@ h3 {
     color: var(--text-color);
 }
 
+.space {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
 .container-slider-wrapper {
     max-width: 70%;
     width: 95%;
