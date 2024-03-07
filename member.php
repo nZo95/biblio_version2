@@ -90,6 +90,37 @@
             </div>
         </div>
     </section>
+    <hr>
+    <div class ="space">
+        <h1>Paramètres</h1>
+    </div>
+    <section>
+        <div class="space">
+            <div class="content-setting">
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="password">Mot de passe</label>
+                            <input type="password"
+                                    id="fullName"
+                                    name="password"
+                                    placeholder="Mot de passe"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="password">Confirmation</label>
+                            <input type="password"
+                                    id="username"
+                                    name="cpassword"
+                                    placeholder="Confirmation Mot de passe"/>
+                        </div>
+                    </div>
+                    <div class="form-logout-btn">
+                        <input type="submit" value="Déconnexion">   
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
 <?php require 'footer.php'?>
 </html>

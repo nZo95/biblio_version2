@@ -27,6 +27,12 @@ h3 {
     color: var(--text-color);
 }
 
+.space {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
 .container-slider-wrapper {
     max-width: 70%;
     width: 95%;
@@ -81,7 +87,7 @@ h3 {
     top: 36%;
     height: 50px;
     width: 50px;
-    color: #fff;
+    color: var(--text-color);
     border: none;
     outline: none;
     background: var(--panel);
@@ -92,7 +98,7 @@ h3 {
   }
   
   .slider-wrapper .slide-button:hover {
-    background: var(--panel-hover);
+    background: var(--text-hover);
   }
   
   .slider-wrapper .slide-button#prev-slide {

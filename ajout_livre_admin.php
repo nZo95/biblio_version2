@@ -8,7 +8,9 @@
 </head>
 <body>
     
-<?php require('header.php'); ?>
+<?php
+require "header.php";
+?>
 
     <div class="book-card">
         <div class="left-panel">
@@ -23,13 +25,14 @@
             <button class="send-button">Envoyer</button>
         </div>
         <div class="right-panel">
-            <input type="file" id="imageInput" style="display: none;" accept="image/*" /> <!-- ============ Pour ouvrir les fichiers pour choisir l'image du livre ============ -->
-            <div class="add-image" onclick="document.getElementById('imageInput').click();"> 
-                <ion-icon name="add-circle-outline"></ion-icon>
-                <p>Ajouter une image de couverture</p>
-            </div>
-            <img id="coverImage" style="max-width: 100%; display: none;"/>
-        </div>
+    <input type="file" id="imageInput" style="display: none;" accept="image/*" />
+    <div class="add-image" onclick="document.getElementById('imageInput').click();">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p>Ajouter une image de couverture</p>
+    </div>
+    <button id="removeImageButton" style="display: none;">Retirer l'image</button>
+    <img id="coverImage" style="max-width: 100%; display: none;"/>
+</div>
         
     </div>
     

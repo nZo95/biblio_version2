@@ -7,21 +7,54 @@
   </head>
   <body>
     <main>
-      <div class="space"></div>
-      <h2>Axiomatique de Greg EGAN</h2>
-      <div class="space"><hr></div>
-      <div class="container-book">
-        <div class="book">
-          <div class="image-item">
-            <img src="images/9782253087830.jpg" alt="">
-          </div>
-          <div class="text-item">
+        <?php
+          $isbn = htmlspecialchars($_GET["isbn"]);
+
+          $stmt = $link->prepare("SELECT titre, annee, nbpages, reserve, id, id_genre, id_editeur FROM livre WHERE isbn=?");
+          $stmt->execute(array($isbn));
+          $stmt->bind_result($titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook);
+          $stmt->fetch();
+          $stmt->close();
+
+          echo '<div class="space"></div>
+                <h2>' . $titleBook . '</h2>
+              <div class="space"><hr></div>
+              <div class="container-book">
+                <div class="book">';
+
+          $query = mysqli_fetch_array(mysqli_query($link, "SELECT libelle FROM genre WHERE id = " . $idGenreBook . ";"));
+          $wordingGenre = $query["libelle"];
+
+          echo '<div class="image-item">
+                <img src="images/' . $isbn . '.jpg" alt="error">
+              </div>
+              <div class="text-item">
+                <p class="center">Livre de <em>' . $wordingGenre . '</em></p>';
+                $queryAuthor = mysqli_query($link, "SELECT id, id_role FROM auteur WHERE isbn = " . $isbn . ";");
+                while ($row = mysqli_fetch_array($queryAuthor))
+                {
+                  $query = mysqli_fetch_array(mysqli_query($link, "SELECT libelle FROM role WHERE id = " . $row["id_role"] . ";"));
+                  $role = $query["libelle"];
+                  $query = mysqli_fetch_array(mysqli_query($link, "SELECT nom, prenom FROM personne WHERE id = " . $row["id"] . ";"));
+                  echo '<p class="center">' . $role . ' : ' . $query["prenom"] . ' ' . $query["nom"] . '</p>';
+                }
+                $query = mysqli_fetch_array(mysqli_query($link, "SELECT libelle FROM editeur WHERE id = " . $idEditorBook . ";"));
+                $wordingEditor = $query["libelle"];
+                echo '<p class="center">Edition ' . $wordingEditor . ', publié en ' . $yearBook . '</p>';
+                $query = mysqli_fetch_array(mysqli_query($link, "SELECT libelle FROM langue WHERE id = " . $idLanguageBook . ";"));
+                $wordingLanguage = $query["libelle"];
+                echo '<p class="center">Langue Originale : ' . $wordingLanguage . '</p>';
+                echo '<h3 class="center">Résumé : </h3>';;
+          
+          echo '</div>';
+          ?>
+          <!-- <div class="text-item">
             <p class="center">Livre de Science-fiction</p>
             <p class="center">Edition Millenium, publié en 1995</p>
             <p class="center">Langue Originale : Anglais</p>
             <h3>Résumé : </h3>
             <p class="resume">Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="space"></div>
