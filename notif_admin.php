@@ -11,48 +11,46 @@
 <?php
 require "header.php";
 ?>
-    <h1>Demandes d'activation de compte</h1>
+    <h1 class="h1_mdp"> Demandes d'activation de compte</h1>
 
     <div class="account_container">
         <div class="request_card">
             <h2>Nom Prénom</h2>
             <p>Identifiant : XXXX</p>
             <p>Date de demande : XX/XX/XXXX</p>
-            <button>Autoriser</button>
-            <button>Refuser</button>
+            <button class="bouton_autoriser">Autoriser</button>
+            <button class="bouton_refuser">Refuser</button>
         </div>
 
         <div class="request_card">
             <h2>Nom Prénom</h2>
             <p>Identifiant : XXXX</p>
             <p>Date de demande : XX/XX/XXXX</p>
-            <button>Autoriser</button>
-            <button>Refuser</button>
+            <button class="bouton_autoriser">Autoriser</button>
+            <button class="bouton_refuser">Refuser</button>
         </div>
-
         <div class="request_card">
             <h2>Nom Prénom</h2>
             <p>Identifiant : XXXX</p>
             <p>Date de demande : XX/XX/XXXX</p>
-            <button>Autoriser</button>
-            <button>Refuser</button>
+            <button class="bouton_autoriser">Autoriser</button>
+            <button class="bouton_refuser">Refuser</button>
         </div>
-
         <div class="request_card">
             <h2>Nom Prénom</h2>
             <p>Identifiant : XXXX</p>
             <p>Date de demande : XX/XX/XXXX</p>
-            <button>Autoriser</button>
-            <button>Refuser</button>
+            <button class="bouton_autoriser">Autoriser</button>
+            <button class="bouton_refuser">Refuser</button>
         </div>
-
         <div class="request_card">
             <h2>Nom Prénom</h2>
             <p>Identifiant : XXXX</p>
             <p>Date de demande : XX/XX/XXXX</p>
-            <button>Autoriser</button>
-            <button>Refuser</button>
+            <button class="bouton_autoriser">Autoriser</button>
+            <button class="bouton_refuser">Refuser</button>
         </div>
+        
     </div>
     
     

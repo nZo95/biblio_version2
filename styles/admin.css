@@ -115,8 +115,50 @@ textarea {
   padding: 20px;
   width: calc(33.333% - 20px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: var(--panel);
 }
 
 .request_card h2, .request_card p {
   margin: 10px 0;
+  color: var(--text-color);
+}
+
+.h1_mdp {
+  text-align: center;
+  color: var(--text-color);
+  margin: 10px;
+}
+
+.bouton_autoriser, .bouton_refuser {
+  align-items: center;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 13px; 
+  cursor: pointer;
+  font-size: 15px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  
+}
+
+
+
+.bouton_autoriser {
+  background-color: #4CAF50; 
+}
+
+.bouton_autoriser:hover, .bouton_autoriser:focus {
+  background-color: #45a049; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+.bouton_refuser {
+  background-color: #f44336; 
+}
+
+.bouton_refuser:hover, .bouton_refuser:focus {
+  background-color: #dc2836; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
