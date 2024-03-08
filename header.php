@@ -28,11 +28,9 @@
               }
               else
               {
-                  echo '<li><a href="page_Livre.php">Livres</a></li>';
+                  echo '<li><a href="books.php">Livres</a></li>';
               }
             ?>
-          
-          <li><a href="books.php">Livres</a></li>
           <li><img src="images/user.png" alt="error"></li>
         </ul>
       </div>
