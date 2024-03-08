@@ -14,7 +14,7 @@ CREATE TABLE compte(
         prenom Varchar (50) NOT NULL ,
         mdp    Varchar (255) NOT NULL,
         phone  Int NULL, 
-	,CONSTRAINT compte_PK PRIMARY KEY (id)
+        CONSTRAINT compte_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
         
 
