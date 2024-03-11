@@ -186,6 +186,7 @@ textarea {
 .json_container ion-icon {
   font-size: 70px;
   color: var(--subtext-color);
+  margin: 10px;
 }
 
 .json_container ion-icon:hover {
