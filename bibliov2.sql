@@ -14,7 +14,7 @@ CREATE TABLE compte(
         prenom Varchar (50) NOT NULL ,
         mdp    Varchar (255) NOT NULL,
         phone  Int NULL, 
-	,CONSTRAINT compte_PK PRIMARY KEY (id)
+        CONSTRAINT compte_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
         
 
@@ -85,7 +85,7 @@ CREATE TABLE livre(
         id         Int NOT NULL ,
         id_genre   Int NOT NULL ,
         id_editeur Int,
-        `resume`   Varchar(4096) NOT NULL
+        résumé   Varchar(4096) NOT NULL
 
 	,CONSTRAINT livre_PK PRIMARY KEY (isbn)
 
@@ -94,7 +94,7 @@ CREATE TABLE livre(
 	,CONSTRAINT livre_editeur1_FK FOREIGN KEY (id_editeur) REFERENCES editeur(id)
 )ENGINE=InnoDB;
 
-INSERT INTO `Livre` (isbn,titre,id_editeur,annee,id_genre,id,nbpages,résumé) VALUES 
+INSERT INTO `livre` (isbn,titre,id_editeur,annee,id_genre,id,nbpages,résumé) VALUES 
  ('9780090898305','2001:' 'L''Odyssée De' ' L''espace',1,2001,'2'and '1',1,648,"À la fin du second millénaire, les hommes se sont lancés à la conquête du système solaire. Un jour ils partiront à la conquête des étoiles. Qu'y trouveront-ils ? Leurs égaux ou leurs maîtres ? Ce roman essaye dapporter une réponse à cette question"),
  ('9780151001637','Des Fleurs Pour Algernon',2,1968,'1',3,80,"Des fleurs pour Algernon est une œuvre de science-fiction dans laquelle il est question dun homme intellectuellement déficient qui se voit proposer l'opportunité de devenir intelligent. Charlie Gordon accepte de servir de cobaye et de subir une opération du cerveau qui augmentera ses capacités intellectuelles."),
  ('9780307792365','La Planete Des Singes',3,1963,'1' and '2',2,208,"Le roman raconte l'histoire de trois hommes qui explorent une planète lointaine similaire à la Terre, où les grands singes sont les espèces dominantes et intelligentes, alors que l'humanité est réduite à l'état animal.</br>Le narrateur, Ulysse Mérou, est capturé par les singes et se retrouve enfermé dans un laboratoire."),
@@ -233,15 +233,3 @@ CREATE TABLE Note(
 	,CONSTRAINT Note_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
 )ENGINE=InnoDB;
 
-#------------------------------------------------------------
-# Table: Résumé
-#------------------------------------------------------------
-
-CREATE TABLE Resume(
-        isbn Varchar(255) NOT NULL, 
-        "resume" Varchar(255) NOT NULL,
-
-        CONSTRAINT Resume_PK PRIMARY KEY (isbn),
-        CONSTRAINT Resume_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
-
-)ENGINE=InnoDB;
