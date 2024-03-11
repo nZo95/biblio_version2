@@ -24,7 +24,6 @@
               if (str_contains($actual_link, "admin"))
               {
                 echo '<li><a href="ajout_livre_admin.php">Ajout</a></li>';
-                echo '<li><a href="json_admin.php">Json</a></li>';
                 echo '<li><a href="notif_admin.php">Comptes client</a></li>';
               }
               else

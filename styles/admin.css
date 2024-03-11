@@ -126,6 +126,7 @@ textarea {
 .h1_mdp {
   text-align: center;
   color: var(--text-color);
+  margin: 10px;
 }
 
 .bouton_autoriser, .bouton_refuser {
@@ -160,11 +161,4 @@ textarea {
 .bouton_refuser:hover, .bouton_refuser:focus {
   background-color: #dc2836; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-}
-
-/* =============== Page de réini de mdp ================ */
-
-.h1_json {
-  text-align: center;
-  color: var(--text-color);
 }

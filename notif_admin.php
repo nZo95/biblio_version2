@@ -11,9 +11,7 @@
 <?php
 require "header.php";
 ?>
-    <div class="space"></div>
     <h1 class="h1_mdp"> Demandes d'activation de compte</h1>
-    <div class="space"><hr></div>
 
     <div class="account_container">
         <div class="request_card">

@@ -10,9 +10,9 @@
         <?php
           $isbn = htmlspecialchars($_GET["isbn"]);
 
-          $stmt = $link->prepare("SELECT titre, annee, nbpages, reserve, id, id_genre, id_editeur, résumé FROM livre WHERE isbn=?");
+          $stmt = $link->prepare("SELECT titre, annee, nbpages, reserve, id, id_genre, id_editeur FROM livre WHERE isbn=?");
           $stmt->execute(array($isbn));
-          $stmt->bind_result($titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
+          $stmt->bind_result($titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook);
           $stmt->fetch();
           $stmt->close();
 
@@ -44,8 +44,7 @@
                 $query = mysqli_fetch_array(mysqli_query($link, "SELECT libelle FROM langue WHERE id = " . $idLanguageBook . ";"));
                 $wordingLanguage = $query["libelle"];
                 echo '<p class="center">Langue Originale : ' . $wordingLanguage . '</p>';
-                echo '<h3 class="center">Résumé : </h3>';
-                echo '<p class="center">' . $resume . '</p>';
+                echo '<h3 class="center">Résumé : </h3>';;
           
           echo '</div>';
           ?>
