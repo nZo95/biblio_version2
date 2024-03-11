@@ -86,7 +86,7 @@ require "header.php";
               <label for="password">Mot de passe :</label><br>
               <input type="password" id="password" name="password" required><br>
             </div>
-
+            
             <button id="buttonSubmit" type="submit">Suivant</button> <br>
             <button id="btnBack">Retour</button>
           </form> 
