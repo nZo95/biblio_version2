@@ -165,18 +165,28 @@ textarea {
 /* =============== Page de réini de mdp ================ */
 
 .json_container {
-  margin: 0 auto; 
+  margin: 30px auto; 
   border: 1px solid #ccc;
   border-radius: 13px; 
   text-align: center; 
+  width: 30%;
 }
 
 .json_container a {
   color: inherit; 
 }
 
+.json_container p {
+  color: inherit; 
+  margin: 10px;
+}
+
 .json_container ion-icon {
-  font-size: 98px;
-  color: var(--Bleu_foncé);
+  font-size: 70px;
+  color: var(--subtext-color);
+}
+
+.json_container ion-icon:hover {
+  color: var(--panel);
 }
 
