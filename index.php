@@ -74,10 +74,12 @@ require "header.php";
             <div id="createPasswordFields">
               <br>
               <br>
-              <label for="newPassword">Créer votre mot de passe :</label><br>
-              <input type="password" id="newPassword" name="newPassword" required><br>
-              <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br>
+              <label for="newPassword">Créer votre mot de passe :</label><br><br>
+              <input type="password" id="newPassword" name="newPassword" required><br><br>
+              <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br><br>
               <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
+
+              <div id="resultPassword"></div>
             </div>
 
             <div id="passwordFields">

@@ -70,3 +70,30 @@ function back(){
     first.style.display = "block";
     divSignIn.style.display = "none";
 }
+
+const passwordField = document.getElementById('newPassword');
+const confirmPasswordField = document.getElementById('confirmNewPassword');
+const messageField = document.getElementById('resultPassword');
+
+function checkPasswordMatch() {
+    const password = passwordField.value;
+    const confirmPassword = confirmPasswordField.value;
+
+    if (password === confirmPassword && password.length >=7) {
+            messageField.textContent = 'Les mots de passe correspondent.';
+            messageField.style.color = 'green';
+    } else if(password === confirmPassword && password.length <=6){
+            messageField.textContent = 'Le mot de passe doit contenir 7 caractères ou plus';
+            messageField.style.color = 'red';
+    } else if(password != confirmPassword && password.length >=7){
+            messageField.textContent = 'Les mots de passe ne correspondent pas';
+            messageField.style.color = 'red';
+    } else {
+            messageField.textContent = 'Le mot de passe doit contenir 7 caractères ou plus';
+            messageField.style.color = 'red';
+        }
+    }
+    
+
+passwordField.addEventListener('input', checkPasswordMatch);
+confirmPasswordField.addEventListener('input', checkPasswordMatch);
