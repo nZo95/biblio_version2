@@ -238,7 +238,7 @@ h3 {
   border: none;
   cursor: pointer;
   border-radius: 7px;
-  transition: all 0.6s;
+  transition: all 0.4;
 }
 
 .member .sign-member #buttonSubmit:hover {
