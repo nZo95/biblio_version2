@@ -10,7 +10,27 @@
 
 <?php
 require "header.php";
+
+// Récupérer les genres
+$genres = [];
+$query = "SELECT id, libelle FROM genre";
+$result = mysqli_query($link, $query);
+while ($row = mysqli_fetch_assoc($result)) {
+    $genres[] = $row;
+}
+
+// Récupérer les langues
+$langues = [];
+$query = "SELECT id, libelle FROM langue";
+$result = mysqli_query($link, $query);
+while ($row = mysqli_fetch_assoc($result)) {
+    $langues[] = $row;
+}
+
+
 ?>
+
+
 
   <div class="book-card">
 
@@ -26,8 +46,14 @@ require "header.php";
         <input type="date" id="date_publication" name="date_publication" placeholder="Date de publication" class="input">
         <br>
         
-        <input type="text" id="genre" name="genre" placeholder="Genre" class="input">
-        <br>
+        <select id="genre" name="genre" class="input">
+  <?php foreach ($genres as $genre) { ?>
+    <option value="<?php echo htmlspecialchars($genre['id']); ?>">
+      <?php echo htmlspecialchars($genre['libelle']); ?>
+    </option>
+  <?php } ?>
+</select>
+<br>
         
         <input type="text" id="editeur" name="editeur" placeholder="Editeur" class="input">
         <br>
@@ -35,8 +61,14 @@ require "header.php";
         <input type="text" id="auteur" name="auteur" placeholder="Auteur" class="input">
         <br>
         
-        <input type="text" id="langue" name="langue" placeholder="Langue" class="input">
-        <br>
+        <select id="langue" name="langue" class="input">
+  <?php foreach ($langues as $langue) { ?>
+    <option value="<?php echo htmlspecialchars($langue['id']); ?>">
+      <?php echo htmlspecialchars($langue['libelle']); ?>
+    </option>
+  <?php } ?>
+</select>
+<br>
         
         <textarea id="description" name="description" rows="4" placeholder="Description du livre" class="input"></textarea>
         <br>
@@ -60,35 +92,7 @@ require "header.php";
 
   </div>
 
-<?php
 
-
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//   $isbn = $_POST['isbn'];
-//   $titre = $_POST['titre'];
-//   $date_publication = $_POST['date_publication'];
-//   $genre = $_POST['genre'];
-//   $editeur = $_POST['editeur'];
-//   $auteur = $_POST['auteur'];
-//   $langue = $_POST['langue'];
-//   $description = $_POST['description'];
-
-
-//   $sql = "INSERT INTO livre (isbn, titre, annee, nbpages, reserve, id, id_genre, id_editeur, résumé)
-//     VALUES ($isbn, '$titre', '$date_publication', , , '$langue', '$genre', '$editeur', '$description');";
-
-  
-//   $result = mysqli_query($sql);
-
-//   if ($result) {
-//     echo "<p>Le livre a été ajouté avec succès.</p>";
-//   } else {
-//     echo "<p>Une erreur est survenue lors de l'insertion du livre.</p>";
-//   }
-
-// }
-
-?>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
