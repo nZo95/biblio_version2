@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface Administrateur ASF</title>
-    <link rel="stylesheet" href="styles/admin.css">
-</head>
-<body>
-    
-<?php
-require "header.php";
-?>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interface Administrateur ASF</title>
+        <link rel="stylesheet" href="styles/json.css">
+    </head>
+    <body>
+        <?php require('header.php'); ?>
 
-    <div class="space"></div>
-        <h1 class="h1_json"> Demandes d'activation de compte</h1>
-    <div class="space"><hr></div>
-
-    <div class="json_container">
-        <p>Importer le JSON :</p>
-        <a href=""><ion-icon name="cloud-download-outline"></ion-icon></a>
-    </div>
-    
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="scripts/admin.js"></script>
-</body>
+        <?php
+            if(isset($_FILES["jsonFile"]["tmp_name"]))
+            {
+                $fileTmp = $_FILES["jsonFile"]["tmp_name"];
+                copy($fileTmp, "uploads/recent_import.json");
+                
+                $json = json_decode(file_get_contents("uploads/recent_import.json"));
+                foreach($json as $line)
+                {
+                    //echo "Card : " . $line->card . "<br>";
+                }
+            }
+        ?>
+            
+        <div class="space"></div>
+            <h2>Importer le JSON</h1>
+        <div class="space"><hr></div>
+        
+        <form id="importJson" name="importJson" enctype="multipart/form-data" method="post" action="json_admin.php">
+            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_file_size ?>">
+            <input name="jsonFile" type="file" id="jsonFile" size="200">
+            <input type="button" id="jsonSubmit" name="jsonSubmit" value="Envoyer" onClick="document.getElementById('importJson').submit();"/>
+        </form>
+        <div class="space"></div>
+        <?php require('footer.php'); ?>
+    </body>
 </html>
