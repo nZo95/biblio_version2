@@ -47,13 +47,13 @@ while ($row = mysqli_fetch_assoc($result)) {
         <br>
         
         <select id="genre" name="genre" class="input">
-  <?php foreach ($genres as $genre) { ?>
-    <option value="<?php echo htmlspecialchars($genre['id']); ?>">
-      <?php echo htmlspecialchars($genre['libelle']); ?>
-    </option>
-  <?php } ?>
-</select>
-<br>
+          <?php foreach ($genres as $genre) { ?>
+            <option value="<?php echo htmlspecialchars($genre['id']); ?>">
+              <?php echo htmlspecialchars($genre['libelle']); ?>
+            </option>
+          <?php } ?>
+        </select>
+        <br>
         
         <input type="text" id="editeur" name="editeur" placeholder="Editeur" class="input">
         <br>
@@ -62,13 +62,13 @@ while ($row = mysqli_fetch_assoc($result)) {
         <br>
         
         <select id="langue" name="langue" class="input">
-  <?php foreach ($langues as $langue) { ?>
-    <option value="<?php echo htmlspecialchars($langue['id']); ?>">
-      <?php echo htmlspecialchars($langue['libelle']); ?>
-    </option>
-  <?php } ?>
-</select>
-<br>
+          <?php foreach ($langues as $langue) { ?>
+            <option value="<?php echo htmlspecialchars($langue['id']); ?>">
+              <?php echo htmlspecialchars($langue['libelle']); ?>
+            </option>
+          <?php } ?>
+        </select>
+        <br>
         
         <textarea id="description" name="description" rows="4" placeholder="Description du livre" class="input"></textarea>
         <br>
