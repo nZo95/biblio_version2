@@ -29,3 +29,10 @@ document.getElementById('removeImageButton').addEventListener('click', function(
     // C'est pr réafficher le logo du + et le texte "Ajouter une image de couverture"
     document.querySelector('.add-image').style.display = 'flex';
 });
+
+function submitForm() {
+    const form = document.getElementById('bookForm');
+    const formData = new FormData(form);
+    let queryString = new URLSearchParams(formData).toString();
+    window.location.href = `submit.php?${queryString}`;
+  }
