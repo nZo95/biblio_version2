@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Administrateur ASF</title>
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+   
+<?php
+require "header.php";
+?>
+
+<h2 class="h2_submit">Livre ajouté avec succès !</h2>
+<form action="ajout_livre_admin.php" class="form_submit">
+    <input type="submit" value="Retour à l'accueil" />
+</form>
+
 <?php
 
 $host = "localhost";
@@ -51,7 +70,7 @@ if($stmt = mysqli_prepare($link, $sql)){
     $param_resume = $description;
 
     if(mysqli_stmt_execute($stmt)){
-        echo "Livre ajouté avec succès.";
+        echo "";
     } else{
         echo "ERROR: Could not execute query: $sql. " . mysqli_error($link);
     }
@@ -62,3 +81,8 @@ if($stmt = mysqli_prepare($link, $sql)){
 mysqli_stmt_close($stmt);
 mysqli_close($link);
 ?>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
