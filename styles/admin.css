@@ -164,6 +164,11 @@ textarea {
 
 /* =============== Page de réini de mdp ================ */
 
+.h1_json {
+  text-align: center;
+  color: var(--text-color);
+}
+
 .json_container {
   background-color: var(--panel);
   margin: 20vh auto; 

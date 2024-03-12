@@ -12,6 +12,10 @@
 require "header.php";
 ?>
 
+    <div class="space"></div>
+        <h1 class="h1_json"> Demandes d'activation de compte</h1>
+    <div class="space"><hr></div>
+
     <div class="json_container">
         <p>Importer le JSON :</p>
         <a href=""><ion-icon name="cloud-download-outline"></ion-icon></a>
