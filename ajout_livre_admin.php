@@ -92,57 +92,57 @@ while ($row = mysqli_fetch_assoc($result)) {
     <script src="scripts/admin.js"></script>
 
 
-    <script>
-    document.getElementById('bookForm').onsubmit = function(event) {
+      <script>
+  document.getElementById('bookForm').onsubmit = function(event) {
+    
     event.preventDefault();
-  
-    var missingFields = [];
+    
+    var errorMessages = '';
 
     var isbn = document.getElementById('isbn').value;
     if (!isbn) {
-        missingFields.push('ISBN');
+      errorMessages += 'Le champ ISBN est requis.<br>';
     }
-  
+    
     var titre = document.getElementById('titre').value;
     if (!titre) {
-        missingFields.push('titre');
+      errorMessages += 'Le champ titre est requis.<br>';
     }
 
     var date_publication = document.getElementById('date_publication').value;
     if (!date_publication) {
-        missingFields.push('date de publication');
+      errorMessages += 'Le champ date de publication est requis.<br>';
     }
 
     var langue = document.getElementById('langue').value;
     if (!langue) {
-        missingFields.push('langue');
+      errorMessages += 'Le champ langue est requis.<br>';
     }
 
     var genre = document.getElementById('genre').value;
     if (!genre) {
-        missingFields.push('genre');
+      errorMessages += 'Le champ genre est requis.<br>';
     }
-  
+    
     var editeur = document.getElementById('editeur').value;
     if (!editeur) {
-        missingFields.push('éditeur');
+      errorMessages += 'Le champ éditeur est requis.<br>';
     }
 
     var description = document.getElementById('description').value;
     if (!description) {
-        missingFields.push('description');
+      errorMessages += 'Le champ description est requis.<br>';
     }
-  
-    if (missingFields.length > 0) {
-       
-        var errorMessage = 'Les champs ' + missingFields.join(', ') + ' sont requis.';
-        document.getElementById('errorMessages').innerHTML = errorMessage;
+    
+    if (errorMessages) {
+      document.getElementById('errorMessages').innerHTML = errorMessages;
     } else {
-        this.submit();
+      
+      this.submit();
     }
-};
+  };
 
-  </script>
+</script>
 
 
     <?php require('footer.php'); ?>
