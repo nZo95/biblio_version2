@@ -94,54 +94,55 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
       <script>
-  document.getElementById('bookForm').onsubmit = function(event) {
-    
+ document.getElementById('bookForm').onsubmit = function(event) {
     event.preventDefault();
-    
-    var errorMessages = '';
+  
+    var missingFields = [];
 
     var isbn = document.getElementById('isbn').value;
     if (!isbn) {
-      errorMessages += 'Le champ ISBN est requis.<br>';
+        missingFields.push('ISBN');
     }
-    
+  
     var titre = document.getElementById('titre').value;
     if (!titre) {
-      errorMessages += 'Le champ titre est requis.<br>';
+        missingFields.push('titre');
     }
 
     var date_publication = document.getElementById('date_publication').value;
     if (!date_publication) {
-      errorMessages += 'Le champ date de publication est requis.<br>';
+        missingFields.push('date de publication');
     }
 
     var langue = document.getElementById('langue').value;
     if (!langue) {
-      errorMessages += 'Le champ langue est requis.<br>';
+        missingFields.push('langue');
     }
 
     var genre = document.getElementById('genre').value;
     if (!genre) {
-      errorMessages += 'Le champ genre est requis.<br>';
+        missingFields.push('genre');
     }
-    
+  
     var editeur = document.getElementById('editeur').value;
     if (!editeur) {
-      errorMessages += 'Le champ éditeur est requis.<br>';
+        missingFields.push('éditeur');
     }
 
     var description = document.getElementById('description').value;
     if (!description) {
-      errorMessages += 'Le champ description est requis.<br>';
+        missingFields.push('description');
     }
-    
-    if (errorMessages) {
-      document.getElementById('errorMessages').innerHTML = errorMessages;
+  
+    if (missingFields.length > 0) {
+        // Créer un message d'erreur unique en listant tous les champs manquants.
+        var errorMessage = 'Les champs ' + missingFields.join(', ') + ' sont requis.';
+        document.getElementById('errorMessages').innerHTML = errorMessage;
     } else {
-      
-      this.submit();
+        this.submit();
     }
-  };
+};
+
 
 </script>
 
