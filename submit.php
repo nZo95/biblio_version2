@@ -32,12 +32,12 @@ if($link === false){
 $isbn = mysqli_real_escape_string($link, $_POST['isbn']);
 $titre = mysqli_real_escape_string($link, $_POST['titre']);
 $date_publication = mysqli_real_escape_string($link, $_POST['date_publication']);
-$id_genre = mysqli_real_escape_string($link, $_POST['genre']); // Ajustement ici
+$id_genre = mysqli_real_escape_string($link, $_POST['genre']); 
 $editeur = mysqli_real_escape_string($link, $_POST['editeur']);
-$id_langue = mysqli_real_escape_string($link, $_POST['langue']); // Ajustement ici
+$id_langue = mysqli_real_escape_string($link, $_POST['langue']); 
 $description = mysqli_real_escape_string($link, $_POST['description']);
 
-// Conversion de l'éditeur en id_editeur (si l'éditeur est encore entré comme texte)
+// Convertir l'éditeur en id_editeur 
 $queryEditeur = "SELECT id FROM editeur WHERE libelle = ?";
 if($stmtEditeur = mysqli_prepare($link, $queryEditeur)){
     mysqli_stmt_bind_param($stmtEditeur, "s", $editeur);
@@ -54,17 +54,14 @@ if($stmtEditeur = mysqli_prepare($link, $queryEditeur)){
     echo "ERROR: Could not prepare query: $queryEditeur. " . mysqli_error($link);
 }
 
-// Ajustez la requête SQL ici avec le bon nom de colonne pour la langue. Ici, j'utilise `id` comme vous l'avez indiqué.
 $sql = "INSERT INTO livre (isbn, titre, annee, id, id_genre, id_editeur, résumé) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 if($stmt = mysqli_prepare($link, $sql)){
-    // Notez que la variable $param_id_langue est utilisée pour la colonne `id` qui correspond à la langue du livre.
     mysqli_stmt_bind_param($stmt, "ssiiiss", $param_isbn, $param_titre, $param_annee, $param_id_langue, $param_id_genre, $param_id_editeur, $param_resume);
-
     $param_isbn = $isbn;
     $param_titre = $titre;
     $param_annee = substr($date_publication, 0, 4); 
-    $param_id_langue = $id_langue; // Cette variable correspond à l'ID de la langue
+    $param_id_langue = $id_langue;
     $param_id_genre = $id_genre;
     $param_id_editeur = $id_editeur;
     $param_resume = $description;
