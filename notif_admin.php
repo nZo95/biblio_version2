@@ -10,54 +10,38 @@
     
 <?php
 require "header.php";
+$sql = "SELECT `id`, `mdp` FROM `inscription`";
+$result = $link->query($sql); 
 ?>
     <div class="space"></div>
         <h1 class="h1_mdp"> Demandes d'activation de compte</h1>
     <div class="space"><hr></div>
 
     <div class="account_container">
-        <div class="request_card">
-            <h2>Nom Prénom</h2>
-            <p>Identifiant : XXXX</p>
-            <p>Date de demande : XX/XX/XXXX</p>
-            <button class="bouton_autoriser">Autoriser</button>
-            <button class="bouton_refuser">Refuser</button>
-        </div>
-
-        <div class="request_card">
-            <h2>Nom Prénom</h2>
-            <p>Identifiant : XXXX</p>
-            <p>Date de demande : XX/XX/XXXX</p>
-            <button class="bouton_autoriser">Autoriser</button>
-            <button class="bouton_refuser">Refuser</button>
-        </div>
-        <div class="request_card">
-            <h2>Nom Prénom</h2>
-            <p>Identifiant : XXXX</p>
-            <p>Date de demande : XX/XX/XXXX</p>
-            <button class="bouton_autoriser">Autoriser</button>
-            <button class="bouton_refuser">Refuser</button>
-        </div>
-        <div class="request_card">
-            <h2>Nom Prénom</h2>
-            <p>Identifiant : XXXX</p>
-            <p>Date de demande : XX/XX/XXXX</p>
-            <button class="bouton_autoriser">Autoriser</button>
-            <button class="bouton_refuser">Refuser</button>
-        </div>
-        <div class="request_card">
-            <h2>Nom Prénom</h2>
-            <p>Identifiant : XXXX</p>
-            <p>Date de demande : XX/XX/XXXX</p>
-            <button class="bouton_autoriser">Autoriser</button>
-            <button class="bouton_refuser">Refuser</button>
-        </div>
+        <?php
+        if ($result->num_rows > 0) {
+            
+            while($row = $result->fetch_assoc()) {
+                $maskedPassword = str_repeat('*', strlen($row['mdp'])); 
+                $idUtilisateur =($row['id']) ;
+                echo '<div class="request_card">';
+                echo "<h2>Identifiant : " . $row['id'] . "</h2>"; 
+                echo "<p>Mot de passe : $maskedPassword</p>"; // Affiche des * à la place du mdp
+                echo "<a href ='?id=".$idUtilisateur."&action=accept'>Accepter</a>";
+                echo "<a href ='?id=".$idUtilisateur."&action=refuse'>Refuser</a>";
+                echo '</div>';
+            }
+        } else {
+            echo "Aucune demande d'activation de compte pour le moment.";
+        }
         
+        ?>
     </div>
-    
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/admin.js"></script>
+
+    <?php require "footer.php"; ?>
 </body>
 </html>
