@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </select>
         <br>
         
-        <input type="text" id="editeur" name="editeur" placeholder="Editeur" class="input">
+        <input type="text" id="editeur" name="editeur" placeholder="Editeur, ex : Hutchinson / Harcourt / Julliard / Ace Book / Chilton Books ..." class="input">
         <br>
       
         <input type="text" id="auteur" name="auteur" placeholder="Auteur" class="input">
