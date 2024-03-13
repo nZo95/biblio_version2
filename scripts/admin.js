@@ -36,3 +36,5 @@ function submitForm() {
     let queryString = new URLSearchParams(formData).toString();
     window.location.href = `submit.php?${queryString}`;
   }
+
+  
