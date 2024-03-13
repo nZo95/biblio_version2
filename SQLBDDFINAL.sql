@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 CREATE TABLE compte(
-        id     Int NOT NULL ,
+        id     Varchar(255) NOT NULL ,
         admin  Bool NOT NULL ,
         nom    Varchar (50) NOT NULL ,
         prenom Varchar (50) NOT NULL ,
@@ -149,7 +149,7 @@ INSERT INTO `role` (id,libelle) VALUES
 #------------------------------------------------------------
 
 CREATE TABLE inscription(
-        id  Varchar (50) NOT NULL ,
+        id  Varchar (255) NOT NULL ,
         mdp Varchar (50) NOT NULL
 	,CONSTRAINT inscription_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
@@ -161,7 +161,7 @@ CREATE TABLE inscription(
 
 CREATE TABLE favoris(
         isbn Varchar (255) NOT NULL ,
-        id   Int NOT NULL
+        id   Varchar(255) NOT NULL
 	,CONSTRAINT favoris_PK PRIMARY KEY (isbn,id)
 
 	,CONSTRAINT favoris_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
@@ -210,7 +210,7 @@ INSERT INTO `auteur` (id,isbn,id_role) VALUES
 
 CREATE TABLE commentaire(
         isbn        Varchar (255) NOT NULL ,
-        id          Int NOT NULL ,
+        id          Varchar(255) NOT NULL,
         commentaire Text NOT NULL
 	,CONSTRAINT commentaire_PK PRIMARY KEY (isbn,id)
 
@@ -225,7 +225,7 @@ CREATE TABLE commentaire(
 
 CREATE TABLE note(
         isbn   Varchar (255) NOT NULL ,
-        id     Int NOT NULL ,
+        id     Varchar(255) NOT NULL ,
         etoile Int NOT NULL
 	,CONSTRAINT note_PK PRIMARY KEY (isbn,id)
 
@@ -235,26 +235,12 @@ CREATE TABLE note(
 
 
 #------------------------------------------------------------
-# Table: EstVerifié
-#------------------------------------------------------------
-
-CREATE TABLE estverifie(
-        id         Varchar (50) NOT NULL ,
-        id_compte Int NOT NULL
-	,CONSTRAINT estverifie_PK PRIMARY KEY (id,id_compte)
-
-	,CONSTRAINT estverifie_Inscription_FK FOREIGN KEY (id) REFERENCES inscription(id)
-	,CONSTRAINT estverifie_compte0_FK FOREIGN KEY (id_compte) REFERENCES compte(id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: reserve
 #------------------------------------------------------------
 
 CREATE TABLE reserve(
         isbn Varchar (255) NOT NULL ,
-        id   Int NOT NULL ,
+        id   Varchar(255) NOT NULL ,
         date Date NOT NULL
 	,CONSTRAINT reserve_PK PRIMARY KEY (isbn,id)
 
