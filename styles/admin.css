@@ -223,3 +223,7 @@ input[type="submit"] {
 .p_form {
   color: var(--subtext-color)   ;
 }
+
+footer {
+  margin-top: 20.8%;
+}
