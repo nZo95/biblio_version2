@@ -54,7 +54,7 @@ if($stmtEditeur = mysqli_prepare($link, $queryEditeur)){
     echo "ERROR: Could not prepare query: $queryEditeur. " . mysqli_error($link);
 }
 
-$sql = "INSERT INTO livre (isbn, titre, annee, id, id_genre, id_editeur, résumé) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO livre (isbn, titre, annee, id, id_genre, id_editeur, resume) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 if($stmt = mysqli_prepare($link, $sql)){
     mysqli_stmt_bind_param($stmt, "ssiiiss", $param_isbn, $param_titre, $param_annee, $param_id_langue, $param_id_genre, $param_id_editeur, $param_resume);
