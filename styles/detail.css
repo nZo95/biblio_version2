@@ -27,10 +27,18 @@ h3 {
 
 .space {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 2.5em;
 }
 
 .space hr {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color)
+}
+
+.space .down {
+  margin-top: 2.5em;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -93,4 +101,59 @@ h3 {
   text-align: center;
 
   color: var(--text-color);
+}
+
+.container-notice {
+  max-width: 70%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notice {
+  border-radius: 7px;
+  background: var(--panel);
+  align-items: center;
+}
+
+.notice p {
+  padding-top: 0.6em;
+  font-size: 32px;
+  font-family: "Ubuntu";
+  text-align: center;
+
+  color: var(--text-color);
+}
+
+.notice select {
+  width: 30%;
+  margin-top: 1.6em;
+  margin-left: 35%;
+  border-radius: 7px;
+  border: none;
+  outline: solid 4px;
+  outline-color: var(--btext-color);
+
+  font-size: 24px;
+  font-family: "Ubuntu";
+  text-align: center;
+
+  color: var(--text-color);
+}
+
+.notice textarea {
+  width: 50%;
+  margin-top: 1.6em;
+  margin-left: 25%;
+  border-radius: 7px;
+  resize: none;
+  vertical-align: vertical;
+  border: none;
+  outline: solid 4px;
+  outline-color: var(--btext-color);
+
+  font-size: 18px;
+  font-family: "Ubuntu";
+
+  color: var(--btext-color);
 }

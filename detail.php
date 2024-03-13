@@ -67,16 +67,23 @@
           
           echo '</div>';
           ?>
-          <!-- <div class="text-item">
-            <p class="center">Livre de Science-fiction</p>
-            <p class="center">Edition Millenium, publié en 1995</p>
-            <p class="center">Langue Originale : Anglais</p>
-            <h3>Résumé : </h3>
-            <p class="resume">Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-          </div> -->
         </div>
       </div>
-      <div class="space"></div>
+      <div class="space"><hr class="down"></div>
+      <div class="container-notice">
+        <form class="notice">
+          <p>Donnez votre avis sur <?php echo "<em>" . $titleBook . "</em>" ?></p>
+          <select name="note" class="input">
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+          </select>
+          <br>
+          <textarea name="commentary" rows="4" placeholder="Votre commentaire" class="input"></textarea>
+        </form>
+      </div>
     </main>
   </body>
   <?php require('footer.php'); ?>
