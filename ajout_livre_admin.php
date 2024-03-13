@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <div class="left-panel">
 
-      <h1>Ajouter un livre</h1>
+      <h1 class="p_form">Ajouter un livre</h1>
       <div id="errorMessages" style="color: red;"></div>
       <form action="submit.php" method="post" id="bookForm">
         <input type="text" id="isbn" name="isbn" placeholder="ISBN du livre" class="input">
@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_assoc($result)) {
       
         <input type="date" id="date_publication" name="date_publication" placeholder="Date de publication" class="input">
         <br>
-        
+        <p class="p_form">Genre : </p>
         <select id="genre" name="genre" class="input">
           <?php foreach ($genres as $genre) { ?>
             <option value="<?php echo htmlspecialchars($genre['id']); ?>">
@@ -56,6 +56,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <input type="text" id="auteur" name="auteur" placeholder="Auteur" class="input">
         <br>
         
+        <p class="p_form">Langue : </p>
         <select id="langue" name="langue" class="input">
           <?php foreach ($langues as $langue) { ?>
             <option value="<?php echo htmlspecialchars($langue['id']); ?>">
