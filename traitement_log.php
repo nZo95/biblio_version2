@@ -38,5 +38,4 @@ if (isset($_POST['newPassword']) && isset($_POST['confirmNewPassword'])) {
         echo "Numéro d'identification ou mot de passe incorrect.";
     }
 }
-
 ?>
