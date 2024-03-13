@@ -23,11 +23,12 @@ $result = $link->query($sql);
             
             while($row = $result->fetch_assoc()) {
                 $maskedPassword = str_repeat('*', strlen($row['mdp'])); 
+                $idUtilisateur =($row['id']) ;
                 echo '<div class="request_card">';
-                echo "<h2>Identifiant : " . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</h2>"; 
+                echo "<h2>Identifiant : " . $row['id'] . "</h2>"; 
                 echo "<p>Mot de passe : $maskedPassword</p>"; // Affiche des * à la place du mdp
-                echo '<button class="bouton_autoriser">Autoriser</button>';
-                echo '<button class="bouton_refuser">Refuser</button>';
+                echo "<a href ='?id=".$idUtilisateur."&action=accept'>Accepter</a>";
+                echo "<a href ='?id=".$idUtilisateur."&action=refuse'>Refuser</a>";
                 echo '</div>';
             }
         } else {
