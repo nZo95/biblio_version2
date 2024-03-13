@@ -37,7 +37,7 @@ $editeur = mysqli_real_escape_string($link, $_POST['editeur']);
 $id_langue = mysqli_real_escape_string($link, $_POST['langue']); 
 $description = mysqli_real_escape_string($link, $_POST['description']);
 
-// Convertir l'éditeur en id_editeur 
+// Convertir de l'éditeur en id_editeur 
 $queryEditeur = "SELECT id FROM editeur WHERE libelle = ?";
 if($stmtEditeur = mysqli_prepare($link, $queryEditeur)){
     mysqli_stmt_bind_param($stmtEditeur, "s", $editeur);
