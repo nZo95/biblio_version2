@@ -11,7 +11,7 @@
 <?php
 require "header.php";
 
-// Récupérer les genres
+
 $genres = [];
 $query = "SELECT id, libelle FROM genre";
 $result = mysqli_query($link, $query);
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $genres[] = $row;
 }
 
-// Récupérer les langues
+
 $langues = [];
 $query = "SELECT id, libelle FROM langue";
 $result = mysqli_query($link, $query);
