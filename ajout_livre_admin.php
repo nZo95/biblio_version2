@@ -11,14 +11,12 @@
 <?php
 require "header.php";
 
-
 $genres = [];
 $query = "SELECT id, libelle FROM genre";
 $result = mysqli_query($link, $query);
 while ($row = mysqli_fetch_assoc($result)) {
     $genres[] = $row;
 }
-
 
 $langues = [];
 $query = "SELECT id, libelle FROM langue";
@@ -27,16 +25,13 @@ while ($row = mysqli_fetch_assoc($result)) {
     $langues[] = $row;
 }
 
-
 ?>
-
-
-
   <div class="book-card">
 
     <div class="left-panel">
 
       <h1>Ajouter un livre</h1>
+      <div id="errorMessages" style="color: red;"></div>
       <form action="submit.php" method="post" id="bookForm">
         <input type="text" id="isbn" name="isbn" placeholder="ISBN du livre" class="input">
         
@@ -92,11 +87,63 @@ while ($row = mysqli_fetch_assoc($result)) {
 
   </div>
 
-
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/admin.js"></script>
+
+
+    <script>
+    document.getElementById('bookForm').onsubmit = function(event) {
+    event.preventDefault();
+  
+    var missingFields = [];
+
+    var isbn = document.getElementById('isbn').value;
+    if (!isbn) {
+        missingFields.push('ISBN');
+    }
+  
+    var titre = document.getElementById('titre').value;
+    if (!titre) {
+        missingFields.push('titre');
+    }
+
+    var date_publication = document.getElementById('date_publication').value;
+    if (!date_publication) {
+        missingFields.push('date de publication');
+    }
+
+    var langue = document.getElementById('langue').value;
+    if (!langue) {
+        missingFields.push('langue');
+    }
+
+    var genre = document.getElementById('genre').value;
+    if (!genre) {
+        missingFields.push('genre');
+    }
+  
+    var editeur = document.getElementById('editeur').value;
+    if (!editeur) {
+        missingFields.push('éditeur');
+    }
+
+    var description = document.getElementById('description').value;
+    if (!description) {
+        missingFields.push('description');
+    }
+  
+    if (missingFields.length > 0) {
+       
+        var errorMessage = 'Les champs ' + missingFields.join(', ') + ' sont requis.';
+        document.getElementById('errorMessages').innerHTML = errorMessage;
+    } else {
+        this.submit();
+    }
+};
+
+  </script>
+
 
     <?php require('footer.php'); ?>
 
