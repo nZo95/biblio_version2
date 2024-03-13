@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </select>
         <br>
         
-        <textarea id="description" name="description" rows="4" placeholder="Description du livre" class="input"></textarea>
+        <textarea id="description" name="description" rows="4" placeholder="Résumé du livre" class="input"></textarea>
         <br>
 
         <button class="send-button">Envoyer</button>
