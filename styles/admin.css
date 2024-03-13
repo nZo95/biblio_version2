@@ -160,6 +160,11 @@ textarea {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
+.bouton_autoriser, .bouton_refuser {
+  margin: 10px;
+  text-decoration: none;
+}
+
 /* =============== Page de réini de mdp ================ */
 
 .h1_json {

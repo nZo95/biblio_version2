@@ -10,8 +10,18 @@
     
 <?php
 require "header.php";
+
+if(isset($_GET["id"]) && isset($_GET["action"])){
+    $sql_refuse = "DELETE FROM inscription WHERE id = $_GET[`id`];";
+    if($_GET["action"] == "accept"){
+        $sql_accept = "INSERT INTO compte (id, admin, nom, prenom, mdp) VALUES ($_GET[`id`], 0, ` `, ` `, $_GET[`mdp`]);";        
+    }
+    else if ($_GET["action"] == "refuse") {
+    }
+  } 
+
 $sql = "SELECT `id`, `mdp` FROM `inscription`";
-$result = $link->query($sql); 
+$result = $link->query($sql);
 ?>
     <div class="space"></div>
         <h1 class="h1_mdp"> Demandes d'activation de compte</h1>
@@ -27,8 +37,8 @@ $result = $link->query($sql);
                 echo '<div class="request_card">';
                 echo "<h2>Identifiant : " . $row['id'] . "</h2>"; 
                 echo "<p>Mot de passe : $maskedPassword</p>"; // Affiche des * à la place du mdp
-                echo "<a href ='?id=".$idUtilisateur."&action=accept'>Accepter</a>";
-                echo "<a href ='?id=".$idUtilisateur."&action=refuse'>Refuser</a>";
+                echo "<a class='bouton_autoriser' href ='?id=".$idUtilisateur."&action=accept'>Accepter</a>";
+                echo "<a class='bouton_refuser'href ='?id=".$idUtilisateur."&action=refuse'>Refuser</a>";
                 echo '</div>';
             }
         } else {
