@@ -151,8 +151,6 @@ textarea {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
-
-
 .bouton_refuser {
   background-color: #f44336; 
 }
@@ -163,6 +161,11 @@ textarea {
 }
 
 /* =============== Page de réini de mdp ================ */
+
+.h1_json {
+  text-align: center;
+  color: var(--text-color);
+}
 
 .json_container {
   background-color: var(--panel);
@@ -191,5 +194,29 @@ textarea {
 
 .json_container ion-icon:hover {
   color: var(--text-hover);
+}
+
+
+/* =============== Page de submit ================ */
+
+
+.h2_submit {
+  color: var(--subtext-color);
+  margin: 20px; 
+  text-align: center; 
+}
+
+.form_submit {
+  position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit"] {
+  cursor: pointer;
 }
 

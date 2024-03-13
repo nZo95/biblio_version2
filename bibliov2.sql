@@ -88,7 +88,6 @@ CREATE TABLE livre(
         résumé   Varchar(4096) NOT NULL
 
 	,CONSTRAINT livre_PK PRIMARY KEY (isbn)
-
 	,CONSTRAINT livre_langue_FK FOREIGN KEY (id) REFERENCES langue(id)
 	,CONSTRAINT livre_genre0_FK FOREIGN KEY (id_genre) REFERENCES genre(id)
 	,CONSTRAINT livre_editeur1_FK FOREIGN KEY (id_editeur) REFERENCES editeur(id)

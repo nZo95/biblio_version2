@@ -30,5 +30,9 @@ document.getElementById('removeImageButton').addEventListener('click', function(
     document.querySelector('.add-image').style.display = 'flex';
 });
 
-
-
+function submitForm() {
+    const form = document.getElementById('bookForm');
+    const formData = new FormData(form);
+    let queryString = new URLSearchParams(formData).toString();
+    window.location.href = `submit.php?${queryString}`;
+  }
