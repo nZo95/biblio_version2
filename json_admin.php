@@ -28,15 +28,18 @@
                 $json = json_decode($content);
                 foreach($json as $line)
                 {
-                    $countAccountQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM compte WHERE id = " . $line->card . ";"));
-                    $countAccountQuery = intval($countQueryFetch["count(*)"]);
-                    $countBookQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM livre WHERE isbn = " . $line->isbn . ";"));
+                    $countAccountQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM compte WHERE id = '" . $line->card . "';"));
+                    $countAccountQuery = intval($countAccountQueryFetch["count(*)"]);
+                    $countBookQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM livre WHERE isbn = '" . $line->isbn . "';"));
                     $countBookQuery = intval($countBookQueryFetch["count(*)"]);
+                    $countReserveQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM reserve WHERE isbn = '" . $line->isbn . "';"));
+                    $countReserveQuery = intval($countBookQueryFetch["count(*)"]);
                     
-                    if ($countAccountQuery == 0 || $countBookQuery == 0) { continue; }
+                    if ($countAccountQuery == 0 || $countBookQuery == 0 || $countReserveQuery == 1) { continue; }
 
-                    
-                    //echo "Card : " . $line->card . "<br>";
+                    $stmt = $link->prepare("INSERT INTO reserve (isbn, id, date) VALUES (?, ?, ?)");
+                    $stmt->execute(array($line->isbn, $line->card, $line->loan_date));
+                    $stmt->close();
                 }
             }
         ?>

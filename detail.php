@@ -19,9 +19,9 @@
 
           $isbn = htmlspecialchars($_GET["isbn"]);
 
-          $stmt = $link->prepare("SELECT count(*), titre, annee, nbpages, reserve, id, id_genre, id_editeur, résumé FROM livre WHERE isbn=?");
+          $stmt = $link->prepare("SELECT count(*), titre, annee, nbpages, id, id_genre, id_editeur, resume FROM livre WHERE isbn=?");
           $stmt->execute(array($isbn));
-          $stmt->bind_result($countBook, $titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
+          $stmt->bind_result($countBook, $titleBook, $yearBook, $countPagesBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
           $stmt->fetch();
           $stmt->close();
           

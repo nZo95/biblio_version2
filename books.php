@@ -33,6 +33,15 @@
           $countQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM genre;"));
           $countQuery = intval($countQueryFetch["count(*)"]);
 
+          if ($countQuery == 0) 
+          { 
+            echo '<div class="space"></div>
+            <h2>Aucun Livre</h2>
+            <div class="space"><hr></div>';
+
+            return;
+          }
+
           while ($row = mysqli_fetch_array($query))
           {
             $queryBook = mysqli_query($link, "SELECT isbn FROM livre WHERE id_genre = " . $row["id"] . ";");
