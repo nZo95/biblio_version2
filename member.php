@@ -67,29 +67,29 @@
         </div>
     </section>
     <hr>
-    <section>
-        <div class="space">
-            <h1>Favoris</h1>
-            <div class="container">
-                <div class="slider-wrapper">
-                    <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-                    <div class="image-list">
-                        <img src="images/9780090898305.jpg" alt="" class="image-item">
-                        <img src="images/9780151001637.jpg" alt="" class="image-item">
-                        <img src="images/9780307792365.jpg" alt="" class="image-item">
-                        <img src="images/9780613135818.jpg" alt="" class="image-item">
-                        <img src="images/9782253087830.jpg" alt="" class="image-item">
-                    </div>
-                    <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
-                </div>
-            </div>
-            <div class="slider-scrollbar">
-                <div class="scrollbar-track">
-                    <div class="scrollbar-thumb"></div>
-                </div>
-            </div>
+    <div class="space">
+        <h1>Favoris</h1>
+    </div>
+      <div class="container-slider-wrapper">
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+          <div class="image-list">
+            <div class="image-item"><img src="images/9780090898305.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9780151001637.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9780307792365.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9782330180805.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9783746612249.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9780340960196.jpg" alt=""></div>
+            <div class="image-item"><img src="images/9780307969941.jpg" alt=""></div>
+          </div>
+          <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
         </div>
-    </section>
+    </div>
+    <div class="slider-scrollbar">
+        <div class="scrollbar-track">
+          <div class="scrollbar-thumb"></div>
+        </div>
+    </div>
     <hr>
     <div class ="space">
         <h1>Paramètres</h1>
@@ -102,14 +102,14 @@
                         <div class="user-input-box">
                             <label for="password">Mot de passe</label>
                             <input type="password"
-                                    id="fullName"
+                                    id="password"
                                     name="password"
                                     placeholder="Mot de passe"/>
                         </div>
                         <div class="user-input-box">
                             <label for="password">Confirmation</label>
                             <input type="password"
-                                    id="username"
+                                    id="cpassword"
                                     name="cpassword"
                                     placeholder="Confirmation Mot de passe"/>
                         </div>
