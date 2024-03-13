@@ -11,14 +11,18 @@
 <?php
 require "header.php";
 
-if(isset($_GET["id"]) && isset($_GET["action"])){
-    $sql_refuse = "DELETE FROM inscription WHERE id = $_GET[`id`];";
+if(isset($_GET["id"]) && isset($_GET["action"]))
+{
+    $sql_refuse = "DELETE FROM inscription WHERE id = '".$_GET['id']."';";
+    
     if($_GET["action"] == "accept"){
-        $sql_accept = "INSERT INTO compte (id, admin, nom, prenom, mdp) VALUES ($_GET[`id`], 0, ` `, ` `, $_GET[`mdp`]);";        
+        $sql_get_mdp = mysqli_fetch_array(mysqli_query($link, 'SELECT mdp FROM inscription WHERE id = "' . $_GET['id'] . '";'));
+        $sql_accept = "INSERT INTO compte (id, admin, nom, prenom, mdp) VALUES ('".$_GET['id']."', 0, ' ', ' ', '" . $sql_get_mdp['mdp'] . "');";        
+        mysqli_query($link, $sql_accept);
     }
-    else if ($_GET["action"] == "refuse") {
-    }
-  } 
+
+    mysqli_query($link, $sql_refuse);
+} 
 
 $sql = "SELECT `id`, `mdp` FROM `inscription`";
 $result = $link->query($sql);
