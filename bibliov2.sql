@@ -4,28 +4,27 @@
 
 
 #------------------------------------------------------------
-# Table: compte
+# Table: _compte
 #------------------------------------------------------------
 
 CREATE TABLE compte(
-        id     Int NOT NULL ,
+        id     Varchar(255) NOT NULL ,
         admin  Bool NOT NULL ,
         nom    Varchar (50) NOT NULL ,
         prenom Varchar (50) NOT NULL ,
-        mdp    Varchar (255) NOT NULL,
-        phone  Int NULL, 
-        CONSTRAINT compte_PK PRIMARY KEY (id)
+        mdp    Varchar (255) NOT NULL
+	,CONSTRAINT _compte_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
-        
+
 
 #------------------------------------------------------------
-# Table: editeur
+# Table: _editeur
 #------------------------------------------------------------
 
 CREATE TABLE editeur(
         id      Int  Auto_increment  NOT NULL ,
         libelle Varchar (255) NOT NULL
-	,CONSTRAINT editeur_PK PRIMARY KEY (id)
+	,CONSTRAINT _editeur_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 INSERT INTO `editeur` (id,libelle) VALUES 
@@ -41,7 +40,7 @@ INSERT INTO `editeur` (id,libelle) VALUES
  (10,'Gallimard');
 
 #------------------------------------------------------------
-# Table: genre
+# Table: _genre
 #------------------------------------------------------------
 
 CREATE TABLE genre(
@@ -54,9 +53,8 @@ INSERT INTO `genre` (id,libelle) VALUES
  (1,'Science-fiction'),
  (2,'Roman');
 
-
 #------------------------------------------------------------
-# Table: langue
+# Table: _langue
 #------------------------------------------------------------
 
 CREATE TABLE langue(
@@ -73,27 +71,26 @@ INSERT INTO `langue` (id,libelle) VALUES
 
 
 #------------------------------------------------------------
-# Table: livre
+# Table: _livre
 #------------------------------------------------------------
 
 CREATE TABLE livre(
-        isbn       Varchar (255) NOT NULL ,
-        titre      Varchar (50) NOT NULL ,
-        annee      Int ,
-        nbpages    Int ,
-        reserve    Bool NOT NULL ,
-        id         Int NOT NULL ,
+        isbn        Varchar (255) NOT NULL ,
+        titre       Varchar (50) NOT NULL ,
+        annee       Int ,
+        nbpages     Int ,
+        resume      Varchar (4096) NOT NULL ,
+        id          Int NOT NULL ,
         id_genre   Int NOT NULL ,
-        id_editeur Int,
-        résumé   Varchar(4096) NOT NULL
-
+        id_editeur Int
 	,CONSTRAINT livre_PK PRIMARY KEY (isbn)
+
 	,CONSTRAINT livre_langue_FK FOREIGN KEY (id) REFERENCES langue(id)
 	,CONSTRAINT livre_genre0_FK FOREIGN KEY (id_genre) REFERENCES genre(id)
 	,CONSTRAINT livre_editeur1_FK FOREIGN KEY (id_editeur) REFERENCES editeur(id)
 )ENGINE=InnoDB;
 
-INSERT INTO `livre` (isbn,titre,id_editeur,annee,id_genre,id,nbpages,résumé) VALUES 
+INSERT INTO `livre` (isbn,titre,id_editeur,annee,id_genre,id,nbpages,resume) VALUES 
  ('9780090898305','2001:' 'L''Odyssée De' ' L''espace',1,2001,'2'and '1',1,648,"À la fin du second millénaire, les hommes se sont lancés à la conquête du système solaire. Un jour ils partiront à la conquête des étoiles. Qu'y trouveront-ils ? Leurs égaux ou leurs maîtres ? Ce roman essaye dapporter une réponse à cette question"),
  ('9780151001637','Des Fleurs Pour Algernon',2,1968,'1',3,80,"Des fleurs pour Algernon est une œuvre de science-fiction dans laquelle il est question dun homme intellectuellement déficient qui se voit proposer l'opportunité de devenir intelligent. Charlie Gordon accepte de servir de cobaye et de subir une opération du cerveau qui augmentera ses capacités intellectuelles."),
  ('9780307792365','La Planete Des Singes',3,1963,'1' and '2',2,208,"Le roman raconte l'histoire de trois hommes qui explorent une planète lointaine similaire à la Terre, où les grands singes sont les espèces dominantes et intelligentes, alors que l'humanité est réduite à l'état animal.</br>Le narrateur, Ulysse Mérou, est capturé par les singes et se retrouve enfermé dans un laboratoire."),
@@ -105,17 +102,15 @@ INSERT INTO `livre` (isbn,titre,id_editeur,annee,id_genre,id,nbpages,résumé) V
  ('9782330180805','Silo',9,2012,'1',3,155,"Dans un futur post-apocalyptique indéterminé, quelques milliers de survivants ont établi une société dans un silo souterrain de 144 étages. Les règles de vie sont strictes. Pour avoir le droit de faire un enfant, les couples doivent s'inscrire à une loterie."),
  ('9783746612249','Malevil',10,1972,'1',2,240," À la suite d'une explosion, probablement nucléaire, qui a selon toute vraisemblance ravagé la Terre entière le dimanche de Pâques, en 1977, Emmanuel Comte et ses six compagnons (La Menou, Momo, Peyssou, Meyssonnier, Colin et Thomas) font du château de Malevil, dont la profonde cave leur a permis de survivre, la base de départ de leurs efforts de reconstruction de la civilisation, qui passera également par l'affrontement avec d'autres groupes de survivants, que ce soient des bandes errantes ou des groupes structurés nomades ou sédentaires.
                     Les premières questions font état de l'absence de femmes dans cette région, ce qui pose des problèmes quant à leur renouvellement de génération. L'arrivée de quelques femmes permet de lever cette inquiétude, tout en posant la question de la place de la femme dans leur nouvelle société, et également celle des unions et leur validité face à la situation.");
-
-
 #------------------------------------------------------------
-# Table: personne
+# Table: _personne
 #------------------------------------------------------------
 
 CREATE TABLE personne(
         id     Int  Auto_increment  NOT NULL ,
         nom    Varchar (255) NOT NULL ,
         prenom Varchar (255) NOT NULL
-	,CONSTRAINT personne_PK PRIMARY KEY (id)
+	,CONSTRAINT _personne_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 INSERT INTO `personne` (id,nom,prenom) VALUES 
@@ -136,30 +131,37 @@ INSERT INTO `personne` (id,nom,prenom) VALUES
  (15,'Denis','Sylvis'),
  (16,'Yoann','Gentric'),
  (17, 'William','Gibson');
-
 #------------------------------------------------------------
-# Table: role
+# Table: _role
 #------------------------------------------------------------
 
 CREATE TABLE role(
         id      Int  Auto_increment  NOT NULL ,
         libelle Varchar (255) NOT NULL
-	,CONSTRAINT role_PK PRIMARY KEY (id)
+	,CONSTRAINT _role_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
 INSERT INTO `role` (id,libelle) VALUES 
  (1,'Ecrivain'),
  (2,'Traducteur');
+#------------------------------------------------------------
+# Table: _Inscription
+#------------------------------------------------------------
 
+CREATE TABLE inscription(
+        id  Varchar (255) NOT NULL ,
+        mdp Varchar (50) NOT NULL
+	,CONSTRAINT inscription_PK PRIMARY KEY (id)
+)ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: favoris
+# Table: _favoris
 #------------------------------------------------------------
 
 CREATE TABLE favoris(
         isbn Varchar (255) NOT NULL ,
-        id   Int NOT NULL
+        id   Varchar(255) NOT NULL
 	,CONSTRAINT favoris_PK PRIMARY KEY (isbn,id)
 
 	,CONSTRAINT favoris_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
@@ -168,21 +170,21 @@ CREATE TABLE favoris(
 
 
 #------------------------------------------------------------
-# Table: Auteur
+# Table: _Auteur
 #------------------------------------------------------------
 
-CREATE TABLE Auteur(
-        id      Int NOT NULL ,
-        isbn    Varchar (255) NOT NULL ,
+CREATE TABLE auteur(
+        id       Int NOT NULL ,
+        isbn     Varchar (255) NOT NULL ,
         id_role Int NOT NULL
-	,CONSTRAINT Auteur_PK PRIMARY KEY (id,isbn,id_role)
+	,CONSTRAINT auteur_PK PRIMARY KEY (id,isbn,id_role)
 
-	,CONSTRAINT Auteur_personne_FK FOREIGN KEY (id) REFERENCES personne(id)
-	,CONSTRAINT Auteur_livre0_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
-	,CONSTRAINT Auteur_role1_FK FOREIGN KEY (id_role) REFERENCES role(id)
+	,CONSTRAINT auteur_personne_FK FOREIGN KEY (id) REFERENCES personne(id)
+	,CONSTRAINT auteur_livre0_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
+	,CONSTRAINT auteur_role1_FK FOREIGN KEY (id_role) REFERENCES role(id)
 )ENGINE=InnoDB;
 
-INSERT INTO `Auteur` (id,isbn,id_role) VALUES 
+INSERT INTO `auteur` (id,isbn,id_role) VALUES 
  (1,"9780090898305",1),
  (12,"9780090898305",2),
  (2,"9780151001637",1),
@@ -202,33 +204,44 @@ INSERT INTO `Auteur` (id,isbn,id_role) VALUES
  (16,"9782330180805",2),
  (11,"9783746612249",1);
 
-
 #------------------------------------------------------------
-# Table: Commentaire
+# Table: _Commentaire
 #------------------------------------------------------------
 
-CREATE TABLE Commentaire(
+CREATE TABLE commentaire(
         isbn        Varchar (255) NOT NULL ,
-        id          Int NOT NULL ,
+        id          Varchar(255) NOT NULL,
         commentaire Text NOT NULL
-	,CONSTRAINT Commentaire_PK PRIMARY KEY (isbn,id)
+	,CONSTRAINT commentaire_PK PRIMARY KEY (isbn,id)
 
-	,CONSTRAINT Commentaire_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
-	,CONSTRAINT Commentaire_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
+	,CONSTRAINT commentaire__livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
+	,CONSTRAINT commentaire__compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: Note
+# Table: _Note
 #------------------------------------------------------------
 
-CREATE TABLE Note(
+CREATE TABLE note(
         isbn   Varchar (255) NOT NULL ,
-        id     Int NOT NULL ,
+        id     Varchar(255) NOT NULL ,
         etoile Int NOT NULL
-	,CONSTRAINT Note_PK PRIMARY KEY (isbn,id)
+	,CONSTRAINT note_PK PRIMARY KEY (isbn,id)
 
-	,CONSTRAINT Note_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
-	,CONSTRAINT Note_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
+	,CONSTRAINT note_livre_FK FOREIGN KEY (isbn) REFERENCES livre(isbn)
+	,CONSTRAINT note_compte0_FK FOREIGN KEY (id) REFERENCES compte(id)
 )ENGINE=InnoDB;
 
+
+#------------------------------------------------------------
+# Table: reserve
+#------------------------------------------------------------
+
+CREATE TABLE reserve(
+        isbn Varchar (255) NOT NULL ,
+        id   Varchar(255) NOT NULL ,
+        date Date NOT NULL
+	,CONSTRAINT reserve_PK PRIMARY KEY (isbn,id)
+
+)ENGINE=InnoDB;

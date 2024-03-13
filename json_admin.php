@@ -11,13 +11,31 @@
 
         <?php
             if(isset($_FILES["jsonFile"]["tmp_name"]))
-            {
+            {   
                 $fileTmp = $_FILES["jsonFile"]["tmp_name"];
                 copy($fileTmp, "uploads/recent_import.json");
                 
-                $json = json_decode(file_get_contents("uploads/recent_import.json"));
+                $content = file_get_contents("uploads/recent_import.json");
+                if (str_contains($content, "card") != "1") 
+                {     
+                    echo '<div class="space"></div>
+                    <h2>JSON Incorrect</h1>
+                    <div class="space"><hr></div>';
+                    
+                    return; 
+                }
+
+                $json = json_decode($content);
                 foreach($json as $line)
                 {
+                    $countAccountQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM compte WHERE id = " . $line->card . ";"));
+                    $countAccountQuery = intval($countQueryFetch["count(*)"]);
+                    $countBookQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM livre WHERE isbn = " . $line->isbn . ";"));
+                    $countBookQuery = intval($countBookQueryFetch["count(*)"]);
+                    
+                    if ($countAccountQuery == 0 || $countBookQuery == 0) { continue; }
+
+                    
                     //echo "Card : " . $line->card . "<br>";
                 }
             }

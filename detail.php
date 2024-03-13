@@ -8,13 +8,31 @@
   <body>
     <main>
         <?php
+          if (!isset($_GET["isbn"])) 
+          { 
+            echo '<div class="space"></div>
+            <h2>ISBN Incorrect</h2>
+            <div class="space"><hr></div>';
+
+            return;
+          }
+
           $isbn = htmlspecialchars($_GET["isbn"]);
 
-          $stmt = $link->prepare("SELECT titre, annee, nbpages, reserve, id, id_genre, id_editeur, résumé FROM livre WHERE isbn=?");
+          $stmt = $link->prepare("SELECT count(*), titre, annee, nbpages, reserve, id, id_genre, id_editeur, résumé FROM livre WHERE isbn=?");
           $stmt->execute(array($isbn));
-          $stmt->bind_result($titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
+          $stmt->bind_result($countBook, $titleBook, $yearBook, $countPagesBook, $reserveBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
           $stmt->fetch();
           $stmt->close();
+          
+          if ($countBook == 0) 
+          { 
+            echo '<div class="space"></div>
+            <h2>ISBN Incorrect</h2>
+            <div class="space"><hr></div>';
+            
+            return;
+          }
 
           echo '<div class="space"></div>
                 <h2>' . $titleBook . '</h2>
