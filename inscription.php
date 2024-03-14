@@ -30,10 +30,10 @@
 
                     <div id="resultPassword"></div>
                 </div>
-                <button type="submit">Envoyer</button>
+                <input type="submit" name="envoi">Envoyer</input>
             </form>
         </div>
         <?php require('footer.php'); ?>
-        <script src="home.js"></script>
+        <script src="scripts/home.js"></script>
     </body>
 </html>

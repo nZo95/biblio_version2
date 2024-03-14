@@ -317,54 +317,29 @@ h3 {
   padding-bottom: 20px;
 }
 
-.container_form {
-  width: 400px;
-  margin: 0 auto;
+.connexion_f{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%; /* Ajustez cette valeur selon la largeur de votre formulaire */
+  background: var(--panel);
   padding: 20px;
-  background-color: #3c3e41;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.container_form h2 {
+.connexion_f{
   text-align: center;
+}
+.connexion_f h2 {
   margin-bottom: 20px;
 }
-
-.container_form label {
-  font-weight: bold;
-}
-
-.container_form input[type="text"],
-input[type="password"],
-button {
+.connexion_f input[type="text"],
+.connexion_f input[type="password"],
+.connexion_f button {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.container_form button {
-  background-color: #5C6672;
-  color: var(--text-color);
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.container_form  button:hover {
-  background-color: #5C6672;
-}
-
-.container_form a {
-  text-decoration: none;
-  color: var(--text-color);
-  margin-bottom: 15px;
-  display: block;
-}
-
-.container_form a:hover {
-  text-decoration: underline;
 }
 .inscription_f {
   display: flex;
@@ -418,4 +393,7 @@ button {
 
 .inscription_f a:hover {
   text-decoration: underline;
+}
+#find{
+  display: none;
 }

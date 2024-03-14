@@ -8,6 +8,6 @@
 <body>
     <h1>Votre compte est en attente de verification.</h1>
     <p>Cette procédure peut durer quelques heures.</p>
-    
+    <p>Vous pouvez retourner sur le site de la bibliotèque en cliquant<a href="index.php">ici</a></p>
 </body>
 </html>
