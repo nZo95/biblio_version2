@@ -1,5 +1,6 @@
 <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
+
+$bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
     if(isset($_POST['envoi'])){
         if(!empty($_POST['id']) AND !empty($_POST['newPassword'])){
             $codeetu = htmlspecialchars($_POST['id']);
@@ -12,8 +13,8 @@
                 $recupUser->execute(array($codeetu,$mdp ));
                 if($recupUser->rowCount() > 0){
                    
-                    $_SESSION['idetu'] = $codeetu;
-                    $_SESSION['mdp'] = $mdp;
+                    $_SESSION['id'] = $codeetu;
+                    $_SESSION['newPassword'] = $mdp;
                     $_SESSION['id'] = $recupUser->fetch()['id'];
                
                 }
