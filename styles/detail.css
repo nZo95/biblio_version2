@@ -103,6 +103,34 @@ h3 {
   color: var(--text-color);
 }
 
+.container-memberNotice {
+  max-width: 60%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 7px;
+  background: var(--panel);
+}
+
+.container-memberNotice .member {
+  padding-top: 0.6em;
+  margin-left: 1em;
+  font-size: 26px;
+  font-family: "Ubuntu";
+  text-align: left;
+
+  color: var(--text-color);
+}
+
+.container-memberNotice .commentary {
+  padding-top: 0.2em;
+  font-size: 20px;
+  font-family: "Ubuntu";
+  text-align: center;
+
+  color: var(--text-color);
+}
+
 .container-notice {
   max-width: 70%;
   width: 95%;
@@ -131,14 +159,12 @@ h3 {
   margin-left: 35%;
   border-radius: 7px;
   border: none;
-  outline: solid 4px;
-  outline-color: var(--btext-color);
 
   font-size: 24px;
   font-family: "Ubuntu";
   text-align: center;
 
-  color: var(--text-color);
+  color: var(--btext-color);
 }
 
 .notice textarea {
@@ -149,11 +175,30 @@ h3 {
   resize: none;
   vertical-align: vertical;
   border: none;
-  outline: solid 4px;
-  outline-color: var(--btext-color);
 
   font-size: 18px;
   font-family: "Ubuntu";
 
   color: var(--btext-color);
+}
+
+.notice #commentarySubmit {
+  margin-top: 1.6em;
+  margin-left: 37.5%;
+  width: 25%;
+  
+  font-size: 22px;
+  font-family: "Ubuntu";
+  color: var(--text-color);
+
+  background: var(--background);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.4;
+}
+
+.notice #commentarySubmit:hover {
+  background: var(--panel-hover);
 }
