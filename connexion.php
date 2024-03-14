@@ -11,7 +11,7 @@ require "header.php";
 </head>
 <body>   
 <div class="container_form">
-        <form id="connexion" action="traitement_log.php" method="post">
+        <form  method="POST" action="login.php" method="post">
             <h2>Connexion</h2>
             <label for="id">Numéro d'identification :</label><br>
             <input type="text" id="id" name="id" required><br><br>
@@ -19,7 +19,7 @@ require "header.php";
             <input type="password" id="password" name="password" required><br><br>
             <a href="forgot_password.php">Mot de passe oublié ?</a><br>
             <a href="inscription.php">Pas encore de compte ?</a><br><br>
-            <button type="submit">Connexion</button>
+            <button type="submit" name="login">Connexion</button>
             <button type="button" onclick="window.history.back()">Retour</button>
         </form>
     </div>

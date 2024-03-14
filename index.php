@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php echo $_SESSION['id']; ?>
 <html lang="fr">
 
 <?php
