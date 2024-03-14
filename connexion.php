@@ -9,9 +9,28 @@ require "header.php";
     <link rel="stylesheet" href="styles/home.css">
     <title>Document</title>
 </head>
-<body>   
+<body> 
+<?php
+
+if(isset($_POST['id']) && isset($_POST['password'])){
+        $idetu = htmlspecialchars($_POST['id']);
+        $mdp = sha1($_POST['password']);
+
+        $query = mysqli_query($link, 'SELECT * FROM compte WHERE id = "' . $idetu . '" AND mdp = "' . $mdp . '";');
+
+        if($query->num_rows > 0){
+            $_SESSION['id'] = $idetu;
+            $_SESSION['mdp'] = $mdp;
+            $_SESSION['id'] = $idetu;
+            header('Location: index.php');
+        }else{
+            echo "Mot de passe ou pseudo incorrecte";
+        }
+}
+
+?>
 <div class="container_form">
-        <form  method="POST" action="login.php" method="post">
+        <form  method="POST" action="connexion.php" method="post">
             <h2>Connexion</h2>
             <label for="id">Numéro d'identification :</label><br>
             <input type="text" id="id" name="id" required><br><br>

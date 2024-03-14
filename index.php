@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<?php echo $_SESSION['id']; ?>
 <html lang="fr">
-
 <?php
 require "header.php";
+echo $id_session;
 ?>
-
   <head>
     <link type="text/css" rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">

@@ -39,7 +39,7 @@
     <?php 
       session_start();
       $id_session = session_id();
-    
+      
       require "bdd/bdd_connexion.php"; 
     ?>
   </header>
