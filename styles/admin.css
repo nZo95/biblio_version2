@@ -232,3 +232,16 @@ input[type="submit"] {
 footer {
   margin-top: 20.8%;
 }
+
+.confirm_container p{
+  display: flex;
+  color: var(--subtext-color);
+  justify-content: center;
+}
+
+.hr_confirm {
+  display: flex;
+  color: var(--subtext-color);
+  justify-content: center;
+}
+

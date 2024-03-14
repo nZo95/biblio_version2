@@ -12,7 +12,29 @@
           <div class="slider-wrapper">
             <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
             <div class="image-list">
-              <div class="image-item"><a href="detail.php"><img src="images/9782253087830.jpg" alt=""></a></div>
+              <?php
+                $books = array(-1, -1, -1, -1, -1, -1, -1, -1);
+                for ($i = 8; $i > 0; $i--)
+                {
+                  $added = false;
+                  do
+                  {
+                    $rowBook = mysqli_fetch_array(mysqli_query($link, "SELECT * FROM livre ORDER BY RAND() LIMIT 1;"));
+                    $isOk = true;
+                    for ($c = 0; $c < count($books); $c++)
+                    {
+                      if ($books[$c] == $rowBook) { $isOk = false; }
+                    }
+
+                    if ($isOk)
+                    {
+                      $books[8 - $i] = $rowBook;
+                      echo '<div class="image-item"><a href="detail.php?isbn=' . $rowBook["isbn"] . '"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>';
+                      $added = true;
+                    }
+                  } while(!$added);
+                }
+              ?>
             </div>
             <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
           </div>
@@ -63,6 +85,8 @@
           }
         ?>
         <div class="space"></div>
+        <script src="scripts/home.js"></script>
         <?php require('footer.php'); ?>
+      </main>
   </body>
 </html>

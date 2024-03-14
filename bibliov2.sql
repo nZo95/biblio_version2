@@ -12,7 +12,9 @@ CREATE TABLE compte(
         admin  Bool NOT NULL ,
         nom    Varchar (50) NOT NULL ,
         prenom Varchar (50) NOT NULL ,
-        mdp    Varchar (255) NOT NULL
+        mdp    Varchar (255) NOT NULL,
+        phone Varchar(50) NOT NULL,
+        mail Varchar(255) NOT NULL
 	,CONSTRAINT _compte_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
