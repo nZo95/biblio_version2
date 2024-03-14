@@ -19,20 +19,27 @@
 
           $isbn = htmlspecialchars($_GET["isbn"]);
 
+          if (isset($_POST["note"]) && isset($_POST["commentary"]))
+          {
+              try 
+              {
+                $stmt = $link->prepare("INSERT INTO note (isbn, id, etoile) VALUES (?, ?, ?)");
+                //$stmt->execute(array($isbn, $_SESSION["id"], $note));
+                $stmt->execute(array($isbn, "1", $_POST["note"]));
+                $stmt->close();
+  
+                $stmt = $link->prepare("INSERT INTO commentaire (isbn, id, commentaire) VALUES (?, ?, ?)");
+                //$stmt->execute(array($isbn, $_SESSION["id"], $note));
+                $stmt->execute(array($isbn, "1", $_POST["commentary"]));
+                $stmt->close();
+              } catch (Exception $e) { }
+          }
+
           $stmt = $link->prepare("SELECT count(*), titre, annee, nbpages, id, id_genre, id_editeur, resume FROM livre WHERE isbn=?");
           $stmt->execute(array($isbn));
           $stmt->bind_result($countBook, $titleBook, $yearBook, $countPagesBook, $idLanguageBook, $idGenreBook, $idEditorBook, $resume);
           $stmt->fetch();
           $stmt->close();
-          
-          if ($countBook == 0) 
-          { 
-            echo '<div class="space"></div>
-            <h2>ISBN Incorrect</h2>
-            <div class="space"><hr></div>';
-            
-            return;
-          }
 
           echo '<div class="space"></div>
                 <h2>' . $titleBook . '</h2>
@@ -69,21 +76,61 @@
           ?>
         </div>
       </div>
-      <div class="space"><hr class="down"></div>
+      <?php 
+        $query = mysqli_query($link, "SELECT * FROM note WHERE isbn = " . $isbn . ";");
+        $count = 0;
+
+        if ($query && $query->num_rows > 0) 
+        { 
+          echo '<div class="space"><hr class="down"></div>';
+          while ($rowNote = mysqli_fetch_array($query))
+          {
+            $rowCommentary = mysqli_fetch_array(mysqli_query($link, 'SELECT * FROM commentaire WHERE isbn = ' . $isbn . ' AND id = "' . $rowNote["id"] . '";'));
+            $note = "";
+            for ($i = 0; $i < $rowNote["etoile"]; $i++)
+            {
+              $note = $note . "&bigstar;";
+            }
+            $rowMember = mysqli_fetch_array(mysqli_query($link, 'SELECT prenom, nom FROM compte WHERE id = "' . $rowNote["id"] . '";'));
+            $member = $rowNote["id"];
+            if ($rowMember["prenom"] != "" || $rowMember["nom"] != "")
+            {
+              $member = $rowMember["prenom"] . " " . $rowMember["nom"];
+            }
+
+            $count++;
+            
+            echo '<div class="container-memberNotice">
+                  <p class="member">' . $member . " - " . $note . '</p>
+                  <p class="commentary">' . $rowCommentary["commentaire"] . '</p>
+                  <br></div>';
+            
+            if ($count != $query->num_rows)
+            {
+              echo '<br>';
+            }
+          }
+        }
+      ?>
+      <?php if (!isset($_SESSION["id"])) { echo '<div class="space"></div>'; require('footer.php'); return; } ?>
+      <div class="space"><hr class="down"></div>;
       <div class="container-notice">
-        <form class="notice">
+        <?php echo '<form name="importCommentary" id="importCommentary" class="notice" method="post" action="detail.php?isbn=' . $isbn . '">'; ?>
           <p>Donnez votre avis sur <?php echo "<em>" . $titleBook . "</em>" ?></p>
           <select name="note" class="input">
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐</option>
-            <option value="3">⭐⭐⭐</option>
-            <option value="2">⭐⭐</option>
-            <option value="1">⭐</option>
+            <option value="5">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</option>
+            <option value="4">&bigstar;&bigstar;&bigstar;&bigstar;</option>
+            <option value="3">&bigstar;&bigstar;&bigstar;</option>
+            <option value="2">&bigstar;&bigstar;</option>
+            <option value="1">&bigstar;</option>
           </select>
           <br>
           <textarea name="commentary" rows="4" placeholder="Votre commentaire" class="input"></textarea>
+          <input type="button" id="commentarySubmit" name="commentarySubmit" value="Envoyer" onClick="document.getElementById('importCommentary').submit();"/>
+          <br><br>
         </form>
       </div>
+      <div class="space"></div>
     </main>
   </body>
   <?php require('footer.php'); ?>

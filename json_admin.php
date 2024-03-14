@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="styles/json.css">
     </head>
     <body>
-        <?php require('header.php'); ?>
-
         <?php
+            require('header.php');
+
             if(isset($_FILES["jsonFile"]["tmp_name"]))
             {   
                 $fileTmp = $_FILES["jsonFile"]["tmp_name"];
@@ -28,19 +28,15 @@
                 $json = json_decode($content);
                 foreach($json as $line)
                 {
-                    $countAccountQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM compte WHERE id = '" . $line->card . "';"));
-                    $countAccountQuery = intval($countAccountQueryFetch["count(*)"]);
-                    $countBookQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM livre WHERE isbn = '" . $line->isbn . "';"));
-                    $countBookQuery = intval($countBookQueryFetch["count(*)"]);
-                    $countReserveQueryFetch = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM reserve WHERE isbn = '" . $line->isbn . "';"));
-                    $countReserveQuery = intval($countBookQueryFetch["count(*)"]);
-                    
-                    if ($countAccountQuery == 0 || $countBookQuery == 0 || $countReserveQuery == 1) { continue; }
-
-                    $stmt = $link->prepare("INSERT INTO reserve (isbn, id, date) VALUES (?, ?, ?)");
-                    $stmt->execute(array($line->isbn, $line->card, $line->loan_date));
-                    $stmt->close();
+                    try 
+                    {
+                        $stmt = $link->prepare("INSERT INTO reserve (isbn, id, date) VALUES (?, ?, ?)");
+                        $stmt->execute(array($line->isbn, $line->card, $line->loan_date));
+                        $stmt->close();
+                    } catch (Exception $e) { }
                 }
+
+                unset($_FILES["jsonFile"]["tmp_name"]);
             }
         ?>
             
