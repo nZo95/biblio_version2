@@ -55,41 +55,10 @@ require "header.php";
             <div id="first">
           <h2>Espace Membre</h2>
           <div id="div-button">
-          <button type="button" id="SignIn">Inscription</button>
-          <button type="button" id="SignUp">Connexion</button>
+          <a href="inscription.php"><button type="button" id="SignIn">Inscription</button></a>
+          <a href="connexion.php"><button type="button" id="SignUp">Connexion</button></a>
           </div>
           </div>
-          
-           
-            <form id="inscription" action="traitement_log.php" method="post">
-            <h2>Devenir Membre !</h2>
-            <h3>Numéro d'identification : </h3>
-            <input type="text" name="id" id="id" required><br><br>
-            <a id="buttonFind">Où le trouver ?</a><br>
-            <div id="find">
-              <p>Pour le trouver veuillez vous 
-                  rendre à votre bibliothèque.</p>
-            </div>
-
-            <div id="createPasswordFields">
-              <br>
-              <br>
-              <label for="newPassword">Créer votre mot de passe :</label><br><br>
-              <input type="password" id="newPassword" name="newPassword" required><br><br>
-              <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br><br>
-              <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
-
-              <div id="resultPassword"></div>
-            </div>
-
-            <div id="passwordFields">
-              <label for="password">Mot de passe :</label><br>
-              <input type="password" id="password" name="password" required><br>
-            </div>
-            
-            <button id="buttonSubmit" type="submit">Suivant</button> <br>
-            <button id="btnBack">Retour</button>
-          </form> 
           </div>
         </div>
       </div>
