@@ -13,10 +13,15 @@
 <?php
 require "header.php";
 ?>
-
-<h1>Votre compte est en attente de verification.</h1>
-    <p>Cette procédure peut durer quelques heures.</p>
-    <p>Vous pouvez retourner sur le site de la bibliotèque en cliquant<a href="index.php">ici</a></p>
+<div class="confirm_container">
+        <div class="space"></div>
+            <h1 class="hr_confirm">Votre compte est en attente de verification</h1>
+        <div class="space"><hr></div>
+        <p>Cette procédure peut durer quelques heures.</p>
+        <br>
+        <p>Vous pouvez retourner sur le site de la bibliotèque en cliquant<a href="index.php">ici</a></p>
+</div>
+       
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/admin.js"></script>
