@@ -3,7 +3,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="styles/style.css">
   <link rel="icon" type="image/png" href="images/icon.png"/>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -20,7 +19,7 @@
         <ul>
           <li><a href="index.php">Accueil</a></li>
           <?php
-            $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+              $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   
               if (str_contains($actual_link, "admin"))
               {
@@ -36,8 +35,6 @@
           <li><img src="images/user.png" alt="error"></li>
         </ul>
       </div>
-
-
     </nav>
     <?php 
       session_start();

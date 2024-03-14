@@ -24,13 +24,11 @@
               try 
               {
                 $stmt = $link->prepare("INSERT INTO note (isbn, id, etoile) VALUES (?, ?, ?)");
-                //$stmt->execute(array($isbn, $_SESSION["id"], $note));
-                $stmt->execute(array($isbn, "1", $_POST["note"]));
+                $stmt->execute(array($isbn, $_SESSION["id"], $_POST["note"]));
                 $stmt->close();
-  
+                  
                 $stmt = $link->prepare("INSERT INTO commentaire (isbn, id, commentaire) VALUES (?, ?, ?)");
-                //$stmt->execute(array($isbn, $_SESSION["id"], $note));
-                $stmt->execute(array($isbn, "1", $_POST["commentary"]));
+                $stmt->execute(array($isbn, $_SESSION["id"], $_POST["commentary"]));
                 $stmt->close();
               } catch (Exception $e) { }
           }
@@ -41,8 +39,26 @@
           $stmt->fetch();
           $stmt->close();
 
+          $query = mysqli_query($link, "SELECT * FROM note WHERE isbn = " . $isbn . ";");
+          $note = "";
+          if ($query->num_rows > 0)
+          {
+            $valueCount = mysqli_fetch_array(mysqli_query($link, "SELECT count(*) FROM note WHERE isbn = " . $isbn . ";"));
+            $valueNote = 0;
+            while ($row = mysqli_fetch_array($query))
+            {
+              $valueNote = $valueNote + $row["etoile"];
+            }
+  
+            $valueNote = round($valueNote / $valueCount["count(*)"]);
+            for ($i = 0; $i < $valueNote; $i++)
+            {
+              $note = $note . "&bigstar;";
+            }
+          }
+
           echo '<div class="space"></div>
-                <h2>' . $titleBook . '</h2>
+                <h2>' . $titleBook . ' - ' . $note . '</h2>
               <div class="space"><hr></div>
               <div class="container-book">
                 <div class="book">';
