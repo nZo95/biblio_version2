@@ -10,7 +10,7 @@ require "header.php";
     <title>Document</title>
 </head>
 <body>   
-<div class="container_form">
+<div class="connexion_f">
         <form id="connexion" action="traitement_log.php" method="post">
             <h2>Connexion</h2>
             <label for="id">Numéro d'identification :</label><br>
