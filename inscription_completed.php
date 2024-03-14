@@ -19,7 +19,7 @@ require "header.php";
         <div class="space"><hr></div>
         <p>Cette procédure peut durer quelques heures.</p>
         <br>
-        <p>Vous pouvez retourner sur le site de la bibliotèque en cliquant<a href="index.php">ici</a></p>
+        <p>Vous pouvez retourner sur le site de la bibliotèque en cliquant <a href="index.php">ici</a>.</p>
 </div>
        
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
