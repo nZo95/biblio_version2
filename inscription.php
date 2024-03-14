@@ -30,7 +30,11 @@
 
                     <div id="resultPassword"></div>
                 </div>
+<<<<<<< HEAD
                 <input id="subbtn" type="submit" name="envoi">
+=======
+                <input type="submit" name="envoi"></input>
+>>>>>>> 56c540898f427afb65691855985d106c1f23c995
             </form>
         </div>
         <?php require('footer.php'); ?>
