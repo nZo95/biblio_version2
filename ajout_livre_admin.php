@@ -8,24 +8,24 @@
 </head>
 <body>
 
-<?php
-require "header.php";
+  <?php
+  require "header.php";
 
-$genres = [];
-$query = "SELECT id, libelle FROM genre";
-$result = mysqli_query($link, $query);
-while ($row = mysqli_fetch_assoc($result)) {
-    $genres[] = $row;
-}
+  $genres = [];
+  $query = "SELECT id, libelle FROM genre";
+  $result = mysqli_query($link, $query);
+  while ($row = mysqli_fetch_assoc($result)) {
+      $genres[] = $row;
+  }
 
-$langues = [];
-$query = "SELECT id, libelle FROM langue";
-$result = mysqli_query($link, $query);
-while ($row = mysqli_fetch_assoc($result)) {
-    $langues[] = $row;
-}
+  $langues = [];
+  $query = "SELECT id, libelle FROM langue";
+  $result = mysqli_query($link, $query);
+  while ($row = mysqli_fetch_assoc($result)) {
+      $langues[] = $row;
+  }
 
-?>
+  ?>
   <div class="book-card">
 
     <div class="left-panel">
