@@ -2,7 +2,6 @@
 <html lang="fr">
 <?php
 require "header.php";
-echo $id_session;
 ?>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/home.css">

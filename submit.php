@@ -33,26 +33,9 @@ $isbn = mysqli_real_escape_string($link, $_POST['isbn']);
 $titre = mysqli_real_escape_string($link, $_POST['titre']);
 $date_publication = mysqli_real_escape_string($link, $_POST['date_publication']);
 $id_genre = mysqli_real_escape_string($link, $_POST['genre']); 
-$editeur = mysqli_real_escape_string($link, $_POST['editeur']);
+$id_editeur = mysqli_real_escape_string($link, $_POST['editeur']);
 $id_langue = mysqli_real_escape_string($link, $_POST['langue']); 
 $description = mysqli_real_escape_string($link, $_POST['description']);
-
-// Convertir de l'éditeur en id_editeur 
-$queryEditeur = "SELECT id FROM editeur WHERE libelle = ?";
-if($stmtEditeur = mysqli_prepare($link, $queryEditeur)){
-    mysqli_stmt_bind_param($stmtEditeur, "s", $editeur);
-    mysqli_stmt_execute($stmtEditeur);
-    $resultEditeur = mysqli_stmt_get_result($stmtEditeur);
-    if ($rowEditeur = mysqli_fetch_assoc($resultEditeur)) {
-        $id_editeur = $rowEditeur['id'];
-    } else {
-        echo "Éditeur non trouvé.";
-        exit;
-    }
-    mysqli_stmt_close($stmtEditeur);
-} else{
-    echo "ERROR: Could not prepare query: $queryEditeur. " . mysqli_error($link);
-}
 
 $sql = "INSERT INTO livre (isbn, titre, annee, id, id_genre, id_editeur, resume) VALUES (?, ?, ?, ?, ?, ?, ?)";
 

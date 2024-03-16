@@ -263,69 +263,27 @@ h3 {
 }
 
 /* DIV FIRST */
-
-#SignIn{
-  margin-top: 30px;
-  height: 30px;
-  width: 200px;
+#div-button a button{
+  margin: 30px;
+  font-size: 20px;
+  padding: 10px;
   border-radius: 10px;
-  font-family: "Ubuntu";
-}
-#SignUp{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  height: 30px;
-  width: 200px;
-  border-radius: 10px;
-}
-.sign-member{
-  display: flex;
-  flex-direction: column;
+  color: var(--text-color);
+  background-color: #5C6672;
 }
 
-/* DIV */
-
-#btnBack{
-  width: 100px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  font-family: "Ubuntu";
-  border-radius: 2px;
-  color: var(--text-color);
-  background-color: var(--second-panel);
-}
-#createPasswordFields label{
-  margin-top: 10px;
-  color: var(--text-color);
-  font-family: "Ubuntu";
-  font-size: 22px;
-}
-#createPasswordFields input{
-  width: 200px;
-  height: 20px;
-  border-radius: 5px;
-}
-
-#passwordFields label{
-  color: var(--text-color);
-  font-family: "Ubuntu";
-  font-size: 22px;
-}
-#buttonFind{
-  padding-bottom: 20px;
+#buttonFind{ 
+  text-align: center;
 }
 
 .connexion_f{
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  width: 100%; /* Ajustez cette valeur selon la largeur de votre formulaire */
+  margin-bottom: 100px;
   background: var(--panel);
   padding: 20px;
   border-radius: 8px;
-}
-.connexion_f{
-  text-align: center;
 }
 .connexion_f h2 {
   margin-bottom: 20px;
@@ -333,51 +291,67 @@ h3 {
 .connexion_f input[type="text"],
 .connexion_f input[type="password"],
 .connexion_f button {
-  width: 100%;
+  width: 300px;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.inscription_f {
+.connexion_f label{
+  color: var(--text-color);
+}
+.connexion_f button {
+  background-color: #5C6672;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.connexion_f button:hover {
+  background-color: #5C6672;
+}
+
+.connexion_f a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.connexion_f a:hover {
+  text-decoration: underline;
+}
+.inscription_f{
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: 50px;
-  width: 100%; /* Ajustez cette valeur selon la largeur de votre formulaire */
+  margin-bottom: 130px;
   background: var(--panel);
   padding: 20px;
   border-radius: 8px;
 }
-
-.inscription_f form {
-  text-align: center;
-}
-
 .inscription_f h2 {
   margin-bottom: 20px;
 }
-
-.inscription_f label {
-  font-weight: bold;
-}
-
 .inscription_f input[type="text"],
 .inscription_f input[type="password"],
 .inscription_f button {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+.inscription_f label{
+  color: var(--text-color);
+}
 .inscription_f button {
   background-color: #5C6672;
   color: var(--text-color);
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .inscription_f button:hover {
   background-color: #5C6672;
 }
@@ -394,4 +368,15 @@ h3 {
 }
 #find{
   display: none;
+  max-width: 300px;
+  color: var(--text-color);
+}
+#subbtn{
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+#btnback_insc{
+  width: 20%;
 }
