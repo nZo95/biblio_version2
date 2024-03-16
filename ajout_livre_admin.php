@@ -103,13 +103,26 @@
 
   </div>
 
+  <div class="book-card">         
+    <div class="left-panel">
+        <h1 class="p_form">Ajouter un éditeur</h1>
+        <form action="ajouterEditeur.php" method="post" id="add_editeur"> 
+          <span id="erreur" style="color:red;"></span> 
+          <input type="text" id="newEditeur" name="editeur" placeholder="Nouvel éditeur" class="input">
+          <button type="submit" class="editeur-button">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="scripts/admin.js"></script>
 
 
-      <script>
- document.getElementById('bookForm').onsubmit = function(event) {
+    <script>
+    document.getElementById('bookForm').onsubmit = function(event) {
     event.preventDefault();
   
     var missingFields = [];
@@ -138,11 +151,6 @@
     if (!genre) {
         missingFields.push('genre');
     }
-  
-    var editeur = document.getElementById('editeur').value;
-    if (!editeur) {
-        missingFields.push('éditeur');
-    }
 
     var description = document.getElementById('description').value;
     if (!description) {
@@ -150,13 +158,32 @@
     }
   
     if (missingFields.length > 0) {
-        // Créer un message d'erreur unique en listant tous les champs manquants.
         var errorMessage = 'Les champs ' + missingFields.join(', ') + ' sont requis.';
         document.getElementById('errorMessages').innerHTML = errorMessage;
     } else {
         this.submit();
     }
-};
+}
+
+    document.getElementById('add_editeur').onsubmit = function(event) {
+    event.preventDefault();
+
+      var missingFields_ajoutEditeur = [];
+
+      var editeur = document.getElementById('newEditeur').value;
+      if (!editeur) {
+          missingFields_ajoutEditeur.push('newEditeur');
+      }
+
+      if (missingFields_ajoutEditeur.length > 0) {
+          var erreur_editeur = 'Veuillez renseigner un éditeur.';
+          document.getElementById('erreur').innerHTML = erreur_editeur;
+      } else {
+          this.submit();
+      }
+    }
+;
+
 
 
 </script>
