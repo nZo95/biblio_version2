@@ -112,7 +112,7 @@
           <button type="submit" class="editeur-button">Envoyer</button>
         </form>
     </div>
-  </div>
+  </div>  
 
 </div>
 
