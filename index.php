@@ -32,7 +32,7 @@ echo $id_session;
                   if ($isOk)
                   {
                     $books[8 - $i] = $rowBook;
-                    echo '<div class="image-item"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></div>';
+                    echo '<div class="image-item"><a href="detail.php?isbn=' . $rowBook["isbn"] . '"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>'; 
                     $added = true;
                   }
                 } while(!$added);

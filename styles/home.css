@@ -1,18 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 :root {
-  --background: #5C6672;
-  --panel: #313E50;
-  --panel-hover: #444;
-  --second-panel: #6C6F7F;
-  --text-color: #E4E4E4;
+  --background: #5C6672;  /* Background */
+  --panel: #313E50; /* Header & Footer*/
+  --text-color: hsl(145, 8%, 59%); /* Boutons */
+  --text-hover: #8fa096; 
+  --text-color: #E4E4E4;  /* Couleurs pr le texte */
   --btext-color: #242424;
   --subtext-color: #e3e3e3;
-
-  --Bleu_foncé : #213742; /* Header / footer */
-  --Bleu_clair : #425c6a; /* Footer */
-  --Beige : #c8ceb5; /* Cartes / boutons */
-  --Gris : #d9d9d9;  /* Cartes bis / contours */
-  --Vert_pâle : #8fa096; /* Couleur supp */
 }
 
 h2 {
@@ -62,6 +56,10 @@ h3 {
   display: none;
 }
 
+.slider-wrapper .image-list .image-item a {  
+  margin: auto;
+  }
+  
 .slider-wrapper .image-list .image-item {
   width: 240px;
   height: 340px;
@@ -101,7 +99,7 @@ h3 {
 }
 
 .slider-wrapper .slide-button:hover {
-  background: var(--panel-hover);
+  background: var(--text-hover);
 }
 
 .slider-wrapper .slide-button#prev-slide {

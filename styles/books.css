@@ -2,7 +2,7 @@
 :root {
   --background: #5C6672;  /* Background */
   --panel: #313E50; /* Header & Footer*/
-  --text-color: #8fa096; /* Boutons */
+  --text-color: hsl(145, 8%, 59%); /* Boutons */
   --text-hover: #8fa096; 
   --text-color: #E4E4E4;  /* Couleurs pr le texte */
   --btext-color: #242424;
