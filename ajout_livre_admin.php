@@ -25,6 +25,12 @@
       $langues[] = $row;
   }
 
+  $editeurs = [];
+  $query = "SELECT id, libelle FROM editeur";
+  $result = mysqli_query($link, $query);
+  while ($row = mysqli_fetch_assoc($result)) {
+      $editeurs[] = $row;
+  }
   ?>
   <div class="book-card">
 
@@ -40,6 +46,7 @@
       
         <input type="date" id="date_publication" name="date_publication" placeholder="Date de publication" class="input">
         <br>
+        
         <p class="p_form">Genre : </p>
         <select id="genre" name="genre" class="input">
           <?php foreach ($genres as $genre) { ?>
@@ -50,7 +57,15 @@
         </select>
         <br>
         
-        <input type="text" id="editeur" name="editeur" placeholder="Editeur, ex : Hutchinson / Harcourt / Julliard / Ace Book / Chilton Books " class="input">
+        
+        <p class="p_form">Editeur: </p>
+        <select id="editeur" name="editeur" class="input">
+          <?php foreach ($editeurs as $editeur) { ?>
+            <option value="<?php echo htmlspecialchars($editeur['id']); ?>">
+              <?php echo htmlspecialchars($editeur['libelle']); ?>
+            </option>
+          <?php } ?>
+        </select>
         <br>
       
         <input type="text" id="auteur" name="auteur" placeholder="Auteur" class="input">
