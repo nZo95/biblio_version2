@@ -13,26 +13,22 @@
         <div class="inscription_f">
             <form id="inscription" action="traitement_log.php" method="post">
                 <h2>Devenir Membre !</h2> <br>
-                <h3>Numéro d'identification : </h3>
+                <label for="id">Numéro d'identification : </label><br><br>
                 <input type="text" name="id" id="id" required><br><br>
-                <a id="buttonFind">Où le trouver ?</a><br>
+                <a id="buttonFind">Où le trouver ?</a>
                 <div id="find">
                     <p>Pour le trouver veuillez vous rendre à votre bibliothèque.</p>
-                </div>
+                </div> <br>
 
-                <div id="createPasswordFields">
-                    <br>
-                    <br>
                     <label for="newPassword">Créer votre mot de passe :</label><br><br>
                         <input type="password" id="newPassword" name="newPassword" required><br><br>
                     <label for="confirmNewPassword">Confirmer votre mot de passe :</label><br><br>
                         <input type="password" id="confirmNewPassword" name="confirmNewPassword" required><br>
 
-                    <div id="resultPassword"></div>
-                </div>
+                    <div id="resultPassword"></div> <br>
 
-                <input id="subbtn" type="submit" name="envoi"> <br>
-                <button type="button" onclick="window.history.back()">Retour</button>
+                <button id="subbtn" type="submit" name="envoi">Envoyer</button> <br>
+                <button type="button" id="btnback_insc" onclick="window.history.back()">Retour</button>
 
             </form>
         </div>

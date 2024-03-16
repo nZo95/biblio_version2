@@ -32,7 +32,13 @@
                   echo '<li><a href="books.php">Livres</a></li>';
               }
             ?>
-          <li><img src="images/user.png" alt="error"></li>
+            <form action="member.php" method="get">
+                <button type="submit" style="border: none; background: none; padding: 0; margin: 0; cursor: pointer;">
+                    <img src="images/user.png" alt="error">
+                </button>
+            </form>
+
+         
         </ul>
       </div>
     </nav>

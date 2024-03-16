@@ -265,7 +265,14 @@ h3 {
 }
 
 /* DIV FIRST */
-
+#div-button a button{
+  margin: 30px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--text-color);
+  background-color: #5C6672;
+}
 
 #buttonFind{ 
   text-align: center;
@@ -318,8 +325,10 @@ h3 {
 .inscription_f{
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 130px;
   background: var(--panel);
   padding: 20px;
   border-radius: 8px;
@@ -330,7 +339,7 @@ h3 {
 .inscription_f input[type="text"],
 .inscription_f input[type="password"],
 .inscription_f button {
-  width: 300px;
+  width: 100%;
   padding: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -365,8 +374,11 @@ h3 {
   color: var(--text-color);
 }
 #subbtn{
-  width: 350px;
+  width: 100%;
   font-size: 20px;
   padding: 5px;
   border-radius: 10px;
+}
+#btnback_insc{
+  width: 20%;
 }

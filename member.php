@@ -10,6 +10,13 @@
     <script src="scripts/member.js" defer></script>
 </head>
 <body>
+    <?php
+if (!isset($_SESSION['id'])) {
+    header("Location: connexion.php");
+    exit();
+}
+$nom_utilisateur = $_SESSION['id']; // Exemple
+?>
     <div class ="space">
         <h1>Bienvenue sur votre espace membre !</h1>
         <img class="sizeimg" src="images/user.png" alt="">
