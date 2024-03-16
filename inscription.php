@@ -30,11 +30,10 @@
 
                     <div id="resultPassword"></div>
                 </div>
-<<<<<<< HEAD
-                <input id="subbtn" type="submit" name="envoi">
-=======
-                <input type="submit" name="envoi"></input>
->>>>>>> 56c540898f427afb65691855985d106c1f23c995
+
+                <input id="subbtn" type="submit" name="envoi"> <br>
+                <button type="button" onclick="window.history.back()">Retour</button>
+
             </form>
         </div>
         <?php require('footer.php'); ?>
