@@ -36,6 +36,7 @@ require "header.php";
                   }
                 } while(!$added);
               }
+
             ?>
           </div>
           <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>

@@ -1,6 +1,44 @@
+<?php
+
+if(isset($_POST['save'])){
+    $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
+    $op = $_POST['password'];
+    $np = $_POST['newpassword'];
+    $cnp = $_POST['cpassword'];
+
+    $op = sha1($op);
+
+    if($np == $cnp){
+        $query = $bdd->prepare("SELECT * FROM compte WHERE mdp = :mdp");
+        $query->bindParam(':mdp', $op);
+        $query->execute();
+        $count = $query->rowCount();
+        if($count > 0){
+            $updateQuery = $bdd->prepare("UPDATE compte SET mdp = :newPassword");
+            $mdp = sha1($np);
+            $updateQuery->bindParam(':newPassword', $mdp);
+            $updateQuery->execute();
+            echo "Mot de passe mis à jour";
+        }
+        else{
+            echo "L'ancien mot de passe ne correspond pas";
+        }
+    }
+    else{
+        echo "Le nouveau mot de passe et la confirmation ne correspondent pas";
+    }
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
-<?php require 'header.php'?>
+<?php require 'header.php';
+?> 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,17 +68,17 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
                 <form action="#">
                     <div class="main-user-info">
                         <div class="user-input-box">
-                            <label for="fullName">Nom Complet</label>
+                            <label for="secondname">Prénom</label>
                             <input type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    placeholder="Nom et Prénom"/>
+                                    id="secondname"
+                                    name="secondname"
+                                    placeholder="Prénom"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="fullName">Pseudo</label>
+                            <label for="name">Nom</label>
                             <input type="text"
-                                    id="username"
-                                    name="username"
+                                    id="name"
+                                    name="name"
                                     placeholder="Pseudo"/>
                         </div>
                         <div class="user-input-box">
@@ -78,7 +116,7 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
     </section>
     <hr>
     <div class="space">
-        <h1>Favoris</h1>
+        <h1>Réservation</h1>
     </div>
       <div class="container-slider-wrapper">
         <div class="slider-wrapper">
@@ -104,13 +142,20 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
     <div class ="space">
         <h1>Paramètres</h1>
     </div>
-    <section>
         <div class="space">
             <div class="content-setting">
-                <form action="#">
+                <form method="post">
+
                     <div class="main-user-info">
                         <div class="user-input-box">
                             <label for="password">Mot de passe</label>
+                            <input type="password"
+                                    id="newpassword"
+                                    name="newpassword"
+                                    placeholder="Nouveau Mot de passe"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="password">Ancien mot de passe</label>
                             <input type="password"
                                     id="password"
                                     name="password"
@@ -121,16 +166,22 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
                             <input type="password"
                                     id="cpassword"
                                     name="cpassword"
-                                    placeholder="Confirmation Mot de passe"/>
+                                    placeholder="Confirmation mot de passe"/>
                         </div>
+
                     </div>
-                    <div class="form-logout-btn">
-                        <input type="submit" value="Déconnexion">   
+                    <div class="form-submit-btn">
+                    <input id="save" name="save" type="submit" value="Enregistrer"></a> 
                     </div>
                 </form>
             </div>
+                <div class="form-logout-btn">
+                        
+                    <a href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
+            
+                </div>
         </div>
-    </section>
+    
 </body>
 <?php require 'footer.php'?>
 </html>
