@@ -53,7 +53,7 @@ if (!isset($_SESSION['id'])) {
     header("Location: connexion.php");
     exit();
 }
-$nom_utilisateur = $_SESSION['id']; // Exemple
+$nom_utilisateur = $_SESSION['id'];
 ?>
     <div class ="space">
         <?php 
@@ -65,7 +65,7 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
     <section>
         <div class="space">
             <div class="content">
-                <form action="#">
+                <form  method="POST">
                     <div class="main-user-info">
                         <div class="user-input-box">
                             <label for="secondname">Prénom</label>
@@ -96,24 +96,43 @@ $nom_utilisateur = $_SESSION['id']; // Exemple
                                     placeholder="Téléphone"/>
                         </div>
                     </div>
-                    <div class="gender-details-box">
-                        <span class="gender-title">Genre</span>
-                        <div class="gender-category">
-                            <input type="radio" name="gender" id="male">
-                            <label for ="male">Homme</label>
-                            <input type="radio" name="gender" id="female">
-                            <label for ="female">Femme</label>
-                            <input type="radio" name="gender" id="other">
-                            <label for ="other">Autre</label>
-                        </div>
-                    </div>
                     <div class="form-submit-btn">
-                        <input type="submit" value="Enregistrer">
+                        <input type="submit" id="submi" name="submi" value="Enregistrer">
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <?php
+
+if(isset($_POST['submi'])){
+    $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8', 'root', '');
+
+    $userId = $_SESSION['id'];
+    
+    $prenom = $_POST['secondname'];
+    $nom = $_POST['name'];
+    $email = $_POST['email'];
+    $telephone = $_POST['phoneNumber'];
+
+    $query = $bdd->prepare("UPDATE compte SET prenom = :prenom, nom = :nom, mail = :email, phone = :telephone WHERE id = :id_utilisateur");
+    $query->bindParam(':id_utilisateur', $userId);
+    $query->bindParam(':prenom', $prenom);
+    $query->bindParam(':nom', $nom);
+    $query->bindParam(':email', $email);
+    $query->bindParam(':telephone', $telephone);
+
+
+    if($query->execute()){
+        echo "Données mises à jour avec succès dans la base de données.";
+    } else {
+        echo "Une erreur s'est produite lors de la mise à jour des données dans la base de données.";
+    }
+}
+
+?>
+
+
     <hr>
     <div class="space">
         <h1>Réservation</h1>
