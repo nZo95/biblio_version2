@@ -174,7 +174,7 @@ if(isset($_POST['submi'])){
                                     placeholder="Nouveau Mot de passe"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="password">Ancien mot de passe</label>
+                            <label for="password">Ancien</label>
                             <input type="password"
                                     id="password"
                                     name="password"
