@@ -55,10 +55,11 @@
             {
               $note = $note . "&bigstar;";
             }
+            $titleBook = $titleBook . " - " . $note;
           }
 
           echo '<div class="space"></div>
-                <h2>' . $titleBook . ' - ' . $note . '</h2>
+                <h2>' . $titleBook . '</h2>
               <div class="space"><hr></div>
               <div class="container-book">
                 <div class="book">';
@@ -109,11 +110,10 @@
             }
             $rowMember = mysqli_fetch_array(mysqli_query($link, 'SELECT prenom, nom FROM compte WHERE id = "' . $rowNote["id"] . '";'));
             $member = $rowNote["id"];
-            if ($rowMember["prenom"] != "" || $rowMember["nom"] != "")
+            if (!empty($rowMember["prenom"]) || !empty($rowMember["nom"]))
             {
               $member = $rowMember["prenom"] . " " . $rowMember["nom"];
             }
-
             $count++;
             
             echo '<div class="container-memberNotice">
