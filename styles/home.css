@@ -181,69 +181,11 @@ h3 {
 .member .sign-member h3 {
   margin-top: 0.6em;
 }
+/*
 
-.member .sign-member #id {
-  margin-top: 0.6em;
-  padding: 2px;
-  border-radius: 7px;
-  font-size: 26px;
-  font-family: "Ubuntu";
-  color: var(--btext-color);
+                                    PAGE BOOKS.PHP
 
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.member .sign-member #buttonFind {
-  font-size: 20px;
-  font-family: "Ubuntu";
-
-  color: var(--text-color);
-  text-decoration: none;
-  cursor: pointer;
-
-  padding-bottom: 0% 0.1em;
-  background-image: linear-gradient(var(--second-panel), var(--second-panel));
-  background-size: 0% 0.1em;
-  background-position-y: 110%;
-  background-position-x: 50%;
-  background-repeat: no-repeat;
-  transition: background-size 0.5s;
-}
-
-.member .sign-member #buttonFind:hover {
-  background-size: 100% 0.22em;
-}
-
-.member .sign-member #find {
-  display: none;
-  margin-top: 0.6em;
-  font-size: 16px;
-  font-family: "Ubuntu";
-
-  color: var(--text-color);
-}
-
-.member .sign-member #buttonSubmit {
-  width: 30%;
-  height: 32px;
-  margin: 2em;
-  font-size: 22px;
-  font-family: "Ubuntu";
-  color: var(--text-color);
-
-  background: var(--background);
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 7px;
-  transition: all 0.4;
-}
-
-.member .sign-member #buttonSubmit:hover {
-  background: var(--panel-hover);
-}
+*/
 #section_genre h2{
   text-align: center;
   padding: 20px;
@@ -274,10 +216,11 @@ h3 {
   background-color: #5C6672;
 }
 
-#buttonFind{ 
-  text-align: center;
-}
+/* 
 
+                                        Page CONNEXION.PHP
+
+*/
 .connexion_f{
   display: flex;
   justify-content: center;
@@ -322,6 +265,12 @@ h3 {
 .connexion_f a:hover {
   text-decoration: underline;
 }
+
+/* 
+
+                                      Page INSCRIPTION.PHP
+
+*/
 .inscription_f{
   display: flex;
   justify-content: center;
@@ -372,6 +321,9 @@ h3 {
   display: none;
   max-width: 300px;
   color: var(--text-color);
+}
+#buttonFind{ 
+  text-align: center;
 }
 #subbtn{
   width: 100%;
