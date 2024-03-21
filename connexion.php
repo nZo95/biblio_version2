@@ -12,8 +12,6 @@ require "header.php";
 
 <body>   
 <div class="connexion_f">
-
-<body> 
 <div class="container_form">
         <form  method="POST" action="connexion.php" method="post">
             <h2>Connexion</h2>
