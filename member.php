@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="fr">
+<?php require 'header.php';
+?> 
+
+
 <?php
 
 if(isset($_POST['save'])){
@@ -30,14 +36,6 @@ if(isset($_POST['save'])){
 }
 
 ?>
-
-
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<?php require 'header.php';
-?> 
 
 <head>
     <meta charset="UTF-8">
@@ -131,32 +129,6 @@ if(isset($_POST['submi'])){
 }
 
 ?>
-
-
-    <hr>
-    <div class="space">
-        <h1>Réservation</h1>
-    </div>
-      <div class="container-slider-wrapper">
-        <div class="slider-wrapper">
-          <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-          <div class="image-list">
-            <div class="image-item"><img src="images/9780090898305.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780151001637.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780307792365.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9782330180805.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9783746612249.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780340960196.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780307969941.jpg" alt=""></div>
-          </div>
-          <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
-        </div>
-    </div>
-    <div class="slider-scrollbar">
-        <div class="scrollbar-track">
-          <div class="scrollbar-thumb"></div>
-        </div>
-    </div>
     <hr>
     <div class ="space">
         <h1>Paramètres</h1>
