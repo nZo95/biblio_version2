@@ -60,6 +60,13 @@ $nom_utilisateur = $_SESSION['id'];
         
         <img class="sizeimg" src="images/user.png" alt="">
     </div>
+    <div class ="space">
+        <div class="form-submit-btn">
+                            
+            <a class="form-logout-btn" href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
+                
+        </div>
+    </div>
     <section>
         <div class="space">
             <div class="content">
@@ -166,11 +173,6 @@ if(isset($_POST['submi'])){
                     </div>
                 </form>
             </div>
-                <div class="form-logout-btn">
-                        
-                    <a href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
-            
-                </div>
         </div>
     
 </body>
