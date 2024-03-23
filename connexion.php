@@ -47,6 +47,6 @@ require "header.php";
             
         </form>
     </div>
-    <?php require('footer.php'); ?>
 </body>
+<?php require('footer.php'); ?>
 </html>

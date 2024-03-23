@@ -44,6 +44,7 @@
                                 $_SESSION['id'] = $recupUser->fetch()['id'];
                             }
                             header('Location: inscription_completed.php');
+                            
                         } catch(Exception $e) {
                             echo "Erreur : ".$e->getMessage();
                         }

@@ -15,7 +15,7 @@ if (!isset($_SESSION['id'])) {
     header("Location: connexion.php");
     exit();
 }
-$nom_utilisateur = $_SESSION['id']; // Exemple
+$nom_utilisateur = $_SESSION['id']; 
 ?>
     <div class ="space">
         <?php 
