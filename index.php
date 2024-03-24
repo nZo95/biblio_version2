@@ -48,6 +48,13 @@ require "header.php";
         </div>
       </div>
       <div class="space"><hr></div>
+      <?php
+      if(isset($_SESSION['id'])) {
+        ?>
+        <p class="connected">Vous êtes connecté.</p>
+        <?php
+        } else {
+        ?>
       <div class="container-member">
         <div class="member">
           <div class="text-member">
@@ -76,6 +83,9 @@ require "header.php";
           </div>
         </div>
       </div>
+      <?php
+      }
+      ?>
       <div class="space"></div>
     </main>
     <script src="scripts/home.js"></script>

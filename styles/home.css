@@ -143,6 +143,7 @@ h3 {
 
 .member {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10%;
 }
@@ -166,7 +167,7 @@ h3 {
 }
 
 .member .sign-member {
-  width: 45%;
+  min-width: 45%;
   border-radius: 7px;
   text-align: center;
   background: var(--panel);
@@ -331,4 +332,10 @@ h3 {
 }
 #btnback_insc{
   width: 20%;
+}
+.connected{
+  font-size: 58px;
+  text-align: center;
+  color: var(--text-color);
+  font-family: "Ubuntu";
 }

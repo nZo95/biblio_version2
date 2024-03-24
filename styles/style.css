@@ -19,8 +19,6 @@ html {
 }
 
 header {
-  height: 5.5em;
-
   border-radius: 0px;
   background-color: var(--panel);
 }
@@ -114,17 +112,14 @@ nav {
 }
 
 footer {
-  height: 3em;
   display: flex;
   align-items: center;
-
   background-color: var(--panel);
 }
 
 footer p {
   margin-left: auto;
   margin-right: auto;
-
   font-size: 20px;
   font-family: "Ubuntu";
   color: var(--text-color);

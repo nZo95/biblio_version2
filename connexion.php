@@ -19,7 +19,6 @@ require "header.php";
             <input type="text" id="id" name="id" required><br><br>
             <label for="password">Mot de passe :</label><br>
             <input type="password" id="password" name="password" required><br><br>
-            <a href="forgot_password.php">Mot de passe oublié ?</a><br>
             <a href="inscription.php">Pas encore de compte ?</a><br><br>
 <?php
 
