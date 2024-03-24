@@ -19,8 +19,15 @@ require "header.php";
 
 <?php
 
-$fileTmp = $_FILES["imageInput"]["tmp_name"];
-copy($fileTmp, "images/" . $_POST['isbn'] . ".png");
+$host = "localhost";
+$user = "root";
+$password = "";
+$dbname = "bibliov2";
+$link = mysqli_connect($host, $user, $password, $dbname);
+
+if($link === false){
+    die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
+}
 
 $isbn = mysqli_real_escape_string($link, $_POST['isbn']);
 $titre = mysqli_real_escape_string($link, $_POST['titre']);

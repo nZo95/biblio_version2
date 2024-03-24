@@ -38,7 +38,7 @@
 
       <h1 class="p_form">Ajouter un livre</h1>
       <div id="errorMessages" style="color: red;"></div>
-      <form name="bookForm" action="submit.php" enctype="multipart/form-data" method="post" id="bookForm">
+      <form action="submit.php" method="post" id="bookForm">
         <input type="text" id="isbn" name="isbn" placeholder="ISBN du livre" class="input">
         
         <input type="text" id="titre" name="titre" placeholder="Titre du livre" class="input">
@@ -90,8 +90,8 @@
     </div>
 
     <div class="right-panel">
-      <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_file_size ?>">
-      <input name="imageInput" type="file" id="imageInput" size="2024" style="display: none;" accept="image/*" />
+
+      <input type="file" id="imageInput" style="display: none;" accept="image/*" />
       <div class="add-image" onclick="document.getElementById('imageInput').click();">
         <ion-icon name="add-circle-outline"></ion-icon>
         <p>Ajouter une image de couverture</p>
