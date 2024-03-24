@@ -36,13 +36,6 @@
                             $insertUser = $bdd->prepare('INSERT INTO inscription(id, mdp)VALUES(?, ?)');
                             $insertUser->execute(array($codeetu, $mdp));
 
-                            $recupUser = $bdd->prepare('SELECT * FROM inscription WHERE id = ? AND mdp = ?');
-                            $recupUser->execute(array($codeetu,$mdp ));
-                            if($recupUser->rowCount() > 0){
-                                $_SESSION['id'] = $codeetu;
-                                $_SESSION['newPassword'] = $mdp;
-                                $_SESSION['id'] = $recupUser->fetch()['id'];
-                            }
                             header('Location: inscription_completed.php');
                             
                         } catch(Exception $e) {

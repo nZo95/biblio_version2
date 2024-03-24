@@ -12,8 +12,6 @@ require "header.php";
 
 <body>   
 <div class="connexion_f">
-
-<body> 
 <div class="container_form">
         <form  method="POST" action="connexion.php" method="post">
             <h2>Connexion</h2>
@@ -34,7 +32,6 @@ require "header.php";
             if($query->num_rows > 0){
                 $_SESSION['id'] = $idetu;
                 $_SESSION['mdp'] = $mdp;
-                $_SESSION['id'] = $idetu;
                 header('Location: index.php');
             }else{
                 echo "Mot de passe ou Numéro d'identification incorrect <br> <br>";

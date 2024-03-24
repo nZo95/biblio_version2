@@ -113,7 +113,7 @@ body{
   cursor: pointer;
   border-radius: 50%;
   transition: all 0.6s;
-  transform: translateY(1450%);
+  transform: translateY(1750%);
 }
 
 .slider-wrapper .slide-button:hover {
@@ -217,7 +217,8 @@ body{
 
 .gender-category label,
 .gender-category input,
-.form-submit-btn input{
+.form-submit-btn input,
+.form-logout-btn{
   cursor: pointer;
 }
 
@@ -242,7 +243,7 @@ body{
 .content-setting{
   background: rgba;
   width: 30%;
-  height: 120%;
+  height: 50%;
   margin-left: auto;
   margin-right: auto;
   background: #313E50;
@@ -251,13 +252,26 @@ body{
 }
 
 .form-logout-btn input{
-  width: 190px;
+  width: 200px;
   margin-top: 10px;
   font-size: 20px;
   padding: 10px;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   color: aliceblue;
-  background: #5C6672;
-  margin-left: 60%;
+  background: #313E50;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+}
+
+.disconnect-setting{
+    background: rgba;
+    width: 30%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #313E50;
+    border-radius: 10px;
+    padding: 28px;
 }

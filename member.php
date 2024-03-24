@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require 'header.php'?>
+<?php require 'header.php';
+?> 
+
+
+<?php
+
+if(isset($_POST['save'])){
+    $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
+    $op = $_POST['password'];
+    $np = $_POST['newpassword'];
+    $cnp = $_POST['cpassword'];
+
+    $op = sha1($op);
+
+    if($np == $cnp){
+        $query = $bdd->prepare("SELECT * FROM compte WHERE mdp = :mdp");
+        $query->bindParam(':mdp', $op);
+        $query->execute();
+        $count = $query->rowCount();
+        if($count > 0){
+            $updateQuery = $bdd->prepare("UPDATE compte SET mdp = :newPassword");
+            $mdp = sha1($np);
+            $updateQuery->bindParam(':newPassword', $mdp);
+            $updateQuery->execute();
+            echo "Mot de passe mis à jour";
+        }
+        else{
+            echo "L'ancien mot de passe ne correspond pas";
+        }
+    }
+    else{
+        echo "Le nouveau mot de passe et la confirmation ne correspondent pas";
+    }
+}
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +51,9 @@ if (!isset($_SESSION['id'])) {
     header("Location: connexion.php");
     exit();
 }
-$nom_utilisateur = $_SESSION['id']; 
+
+$nom_utilisateur = $_SESSION['id'];
+
 ?>
     <div class ="space">
         <?php 
@@ -24,23 +62,30 @@ $nom_utilisateur = $_SESSION['id'];
         
         <img class="sizeimg" src="images/user.png" alt="">
     </div>
+    <div class ="space">
+        <div class="form-submit-btn">
+                            
+            <a class="form-logout-btn" href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
+                
+        </div>
+    </div>
     <section>
         <div class="space">
             <div class="content">
-                <form action="#">
+                <form  method="POST">
                     <div class="main-user-info">
                         <div class="user-input-box">
-                            <label for="fullName">Nom Complet</label>
+                            <label for="secondname">Prénom</label>
                             <input type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    placeholder="Nom et Prénom"/>
+                                    id="secondname"
+                                    name="secondname"
+                                    placeholder="Prénom"/>
                         </div>
                         <div class="user-input-box">
-                            <label for="fullName">Pseudo</label>
+                            <label for="name">Nom</label>
                             <input type="text"
-                                    id="username"
-                                    name="username"
+                                    id="name"
+                                    name="name"
                                     placeholder="Pseudo"/>
                         </div>
                         <div class="user-input-box">
@@ -58,27 +103,44 @@ $nom_utilisateur = $_SESSION['id'];
                                     placeholder="Téléphone"/>
                         </div>
                     </div>
-                    <div class="gender-details-box">
-                        <span class="gender-title">Genre</span>
-                        <div class="gender-category">
-                            <input type="radio" name="gender" id="male">
-                            <label for ="male">Homme</label>
-                            <input type="radio" name="gender" id="female">
-                            <label for ="female">Femme</label>
-                            <input type="radio" name="gender" id="other">
-                            <label for ="other">Autre</label>
-                        </div>
-                    </div>
                     <div class="form-submit-btn">
-                        <input type="submit" value="Enregistrer">
+                        <input type="submit" id="submi" name="submi" value="Enregistrer">
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <?php
+
+if(isset($_POST['submi'])){
+    $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8', 'root', '');
+
+    $userId = $_SESSION['id'];
+    
+    $prenom = $_POST['secondname'];
+    $nom = $_POST['name'];
+    $email = $_POST['email'];
+    $telephone = $_POST['phoneNumber'];
+
+    $query = $bdd->prepare("UPDATE compte SET prenom = :prenom, nom = :nom, mail = :email, phone = :telephone WHERE id = :id_utilisateur");
+    $query->bindParam(':id_utilisateur', $userId);
+    $query->bindParam(':prenom', $prenom);
+    $query->bindParam(':nom', $nom);
+    $query->bindParam(':email', $email);
+    $query->bindParam(':telephone', $telephone);
+
+
+    if($query->execute()){
+        echo "Données mises à jour avec succès dans la base de données.";
+    } else {
+        echo "Une erreur s'est produite lors de la mise à jour des données dans la base de données.";
+    }
+}
+
+?>
     <hr>
-    <div class="space">
-        <h1>Favoris</h1>
+        <div class="space">
+        <h1>Réservation</h1>
     </div>
       <div class="container-slider-wrapper">
         <div class="slider-wrapper">
@@ -104,13 +166,20 @@ $nom_utilisateur = $_SESSION['id'];
     <div class ="space">
         <h1>Paramètres</h1>
     </div>
-    <section>
         <div class="space">
             <div class="content-setting">
-                <form action="#">
+                <form method="post">
+
                     <div class="main-user-info">
                         <div class="user-input-box">
                             <label for="password">Mot de passe</label>
+                            <input type="password"
+                                    id="newpassword"
+                                    name="newpassword"
+                                    placeholder="Nouveau Mot de passe"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="password">Ancien</label>
                             <input type="password"
                                     id="password"
                                     name="password"
@@ -121,16 +190,17 @@ $nom_utilisateur = $_SESSION['id'];
                             <input type="password"
                                     id="cpassword"
                                     name="cpassword"
-                                    placeholder="Confirmation Mot de passe"/>
+                                    placeholder="Confirmation mot de passe"/>
                         </div>
+
                     </div>
-                    <div class="form-logout-btn">
-                        <input type="submit" value="Déconnexion">   
+                    <div class="form-submit-btn">
+                    <input id="save" name="save" type="submit" value="Enregistrer"></a> 
                     </div>
                 </form>
             </div>
         </div>
-    </section>
+    
 </body>
 <?php require 'footer.php'?>
 </html>
