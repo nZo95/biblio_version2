@@ -25,7 +25,7 @@
               {
                 echo '<li><a href="notif_admin.php">Comptes client</a></li>';
                 echo '<li><a href="ajout_livre_admin.php">Livres</a></li>';
-                echo '<li><a href="json_admin.php">JSON</a></li>';
+                echo '<li><a href="json_admin.php">Importer JSON</a></li>';
               }
               else
               {
