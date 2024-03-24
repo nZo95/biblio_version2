@@ -20,12 +20,13 @@
           <li><a href="index.php">Accueil</a></li>
           <?php
               $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-  
-              if (str_contains($actual_link, "admin"))
+
+              echo echo_vardump(strpbrk($actual_link, 'admin'));
+              if (strpbrk($actual_link, "admin"))
               {
                 echo '<li><a href="notif_admin.php">Comptes client</a></li>';
                 echo '<li><a href="ajout_livre_admin.php">Livres</a></li>';
-                echo '<li><a href="json_admin.php">JSON</a></li>';
+                echo '<li><a href="json_admin.php">Importer JSON</a></li>';
               }
               else
               {
@@ -36,9 +37,7 @@
                 <button type="submit" style="border: none; background: none; padding: 0; margin: 0; cursor: pointer;">
                     <img src="images/user.png" alt="error">
                 </button>
-            </form>
-
-         
+            </form>         
         </ul>
       </div>
     </nav>

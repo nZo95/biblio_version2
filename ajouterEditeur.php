@@ -15,19 +15,23 @@
     </form>
 
     <?php
-     
         $libelleEditeur = $_POST['editeur'];
-        $sqlCount = "SELECT MAX(id) as maxId FROM editeur";
+        $sqlCount = "SELECT MAX(id) AS maxId FROM editeur";
         $result = $link->query($sqlCount);
         $row = $result->fetch_assoc();
         $newId = $row['maxId'] + 1;
-        $sqlInsert = "INSERT INTO editeur (id, libelle) VALUES ($newId, '$libelleEditeur')";
 
-        if ($link->query($sqlInsert) === TRUE) {
-            
+        $stmt = $link->prepare("INSERT INTO editeur (id, libelle) VALUES (?, ?)");
+
+        $stmt->bind_param("is", $newId, $libelleEditeur);
+
+        if ($stmt->execute()) {
+            echo "<p>Éditeur ajouté avec succès !</p>";
         } else {
-            echo "Erreur : " . $sqlInsert . "<br>" . $link->error;
+            echo "<p>Erreur lors de l'ajout de l'éditeur : " . $stmt->error . "</p>";
         }
+
+        $stmt->close();
     ?>
 
     <?php require "footer.php"; ?>

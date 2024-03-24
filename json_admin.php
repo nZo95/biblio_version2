@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Interface Administrateur ASF</title>
         <link rel="stylesheet" href="styles/json.css">
+        
     </head>
     <body>
         <?php
@@ -50,6 +51,7 @@
             <input type="button" id="jsonSubmit" name="jsonSubmit" value="Envoyer" onClick="document.getElementById('importJson').submit();"/>
         </form>
         <div class="space"></div>
+        <a class="form-logout-btn" href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
         <?php require('footer.php'); ?>
     </body>
 </html>
