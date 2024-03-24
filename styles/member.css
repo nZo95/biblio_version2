@@ -113,7 +113,7 @@ body{
   cursor: pointer;
   border-radius: 50%;
   transition: all 0.6s;
-  transform: translateY(1450%);
+  transform: translateY(1750%);
 }
 
 .slider-wrapper .slide-button:hover {
