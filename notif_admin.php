@@ -38,8 +38,7 @@ $result = $link->query($sql);
                 $maskedPassword = str_repeat('*', strlen($row['mdp'])); 
                 $idUtilisateur =($row['id']) ;
                 echo '<div class="request_card">';
-                echo "<h2>Identifiant : " . $row['id'] . "</h2>"; 
-                echo "<p>Mot de passe : $maskedPassword</p>"; // Affiche des * à la place du mdp
+                echo "<h2>Identifiant : " . $row['id'] . "</h2> <br>"; 
                 echo "<a class='bouton_autoriser' href ='?id=".$idUtilisateur."&action=accept'>Accepter</a>";
                 echo "<a class='bouton_refuser'href ='?id=".$idUtilisateur."&action=refuse'>Refuser</a>";
                 echo '</div>';
