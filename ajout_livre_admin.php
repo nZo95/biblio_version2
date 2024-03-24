@@ -44,6 +44,7 @@
         <input type="text" id="titre" name="titre" placeholder="Titre du livre" class="input">
         <br>
       
+        <p class="p_form">Date de parution : </p>
         <input type="date" id="date_publication" name="date_publication" placeholder="Date de publication" class="input">
         <br>
         
