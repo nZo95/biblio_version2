@@ -96,7 +96,7 @@
       <?php 
         $query = mysqli_query($link, "SELECT * FROM note WHERE isbn = " . $isbn . ";");
         $count = 0;
-        $haveNote = false
+        $haveNote = false;
 
         if ($query && $query->num_rows > 0) 
         { 
