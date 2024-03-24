@@ -96,6 +96,7 @@
       <?php 
         $query = mysqli_query($link, "SELECT * FROM note WHERE isbn = " . $isbn . ";");
         $count = 0;
+        $haveNote = false
 
         if ($query && $query->num_rows > 0) 
         { 
@@ -110,6 +111,7 @@
             }
             $rowMember = mysqli_fetch_array(mysqli_query($link, 'SELECT prenom, nom FROM compte WHERE id = "' . $rowNote["id"] . '";'));
             $member = $rowNote["id"];
+            if (!$haveNote && isset($_SESSION["id"]) && $_SESSION["id"] == $rowNote["id"]) { $haveNote = true; }
             if (!empty($rowMember["prenom"]) || !empty($rowMember["nom"]))
             {
               $member = $rowMember["prenom"] . " " . $rowMember["nom"];
@@ -128,7 +130,7 @@
           }
         }
       ?>
-      <?php if (!isset($_SESSION["id"])) { echo '<div class="space"></div>'; require('footer.php'); return; } ?>
+      <?php if (!isset($_SESSION["id"]) || $haveNote) { echo '<div class="space"></div>'; require('footer.php'); return; } ?>
       <div class="space"><hr class="down"></div>;
       <div class="container-notice">
         <?php echo '<form name="importCommentary" id="importCommentary" class="notice" method="post" action="detail.php?isbn=' . $isbn . '">'; ?>
