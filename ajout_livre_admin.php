@@ -184,12 +184,9 @@
       }
     }
 ;
-
-
-
 </script>
 
-
+    <a class="form-logout-btn" href="deconnexion.php"><input type="submit" value="Déconnexion"></a> 
     <?php require('footer.php'); ?>
 
 </body>
