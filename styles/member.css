@@ -275,3 +275,11 @@ body{
     border-radius: 10px;
     padding: 28px;
 }
+
+@media(max-width:912px){
+
+  .slider-wrapper .slide-button {
+    transform: translateY(1350%);
+  }
+
+}
