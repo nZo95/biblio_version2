@@ -146,13 +146,30 @@ if(isset($_POST['submi'])){
         <div class="slider-wrapper">
           <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
           <div class="image-list">
-            <div class="image-item"><img src="images/9780090898305.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780151001637.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780307792365.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9782330180805.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9783746612249.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780340960196.jpg" alt=""></div>
-            <div class="image-item"><img src="images/9780307969941.jpg" alt=""></div>
+          <?php
+              $books = array(-1, -1, -1, -1, -1, -1, -1, -1);
+              for ($i = 8; $i > 0; $i--)
+              {
+                $added = false;
+                do
+                {
+                  $rowBook = mysqli_fetch_array(mysqli_query($link, "SELECT * FROM livre ORDER BY RAND() LIMIT 1;"));
+                  $isOk = true;
+                  for ($c = 0; $c < count($books); $c++)
+                  {
+                    if ($books[$c] == $rowBook) { $isOk = false; }
+                  }
+
+                  if ($isOk)
+                  {
+                    $books[8 - $i] = $rowBook;
+                    echo '<div class="image-item"><a href="detail.php?isbn=' . $rowBook["isbn"] . '"><img src="images/' . $rowBook["isbn"] . '.jpg" alt=""></a></div>'; 
+                    $added = true;
+                  }
+                } while(!$added);
+              }
+
+            ?>
           </div>
           <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
         </div>
