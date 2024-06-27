@@ -26,28 +26,28 @@
             <div id="resultPassword"></div> <br>
 
             <?php
-            $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
-            if(isset($_POST['envoi'])){
-                if(!empty($_POST['id']) && !empty($_POST['newPassword'])){
-                    if($_POST['newPassword'] == $_POST['confirmNewPassword']){
-                        $codeetu = htmlspecialchars($_POST['id']);
-                        $mdp = sha1($_POST['newPassword']);
-                        try {
-                            $insertUser = $bdd->prepare('INSERT INTO inscription(id, mdp)VALUES(?, ?)');
-                            $insertUser->execute(array($codeetu, $mdp));
+                $bdd = new PDO('mysql:host=localhost;dbname=bibliov2;charset=utf8;', 'root', '');
+                if(isset($_POST['envoi'])){
+                    if(!empty($_POST['id']) && !empty($_POST['newPassword'])){
+                        if($_POST['newPassword'] == $_POST['confirmNewPassword']){
+                            $codeetu = htmlspecialchars($_POST['id']);
+                            $mdp = sha1($_POST['newPassword']);
+                            try {
+                                $insertUser = $bdd->prepare('INSERT INTO inscription(id, mdp)VALUES(?, ?)');
+                                $insertUser->execute(array($codeetu, $mdp));
 
-                            header('Location: inscription_completed.php');
-                            
-                        } catch(Exception $e) {
-                            echo "Erreur : ".$e->getMessage();
+                                header('Location: inscription_completed.php');
+                                
+                            } catch(Exception $e) {
+                                echo "Erreur : ".$e->getMessage();
+                            }
+                        } else {
+                            echo "<p style='color: red;' >Les mot de passe saisi ne sont pas identiques</p> <br>";
                         }
                     } else {
-                        echo "<p style='color: red;' >Les mot de passe saisi ne sont pas identiques</p> <br>";
+                        echo "<p style='color: red;'>Veuillez compléter tous les champs</p>";
                     }
-                } else {
-                    echo "<p style='color: red;'>Veuillez compléter tous les champs</p>";
                 }
-            }
             ?>
 
             <button id="subbtn" type="submit" name="envoi">Envoyer</button> <br>
