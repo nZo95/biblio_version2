@@ -17,7 +17,6 @@ ASF est une bibliothèque en ligne développée pour une bibliothèque ne possé
 
 ✅ Ajouter, modifier ou supprimer des livres dans la bibliothèque.
 
-✅ Superviser l'activité des utilisateurs et assurer la maintenance du site.
 
 # 🛠️ Technologies utilisées
 Frontend : HTML / CSS / JS
