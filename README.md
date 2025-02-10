@@ -2,7 +2,7 @@
 ASF est une bibliothèque en ligne développée pour une bibliothèque ne possédant pas de site web. Ce projet permet aux utilisateurs de découvrir les livres disponibles et d'interagir avec la plateforme via un système de comptes et de favoris.
 
 # 🚀 Fonctionnalités
-👤 Utilisateurs
+👤 Utilisateurs :
 
 ✅ Consulter la liste des livres disponibles.
 
@@ -10,7 +10,7 @@ ASF est une bibliothèque en ligne développée pour une bibliothèque ne possé
 
 ✅ Ajouter des livres à leurs favoris pour un accès rapide.
 
-🛠️ Administrateurs
+🛠️ Administrateurs :
 
 ✅ Gérer les demandes de création de compte et valider les inscriptions.
 
