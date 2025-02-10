@@ -1,7 +1,7 @@
-## 📚 Projet Bibliothèque V2 - ASF
+# 📚 Projet Bibliothèque V2 - ASF
 ASF est une bibliothèque en ligne développée pour une bibliothèque ne possédant pas de site web. Ce projet permet aux utilisateurs de découvrir les livres disponibles et d'interagir avec la plateforme via un système de comptes et de favoris.
 
-# 🚀 Fonctionnalités
+## 🚀 Fonctionnalités
 👤 Utilisateurs :
 
 ✅ Consulter la liste des livres disponibles.
@@ -18,7 +18,7 @@ ASF est une bibliothèque en ligne développée pour une bibliothèque ne possé
 ✅ Ajouter, modifier ou supprimer des livres dans la bibliothèque.
 
 
-# 🛠️ Technologies utilisées
+## 🛠️ Technologies utilisées
 Frontend : HTML / CSS / JS
 
 Backend : Node.js / PHP
