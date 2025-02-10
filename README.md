@@ -20,6 +20,9 @@ ASF est une bibliothèque en ligne développée pour une bibliothèque ne possé
 
 # 🛠️ Technologies utilisées
 Frontend : HTML / CSS / JS
+
 Backend : Node.js / PHP
+
 Base de données : MySQL
+
 Hébergement : Serveurs privés
